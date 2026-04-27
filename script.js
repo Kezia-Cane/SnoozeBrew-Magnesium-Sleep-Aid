@@ -103,6 +103,7 @@
       var previous = carousel.querySelector("[data-carousel-prev]");
       var next = carousel.querySelector("[data-carousel-next]");
       var dots = carousel.querySelectorAll("[data-carousel-dot]");
+      var activeIndex = 0;
 
       if (!track) return;
 
@@ -111,9 +112,44 @@
       }
 
       function setActiveDot(index) {
+        activeIndex = index;
         dots.forEach(function (dot, dotIndex) {
           dot.classList.toggle("is-active", dotIndex === index);
         });
+      }
+
+      function scrollToCard(index, behavior) {
+        var card = cards()[index];
+        var targetLeft;
+
+        if (!card) return;
+
+        targetLeft = card.offsetLeft - (track.clientWidth - card.getBoundingClientRect().width) / 2;
+
+        track.scrollTo({
+          left: Math.max(0, targetLeft),
+          behavior: behavior || "smooth"
+        });
+
+        setActiveDot(index);
+      }
+
+      function syncActiveDotToScroll() {
+        var trackCenter = track.scrollLeft + track.clientWidth / 2;
+        var closestIndex = 0;
+        var closestDistance = Infinity;
+
+        cards().forEach(function (card, index) {
+          var cardCenter = card.offsetLeft + card.getBoundingClientRect().width / 2;
+          var distance = Math.abs(cardCenter - trackCenter);
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+          }
+        });
+
+        setActiveDot(closestIndex);
       }
 
       function scrollByCard(direction) {
@@ -129,20 +165,30 @@
       dots.forEach(function (dot) {
         dot.addEventListener("click", function () {
           var targetIndex = Number(dot.getAttribute("data-carousel-dot"));
-          var card = cards()[targetIndex];
-
-          if (!card) return;
-
-          track.scrollTo({
-            left: card.offsetLeft,
-            behavior: "smooth"
-          });
-
-          setActiveDot(targetIndex);
+          scrollToCard(targetIndex, "smooth");
         });
       });
 
-      if (dots.length) setActiveDot(0);
+      if (dots.length) {
+        var defaultIndex = 0;
+
+        if (carousel.classList.contains("sb-results-carousel") && window.matchMedia("(max-width: 989px)").matches) {
+          defaultIndex = Math.min(2, cards().length - 1);
+        }
+
+        setActiveDot(defaultIndex);
+        window.requestAnimationFrame(function () {
+          scrollToCard(defaultIndex, "auto");
+        });
+      }
+
+      track.addEventListener("scroll", syncActiveDotToScroll, { passive: true });
+
+      window.addEventListener("resize", function () {
+        if (dots.length) {
+          scrollToCard(activeIndex, "auto");
+        }
+      });
 
       if (previous) {
         previous.addEventListener("click", function () {
