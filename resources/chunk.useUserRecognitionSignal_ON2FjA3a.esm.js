@@ -1,0 +1,2 @@
+import{b as i,q as o}from"./chunk.hooks_B7u5YXvI.esm.js";import{i as n}from"./chunk.window_BV7pwtSs.esm.js";function h(){const{notify:h}=i();return o((({recognized:i})=>{try{n.Shopify||(n.Shopify={}),n.Shopify.SignInWithShop||(n.Shopify.SignInWithShop={}),n.Shopify.SignInWithShop.User||(n.Shopify.SignInWithShop.User={}),n.Shopify.SignInWithShop.User.recognized=i,n.dispatchEvent(new CustomEvent("shop-user-recognition-changed",{detail:{recognized:i}}))}catch(i){h(i)}}),[h])}export{h as u};
+//# sourceMappingURL=chunk.useUserRecognitionSignal_ON2FjA3a.esm.js.map
