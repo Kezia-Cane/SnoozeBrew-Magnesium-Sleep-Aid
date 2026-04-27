@@ -4,9 +4,6 @@
   }
 
   function updateCountdown() {
-    var countdowns = document.querySelectorAll("[data-countdown]");
-    if (!countdowns.length) return;
-
     var now = new Date();
     var end = new Date(now);
     end.setHours(23, 59, 59, 999);
@@ -16,14 +13,26 @@
     var minutes = Math.floor((diff % 3600000) / 60000);
     var seconds = Math.floor((diff % 60000) / 1000);
 
-    countdowns.forEach(function (countdown) {
-      var hoursNode = countdown.querySelector("[data-hours]");
-      var minutesNode = countdown.querySelector("[data-minutes]");
-      var secondsNode = countdown.querySelector("[data-seconds]");
+    var values = {
+      hours: pad(hours),
+      minutes: pad(minutes),
+      seconds: pad(seconds)
+    };
 
-      if (hoursNode) hoursNode.textContent = pad(hours);
-      if (minutesNode) minutesNode.textContent = pad(minutes);
-      if (secondsNode) secondsNode.textContent = pad(seconds);
+    Object.keys(values).forEach(function (key) {
+      var node = document.querySelector('[data-countdown="' + key + '"]');
+      if (!node) return;
+
+      if (node.textContent !== values[key]) {
+        var box = node.closest(".sb-timebox");
+        node.textContent = values[key];
+
+        if (box) {
+          box.classList.remove("is-ticking");
+          void box.offsetWidth;
+          box.classList.add("is-ticking");
+        }
+      }
     });
   }
 
@@ -93,8 +102,19 @@
       var track = carousel.querySelector("[data-carousel-track]");
       var previous = carousel.querySelector("[data-carousel-prev]");
       var next = carousel.querySelector("[data-carousel-next]");
+      var dots = carousel.querySelectorAll("[data-carousel-dot]");
 
       if (!track) return;
+
+      function cards() {
+        return Array.prototype.slice.call(track.children);
+      }
+
+      function setActiveDot(index) {
+        dots.forEach(function (dot, dotIndex) {
+          dot.classList.toggle("is-active", dotIndex === index);
+        });
+      }
 
       function scrollByCard(direction) {
         var card = track.querySelector(":scope > *");
@@ -105,6 +125,24 @@
           behavior: "smooth"
         });
       }
+
+      dots.forEach(function (dot) {
+        dot.addEventListener("click", function () {
+          var targetIndex = Number(dot.getAttribute("data-carousel-dot"));
+          var card = cards()[targetIndex];
+
+          if (!card) return;
+
+          track.scrollTo({
+            left: card.offsetLeft,
+            behavior: "smooth"
+          });
+
+          setActiveDot(targetIndex);
+        });
+      });
+
+      if (dots.length) setActiveDot(0);
 
       if (previous) {
         previous.addEventListener("click", function () {

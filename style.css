@@ -98,6 +98,18 @@ h3 {
   font-size: 17px;
   font-weight: 700;
   line-height: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.sb-countdown-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.16) 42%, transparent 58%);
+  transform: translateX(-115%);
+  animation: sb-countdown-sheen 4.2s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .sb-countdown {
@@ -118,6 +130,7 @@ h3 {
   flex-direction: column;
   font-size: 17px;
   font-weight: 700;
+  transform-origin: center;
 }
 
 .sb-timebox small {
@@ -125,6 +138,36 @@ h3 {
   font-size: 8px;
   line-height: 1;
   font-weight: 400;
+}
+
+.sb-timebox.is-ticking {
+  animation: sb-countdown-tick 0.34s ease;
+}
+
+@keyframes sb-countdown-sheen {
+  0%,
+  54% {
+    transform: translateX(-115%);
+  }
+
+  74%,
+  100% {
+    transform: translateX(115%);
+  }
+}
+
+@keyframes sb-countdown-tick {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  42% {
+    transform: translateY(-1px) scale(1.08);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
 }
 
 .sb-separator {
@@ -1354,16 +1397,22 @@ h3 {
   margin-top: 16px;
 }
 
-.sb-dots span {
+.sb-dots button {
   width: 11px;
   height: 11px;
   border-radius: 50%;
   background: #d8d8d8;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, width 0.2s ease;
 }
 
-.sb-dots span:first-child {
+.sb-dots button.is-active,
+.sb-dots button:hover {
   background: #bdbdbd;
   width: 13px;
+  transform: scale(1.04);
 }
 
 .sb-refund {
@@ -1378,17 +1427,19 @@ h3 {
 }
 
 .sb-shield {
-  width: 58px;
-  height: 58px;
+  width: 80px;
+  height: 80px;
   margin: 0 auto 17px;
-  background: var(--sb-purple);
-  color: #ffffff;
+  color: var(--sb-purple);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 35px;
-  font-weight: 700;
-  clip-path: polygon(50% 0, 86% 14%, 86% 50%, 50% 88%, 14% 50%, 14% 14%);
+}
+
+.sb-shield svg {
+  width: 80px;
+  height: 80px;
+  display: block;
 }
 
 .sb-refund h2 {
@@ -1504,6 +1555,15 @@ h3 {
   border-radius: 8px;
   min-height: 58px;
   font-size: 14px;
+}
+
+@media (min-width: 990px) {
+  .sb-gallery {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+    z-index: 1;
+  }
 }
 
 @media (max-width: 1190px) {
@@ -1835,45 +1895,62 @@ h3 {
   }
 
   .sb-stats {
-    padding: 29px 0 44px;
+    padding: 24px 0 34px;
   }
 
   .sb-stats-header {
-    margin-bottom: 31px;
+    margin-bottom: 30px;
   }
 
   .sb-stats-header h2 {
-    font-size: 33px;
+    font-size: 30px;
+    line-height: 1.05;
     margin-bottom: 13px;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sb-stats-header p {
+    max-width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 13px;
+    line-height: 1.35;
   }
 
   .sb-stat-list article {
-    align-items: flex-start;
-    gap: 20px;
-    padding: 21px 0;
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    align-items: start;
+    gap: 14px;
+    padding: 16px 0;
   }
 
   .sb-stat-list strong {
-    min-width: 86px;
-    font-size: 52px;
+    min-width: 0;
+    font-size: 48px;
+    line-height: 0.95;
   }
 
   .sb-stat-list h3 {
-    font-size: 18px;
-    margin-bottom: 6px;
+    font-size: 16px;
+    line-height: 1.15;
+    margin-bottom: 5px;
   }
 
   .sb-stat-list p {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.42;
   }
 
   .sb-disclaimer {
-    margin-top: 28px;
-    padding: 18px 16px;
+    margin-top: 24px;
+    padding: 15px 14px;
     align-items: flex-start;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.45;
+    border-radius: 8px;
   }
 
   .sb-photo-reviews {
