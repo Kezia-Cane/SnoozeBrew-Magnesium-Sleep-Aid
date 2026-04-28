@@ -154,6 +154,110 @@ window.va =
     // Gallery logic end
   }
 
+  function initPurchaseSelector() {
+    var options = Array.prototype.slice.call(document.querySelectorAll(".sb-variant-option"));
+    var toggle = document.getElementById("sb-subscribe-toggle");
+    var title = document.getElementById("sb-subscribe-title");
+    var sub = document.getElementById("sb-subscribe-sub");
+    var cta = document.getElementById("sb-selector-cta");
+    var ctaText = document.getElementById("sb-selector-cta-text");
+    var selected = options.filter(function (option) {
+      return option.classList.contains("is-selected");
+    })[0] || options[0];
+
+    function formatPrice(value) {
+      var amount = Number(value);
+
+      if (!isFinite(amount)) {
+        return "";
+      }
+
+      return "$" + amount.toFixed(2);
+    }
+
+    function renderOptionPricing(option, useSubscription) {
+      var price = useSubscription ? option.getAttribute("data-subscription") : option.getAttribute("data-regular");
+      var comparePrice = useSubscription ? option.getAttribute("data-subscription-compare") : option.getAttribute("data-regular-compare");
+      var dailyPrice = useSubscription ? option.getAttribute("data-subscription-daily") : option.getAttribute("data-regular-daily");
+      var priceNode = option.querySelector(".sb-variant-price");
+      var compareNode = option.querySelector(".sb-variant-compare");
+      var dailyNode = option.querySelector(".sb-variant-daily");
+
+      if (priceNode) {
+        priceNode.textContent = formatPrice(price);
+      }
+
+      if (compareNode) {
+        compareNode.textContent = comparePrice ? formatPrice(comparePrice) : "";
+      }
+
+      if (dailyNode) {
+        dailyNode.textContent = dailyPrice ? formatPrice(dailyPrice) + " per day" : "";
+      }
+    }
+
+    function renderSelector() {
+      var useSubscription = toggle ? toggle.checked : false;
+
+      options.forEach(function (option) {
+        renderOptionPricing(option, useSubscription);
+      });
+
+      if (title) {
+        title.textContent = useSubscription ? "Save 20% — Monthly Delivery" : "One-Time Purchase";
+      }
+
+      if (sub) {
+        sub.textContent = useSubscription
+          ? "Subscription active — 20% discount applied."
+          : "One-time purchase selected.";
+      }
+
+      if (cta) {
+        cta.setAttribute("data-purchase-type", useSubscription ? "subscription" : "one_time");
+        cta.setAttribute("data-bundle", selected ? selected.getAttribute("data-bundle") : "buy1");
+      }
+
+      if (ctaText) {
+        ctaText.textContent = useSubscription ? "ADD TO CART — SAVE 20%" : "ADD TO CART";
+      }
+    }
+
+    function setSelected(option) {
+      selected = option;
+
+      options.forEach(function (item) {
+        var isSelected = item === option;
+        item.classList.toggle("is-selected", isSelected);
+        item.setAttribute("aria-pressed", isSelected ? "true" : "false");
+      });
+
+      renderSelector();
+    }
+
+    if (!options.length) {
+      return;
+    }
+
+    options.forEach(function (option) {
+      option.addEventListener("click", function () {
+        setSelected(option);
+      });
+    });
+
+    if (toggle) {
+      toggle.addEventListener("change", renderSelector);
+    }
+
+    if (cta) {
+      cta.addEventListener("click", function () {
+        renderSelector();
+      });
+    }
+
+    renderSelector();
+  }
+
   function initAccordions() {
     var accordions = document.querySelectorAll("[data-accordion]");
 
@@ -333,6 +437,7 @@ window.va =
     setInterval(updateCountdown, 1000);
     initGallery();
     initGallerySticky();
+    initPurchaseSelector();
     initAccordions();
     initCarousels();
     initOfferButtons();

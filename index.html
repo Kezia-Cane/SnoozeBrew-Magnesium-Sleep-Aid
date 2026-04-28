@@ -109,10 +109,119 @@
 
               <p class="sb-stock"><span></span><strong>Low Stock!</strong> <span class="sb-stock-desktop">45 people are looking at this</span><span class="sb-stock-mobile">52 people are looking at this</span></p>
 
-              <button class="sb-primary-btn" type="button" data-scroll-target="#sb-top">
-                <span class="sb-bag-mini" aria-hidden="true"></span>
-                ADD TO CART
-              </button>
+              <section class="sb-purchase-card" aria-label="Choose your SnoozeBrew supply">
+                <div class="sb-purchase-heading">
+                  <p class="sb-purchase-kicker">Choose your supply and save</p>
+                </div>
+
+                <div class="sb-variant-grid" id="sb-variant-options">
+                  <button
+                    class="sb-variant-option"
+                    type="button"
+                    data-bundle="buy1"
+                    data-image="assets/products/1.png"
+                    data-image-alt="SnoozeBrew 1-month supply"
+                    data-regular="51.99"
+                    data-regular-compare=""
+                    data-regular-daily="1.73"
+                    data-subscription="41.59"
+                    data-subscription-compare="51.99"
+                    data-subscription-daily="1.39"
+                    aria-pressed="false">
+                    <span class="sb-variant-badge">1-Month Supply</span>
+                    <span class="sb-variant-card">
+                      <span class="sb-variant-media">
+                        <img src="assets/products/1.png" alt="SnoozeBrew single jar bundle">
+                      </span>
+                      <span class="sb-variant-copy">
+                        <strong class="sb-variant-title">Buy 1</strong>
+                        <span class="sb-variant-note">Perfect to try</span>
+                      </span>
+                      <span class="sb-variant-pricing">
+                        <span class="sb-variant-price">$51.99</span>
+                        <span class="sb-variant-compare"></span>
+                        <span class="sb-variant-daily">$1.73 per day</span>
+                      </span>
+                    </span>
+                  </button>
+
+                  <button
+                    class="sb-variant-option is-selected"
+                    type="button"
+                    data-bundle="buy1get1free"
+                    data-image="assets/products/2.png"
+                    data-image-alt="SnoozeBrew 2-month supply"
+                    data-regular="51.99"
+                    data-regular-compare=""
+                    data-regular-daily="0.87"
+                    data-subscription="41.59"
+                    data-subscription-compare="51.99"
+                    data-subscription-daily="0.69"
+                    aria-pressed="true">
+                    <span class="sb-variant-badge sb-variant-badge--popular">2-Month Supply</span>
+                    <span class="sb-variant-card">
+                      <span class="sb-variant-media">
+                        <img src="assets/products/2.png" alt="SnoozeBrew buy one get one free bundle">
+                      </span>
+                      <span class="sb-variant-copy">
+                        <strong class="sb-variant-title">Buy 1 Get 1 FREE</strong>
+                        <span class="sb-variant-note">Most popular pick</span>
+                      </span>
+                      <span class="sb-variant-pricing">
+                        <span class="sb-variant-price">$51.99</span>
+                        <span class="sb-variant-compare"></span>
+                        <span class="sb-variant-daily">$0.87 per day</span>
+                      </span>
+                    </span>
+                  </button>
+
+                  <button
+                    class="sb-variant-option"
+                    type="button"
+                    data-bundle="buy2get2free"
+                    data-image="assets/products/3.png"
+                    data-image-alt="SnoozeBrew 4-month supply"
+                    data-regular="89.99"
+                    data-regular-compare=""
+                    data-regular-daily="0.75"
+                    data-subscription="71.99"
+                    data-subscription-compare="89.99"
+                    data-subscription-daily="0.60"
+                    aria-pressed="false">
+                    <span class="sb-variant-badge sb-variant-badge--value">4-Month Supply</span>
+                    <span class="sb-variant-card">
+                      <span class="sb-variant-media">
+                        <img src="assets/products/3.png" alt="SnoozeBrew buy two get two free bundle">
+                      </span>
+                      <span class="sb-variant-copy">
+                        <strong class="sb-variant-title">Buy 2 Get 2 FREE</strong>
+                        <span class="sb-variant-note">Best value bundle</span>
+                      </span>
+                      <span class="sb-variant-pricing">
+                        <span class="sb-variant-price">$89.99</span>
+                        <span class="sb-variant-compare"></span>
+                        <span class="sb-variant-daily">$0.75 per day</span>
+                      </span>
+                    </span>
+                  </button>
+                </div>
+
+                <div class="sb-subscribe-toggle" id="sb-subscribe-box">
+                  <label class="sb-subscribe-label" for="sb-subscribe-toggle">
+                    <input type="checkbox" id="sb-subscribe-toggle" class="sb-subscribe-native" checked>
+                    <span class="sb-subscribe-check" aria-hidden="true"></span>
+                    <span class="sb-subscribe-copy">
+                      <strong id="sb-subscribe-title">Save 20% — Monthly Delivery</strong>
+                      <span class="sb-subscribe-sub" id="sb-subscribe-sub">Subscription active — 20% discount applied.</span>
+                    </span>
+                  </label>
+                </div>
+
+                <button class="sb-primary-btn sb-selector-cta" id="sb-selector-cta" type="button">
+                  <span class="sb-bag-mini" aria-hidden="true"></span>
+                  <span id="sb-selector-cta-text">ADD TO CART — SAVE 20%</span>
+                </button>
+              </section>
 
               <div class="sb-payments" aria-label="Payment methods">
                 <span class="sb-pay sb-visa">VISA</span>
