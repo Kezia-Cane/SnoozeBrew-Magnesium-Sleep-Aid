@@ -1,3 +1,9 @@
+window.va =
+  window.va ||
+  function () {
+    (window.vaq = window.vaq || []).push(arguments);
+  };
+
 (function () {
   function pad(value) {
     return String(value).padStart(2, "0");

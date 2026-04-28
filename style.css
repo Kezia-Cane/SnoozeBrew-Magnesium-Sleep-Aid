@@ -1678,7 +1678,7 @@ h3 {
 
 @media (max-width: 749px) {
   body {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .sb-page {
@@ -1761,34 +1761,37 @@ h3 {
   }
 
   .sb-trust-callout strong {
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.4;
     margin-bottom: 7px;
   }
 
   .sb-trust-callout p {
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .sb-product-info h1 {
-    font-size: 26px;
-    line-height: 1.12;
-    margin-bottom: 8px;
+    font-size: 31px;
+    line-height: 1.14;
+    margin-bottom: 12px;
   }
 
   .sb-product-copy {
-    font-size: 13px;
-    line-height: 1.35;
+    font-size: 15px;
+    line-height: 1.58;
+    margin-bottom: 12px;
   }
 
   .sb-bullets {
-    gap: 8px;
-    margin-top: 12px;
+    gap: 10px;
+    margin-top: 14px;
   }
 
   .sb-bullets li {
-    font-size: 14px;
-    line-height: 1.25;
-    padding-left: 26px;
+    font-size: 15px;
+    line-height: 1.45;
+    padding-left: 28px;
   }
 
   .sb-bullets li::before {
@@ -1798,8 +1801,8 @@ h3 {
   }
 
   .sb-stock {
-    font-size: 10px;
-    padding: 5px 9px;
+    font-size: 13px;
+    padding: 7px 12px;
     margin-top: 8px;
   }
 
@@ -1814,7 +1817,7 @@ h3 {
   .sb-primary-btn {
     min-height: 49px;
     border-radius: 17px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .sb-payments {
@@ -1839,18 +1842,23 @@ h3 {
   }
 
   .sb-guarantee-card h2 {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .sb-guarantee-card p {
-    font-size: 13px;
-    line-height: 1.24;
+    font-size: 14px;
+    line-height: 1.45;
   }
 
   .sb-accordion-trigger {
-    min-height: 39px;
+    min-height: 44px;
     padding: 8px 12px;
+    font-size: 15px;
+  }
+
+  .sb-accordion-panel {
     font-size: 14px;
+    line-height: 1.58;
   }
 
   .sb-mini-review {
@@ -1864,13 +1872,13 @@ h3 {
   }
 
   .sb-mini-review h3 {
-    font-size: 14px;
-    margin-bottom: 3px;
+    font-size: 15px;
+    margin-bottom: 5px;
   }
 
   .sb-mini-review p {
-    font-size: 13px;
-    line-height: 1.3;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .sb-narrow,
@@ -1879,13 +1887,14 @@ h3 {
   }
 
   .sb-section-header h2 {
-    font-size: 34px;
-    line-height: 1.15;
+    font-size: 36px;
+    line-height: 1.1;
   }
 
   .sb-section-header p {
-    font-size: 14px;
-    line-height: 1.48;
+    font-size: 15px;
+    line-height: 1.58;
+    max-width: 34ch;
   }
 
   .sb-journey {
@@ -1897,7 +1906,7 @@ h3 {
   }
 
   .sb-journey .sb-section-header h2 {
-    font-size: 35px;
+    font-size: 37px;
   }
 
   .sb-timeline::before {
@@ -1911,20 +1920,20 @@ h3 {
   }
 
   .sb-phase {
-    font-size: 11px;
+    font-size: 12px;
     padding: 4px 11px;
   }
 
   .sb-timeline h3 {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 12px;
   }
 
   .sb-timeline p,
   .sb-timeline li,
   .sb-timeline strong {
-    font-size: 14px;
-    line-height: 1.65;
+    font-size: 15px;
+    line-height: 1.7;
   }
 
   .sb-timeline p {
@@ -1948,8 +1957,8 @@ h3 {
   }
 
   .sb-stats-header h2 {
-    font-size: 30px;
-    line-height: 1.05;
+    font-size: 34px;
+    line-height: 1.08;
     margin-bottom: 13px;
     max-width: 360px;
     margin-left: auto;
@@ -1960,8 +1969,8 @@ h3 {
     max-width: 370px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 13px;
-    line-height: 1.35;
+    font-size: 15px;
+    line-height: 1.55;
   }
 
   .sb-stat-list article {
@@ -1974,27 +1983,27 @@ h3 {
 
   .sb-stat-list strong {
     min-width: 0;
-    font-size: 48px;
+    font-size: 52px;
     line-height: 0.95;
   }
 
   .sb-stat-list h3 {
-    font-size: 16px;
-    line-height: 1.15;
+    font-size: 18px;
+    line-height: 1.2;
     margin-bottom: 5px;
   }
 
   .sb-stat-list p {
-    font-size: 12px;
-    line-height: 1.42;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .sb-disclaimer {
     margin-top: 24px;
     padding: 15px 14px;
     align-items: flex-start;
-    font-size: 12px;
-    line-height: 1.45;
+    font-size: 13px;
+    line-height: 1.5;
     border-radius: 8px;
   }
 
@@ -2005,7 +2014,7 @@ h3 {
   .sb-rating-pill {
     max-width: calc(100% - 28px);
     white-space: nowrap;
-    font-size: 12px;
+    font-size: 13px;
     padding: 6px 12px;
   }
 
@@ -2034,11 +2043,12 @@ h3 {
 
   .sb-review-meta {
     gap: 7px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .sb-review-body > p:not(.sb-review-meta) {
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 1.55;
   }
 
   .sb-carousel-nav {
@@ -2065,13 +2075,13 @@ h3 {
   }
 
   .sb-benefits .sb-section-header h2 {
-    font-size: 33px;
+    font-size: 35px;
     line-height: 1.08;
   }
 
   .sb-benefits .sb-section-header p {
-    font-size: 13px;
-    line-height: 1.55;
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .sb-benefits-img {
@@ -2086,11 +2096,13 @@ h3 {
   }
 
   .sb-benefit-box h3 {
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.3;
   }
 
   .sb-benefit-box p {
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 1.52;
   }
 
   .sb-store-faq {
@@ -2108,18 +2120,19 @@ h3 {
   }
 
   .sb-faq-wrap h2 {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   .sb-faq-wrap header p {
     max-width: 100%;
     margin-bottom: 18px;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.58;
   }
 
   .sb-store-accordion .sb-accordion-trigger {
     min-height: 46px;
-    font-size: 14px;
+    font-size: 15px;
     padding: 10px 12px;
   }
 
@@ -2193,13 +2206,13 @@ h3 {
   }
 
   .sb-refund h2 {
-    font-size: 22px;
+    font-size: 28px;
     margin-bottom: 24px;
   }
 
   .sb-refund p {
-    font-size: 14px;
-    line-height: 1.58;
+    font-size: 15px;
+    line-height: 1.65;
   }
 
   .sb-refund .sb-primary-btn {
@@ -2208,7 +2221,7 @@ h3 {
 
   .sb-refund-badges {
     gap: 14px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .sb-footer {
@@ -2245,7 +2258,7 @@ h3 {
   .sb-sticky-delivery {
     order: 2;
     align-self: center;
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 
@@ -2314,6 +2327,98 @@ h3 {
 
   .sb-result-card footer strong {
     font-size: 11px;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  .sb-product-info h1 {
+    font-size: 31px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .sb-product-copy,
+  .sb-bullets li,
+  .sb-accordion-panel,
+  .sb-faq-wrap header p,
+  .sb-refund p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .sb-trust-callout strong,
+  .sb-guarantee-card h2,
+  .sb-timeline h3,
+  .sb-benefit-box h3,
+  .sb-stat-list h3 {
+    font-size: 17px;
+    line-height: 1.3;
+  }
+
+  .sb-trust-callout p,
+  .sb-guarantee-card p,
+  .sb-mini-review p,
+  .sb-review-body > p:not(.sb-review-meta),
+  .sb-benefit-box p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .sb-stock,
+  .sb-primary-btn,
+  .sb-sticky-btn,
+  .sb-store-accordion .sb-accordion-trigger,
+  .sb-accordion-trigger {
+    font-size: 15px;
+  }
+
+  .sb-section-header h2,
+  .sb-journey .sb-section-header h2,
+  .sb-photo-reviews .sb-section-header h2,
+  .sb-benefits .sb-section-header h2,
+  .sb-results .sb-section-header h2 {
+    font-size: 38px;
+    line-height: 1.08;
+  }
+
+  .sb-section-header p,
+  .sb-benefits .sb-section-header p,
+  .sb-results .sb-section-header p,
+  .sb-stats-header p {
+    font-size: 16px;
+    line-height: 1.58;
+    max-width: 44rem;
+  }
+
+  .sb-stats-header h2,
+  .sb-faq-wrap h2,
+  .sb-refund h2 {
+    font-size: 34px;
+    line-height: 1.1;
+  }
+
+  .sb-timeline p,
+  .sb-timeline li,
+  .sb-timeline strong,
+  .sb-stat-list p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .sb-rating-pill,
+  .sb-refund-badges,
+  .sb-review-meta,
+  .sb-sticky-delivery {
+    font-size: 12px;
+  }
+
+  .sb-mini-review h3,
+  .sb-result-card h3 {
+    font-size: 18px;
   }
 }
 
