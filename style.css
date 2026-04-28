@@ -338,11 +338,17 @@ h3 {
 
 /* Gallery logic start */
 .sb-gallery {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.sb-gallery-sticky {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-width: 0;
 }
 
 .sb-gallery-frame {
@@ -1584,12 +1590,19 @@ h3 {
 }
 
 @media (min-width: 990px) {
-  .sb-gallery {
-    position: sticky;
+  .sb-gallery.is-fixed .sb-gallery-sticky {
+    position: fixed;
     top: 24px;
-    align-self: start;
-    z-index: 1;
-    max-height: calc(100vh - 32px);
+    left: var(--sb-gallery-left, 0);
+    width: var(--sb-gallery-width, 452px);
+    z-index: 2;
+  }
+
+  .sb-gallery.is-bottom .sb-gallery-sticky {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 }
 

@@ -80,6 +80,74 @@
     });
   }
 
+  function initGallerySticky() {
+    var topOffset = 24;
+    var desktopQuery = window.matchMedia("(min-width: 990px)");
+    var galleries = document.querySelectorAll("[data-gallery]");
+
+    function resetGallery(gallery, sticky) {
+      gallery.classList.remove("is-fixed", "is-bottom");
+      gallery.style.removeProperty("--sb-gallery-left");
+      gallery.style.removeProperty("--sb-gallery-width");
+      gallery.style.removeProperty("min-height");
+      sticky.style.removeProperty("width");
+    }
+
+    function updateGallery(gallery) {
+      var sticky = gallery.querySelector(".sb-gallery-sticky");
+      var container = gallery.closest(".sb-product-container");
+      var galleryRect;
+      var stickyRect;
+      var galleryTop;
+      var containerTop;
+      var containerBottom;
+      var stickyHeight;
+      var stopPoint;
+
+      if (!sticky || !container || !desktopQuery.matches) {
+        if (sticky) resetGallery(gallery, sticky);
+        return;
+      }
+
+      galleryRect = gallery.getBoundingClientRect();
+      stickyRect = sticky.getBoundingClientRect();
+      galleryTop = galleryRect.top + window.scrollY;
+      containerTop = container.getBoundingClientRect().top + window.scrollY;
+      containerBottom = containerTop + container.offsetHeight;
+      stickyHeight = sticky.offsetHeight;
+      stopPoint = containerBottom - stickyHeight - topOffset;
+
+      gallery.style.setProperty("--sb-gallery-left", galleryRect.left + "px");
+      gallery.style.setProperty("--sb-gallery-width", galleryRect.width + "px");
+      gallery.style.minHeight = stickyHeight + "px";
+
+      if (window.scrollY <= galleryTop - topOffset) {
+        gallery.classList.remove("is-fixed", "is-bottom");
+      } else if (window.scrollY < stopPoint) {
+        gallery.classList.add("is-fixed");
+        gallery.classList.remove("is-bottom");
+      } else {
+        gallery.classList.remove("is-fixed");
+        gallery.classList.add("is-bottom");
+      }
+    }
+
+    function updateAll() {
+      galleries.forEach(function (gallery) {
+        updateGallery(gallery);
+      });
+    }
+
+    // Gallery logic start
+    window.addEventListener("scroll", updateAll, { passive: true });
+    window.addEventListener("resize", updateAll);
+    if (desktopQuery.addEventListener) {
+      desktopQuery.addEventListener("change", updateAll);
+    }
+    updateAll();
+    // Gallery logic end
+  }
+
   function initAccordions() {
     var accordions = document.querySelectorAll("[data-accordion]");
 
@@ -258,6 +326,7 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
     initGallery();
+    initGallerySticky();
     initAccordions();
     initCarousels();
     initOfferButtons();
