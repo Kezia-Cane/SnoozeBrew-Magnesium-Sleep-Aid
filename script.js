@@ -119,7 +119,7 @@
 
       gallery.style.setProperty("--sb-gallery-left", galleryRect.left + "px");
       gallery.style.setProperty("--sb-gallery-width", galleryRect.width + "px");
-      gallery.style.minHeight = stickyHeight + "px";
+      gallery.style.minHeight = Math.max(stickyHeight, container.offsetHeight) + "px";
 
       if (window.scrollY <= galleryTop - topOffset) {
         gallery.classList.remove("is-fixed", "is-bottom");
