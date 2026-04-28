@@ -335,17 +335,15 @@ h3 {
 
 /* Gallery logic start */
 .sb-gallery {
-  display: grid;
-  grid-template-columns: 66px minmax(0, 1fr);
-  gap: 18px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   min-width: 0;
 }
 
 .sb-gallery-frame {
-  grid-column: 2;
-  width: 100%;
+  width: min(100%, 452px);
   aspect-ratio: 1;
   border-radius: 8px;
   overflow: hidden;
@@ -361,40 +359,36 @@ h3 {
 }
 
 .sb-thumbnails {
-  grid-column: 1;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 66px;
-  max-height: min(500px, calc(100vh - 180px));
-  margin-top: 0;
-  padding-right: 4px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+  width: min(100%, 452px);
+  max-width: 100%;
+  margin-top: 12px;
+  padding: 0 2px 4px;
+  overflow-x: auto;
+  overflow-y: hidden;
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(75, 51, 129, 0.28) transparent;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
 }
 
 .sb-thumbnails::-webkit-scrollbar {
-  width: 4px;
-}
-
-.sb-thumbnails::-webkit-scrollbar-thumb {
-  background: rgba(75, 51, 129, 0.28);
-  border-radius: 999px;
+  display: none;
 }
 
 .sb-thumb {
-  flex: 0 0 66px;
-  width: 66px;
-  height: 66px;
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
   border: 1px solid rgba(75, 51, 129, 0.18);
   border-radius: 7px;
   overflow: hidden;
   background: #ffffff;
   padding: 0;
   cursor: pointer;
+  scroll-snap-align: start;
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
@@ -1656,17 +1650,12 @@ h3 {
     padding-top: 22px;
   }
 
-  .sb-gallery {
-    grid-template-columns: 62px minmax(0, 1fr);
-    gap: 14px;
-  }
-
   .sb-gallery-frame {
     width: 100%;
   }
 
   .sb-thumbnails {
-    width: 62px;
+    width: 100%;
   }
 }
 
@@ -1724,34 +1713,17 @@ h3 {
     min-width: 0;
   }
 
-  .sb-gallery {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
   .sb-gallery-frame {
-    grid-column: auto;
     aspect-ratio: 1;
     border-radius: 0;
   }
 
   .sb-thumbnails {
-    grid-column: auto;
     width: 100%;
-    max-height: none;
-    flex-direction: row;
     justify-content: center;
     gap: 6px;
     margin-top: 10px;
     padding: 0 4px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x proximity;
-    scrollbar-width: none;
-  }
-
-  .sb-thumbnails::-webkit-scrollbar {
-    display: none;
   }
 
   .sb-thumb {
