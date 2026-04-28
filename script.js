@@ -43,14 +43,23 @@
       var image = gallery.querySelector("[data-gallery-image]");
       var thumbs = gallery.querySelectorAll("[data-gallery-src]");
 
+      // Gallery logic start
       thumbs.forEach(function (thumb) {
         thumb.addEventListener("click", function () {
           var nextSource = thumb.getAttribute("data-gallery-src");
-          var nextAlt = thumb.querySelector("img") ? thumb.querySelector("img").alt : "";
+          var nextAlt = thumb.getAttribute("data-gallery-alt") || "";
 
           if (image && nextSource) {
-            image.src = nextSource;
-            image.alt = nextAlt || image.alt;
+            if (image.getAttribute("src") !== nextSource) {
+              var preloader = new Image();
+              preloader.onload = function () {
+                image.src = nextSource;
+                image.alt = nextAlt || image.alt;
+              };
+              preloader.src = nextSource;
+            } else {
+              image.alt = nextAlt || image.alt;
+            }
           }
 
           thumbs.forEach(function (item) {
@@ -60,8 +69,14 @@
 
           thumb.classList.add("is-active");
           thumb.setAttribute("aria-pressed", "true");
+          thumb.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "nearest"
+          });
         });
       });
+      // Gallery logic end
     });
   }
 
