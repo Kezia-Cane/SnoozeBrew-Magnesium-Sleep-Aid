@@ -11817,6 +11817,10 @@ body {
   color: var(--snooze-indigo);
 }
 
+.purchase-row {
+  border-color: rgba(74, 47, 126, 0.52);
+}
+
 .site-header__actions .header-icon {
   position: relative;
 }
