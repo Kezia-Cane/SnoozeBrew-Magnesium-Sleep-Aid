@@ -3,479 +3,1136 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SnoozeBrew™ Magnesium Sleep Aid</title>
+    <title>SnoozeBrew | Magnesium Sleep Aid</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
   </head>
   <body>
-    <div class="sb-page" id="sb-top">
-      <aside class="sb-countdown-bar" aria-label="Sale countdown">
-        <strong>SALE ENDS IN</strong>
-        <span class="sb-countdown" aria-live="polite">
-          <span class="sb-timebox"><span data-countdown="hours">13</span><small>HRS</small></span>
-          <span class="sb-separator">:</span>
-          <span class="sb-timebox"><span data-countdown="minutes">29</span><small>MIN</small></span>
-          <span class="sb-separator">:</span>
-          <span class="sb-timebox"><span data-countdown="seconds">53</span><small>SEC</small></span>
+    <div class="announcement-bar">
+      <div class="announcement-bar__inner">
+        <span class="announcement-text">
+          <span class="announcement-offer announcement-offer--main">SAVE 20% + FREE</span>
+          <span class="announcement-break" aria-hidden="true"></span>
+          <span class="announcement-offer announcement-offer--shipping">SHIPPING.</span>
+          <a href="#product-info">Shop Now</a>
         </span>
-      </aside>
+      </div>
+    </div>
 
-      <aside class="sb-promo-bar">Save 50% OFF - Limited Time Only!</aside>
-
-      <header class="sb-header" aria-label="Site header">
-        <div class="sb-header-inner">
-          <button class="sb-mobile-menu" type="button" aria-label="Open menu">
-            <span></span>
-            <span></span>
-            <span></span>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <button class="header-menu" aria-label="Open menu" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a href="#product-page" class="site-logo" aria-label="SnoozeBrew home">
+          <img src="assets/images/Screenshot_2025-12-04_at_5.09.10_pm_x320.png" alt="SnoozeBrew" class="site-logo__image" width="170" height="38">
+        </a>
+        <nav class="site-nav">
+          <a href="#product-info">SHOP</a>
+          <a href="#clinical-ingredients">ABOUT US</a>
+          <a href="#customer-reviews">REVIEWS</a>
+          <a href="#faq-section">FAQS</a>
+          <a href="#newsletter-section">CONTACT US</a>
+        </nav>
+        <div class="site-header__actions">
+          <button class="header-icon" aria-label="Account" type="button">
+            <img src="https://cdn.shopify.com/s/files/1/0754/6948/8351/files/fi_15678795.svg?v=1763101209" alt="" width="24" height="24">
           </button>
-
-          <a class="sb-logo-link" href="#sb-top" aria-label="SnoozeBrew home">
-            <img class="sb-logo" src="assets/images/Screenshot_2025-12-04_at_5.09.10_pm.png" alt="SnoozeBrew">
-          </a>
-
-          <nav class="sb-nav" aria-label="Primary navigation">
-            <a href="#">Orders</a>
-            <a href="#">Profile</a>
-            <a href="#">Subscription Policy</a>
-            <a href="#">Shipping Policy</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">30 Day Money-Back Guarantee</a>
-            <a href="#">Manage Subscription</a>
-          </nav>
-
-          <div class="sb-header-actions">
-            <button class="sb-currency" type="button">Australia | USD $</button>
-            <button class="sb-icon-button sb-account" type="button" aria-label="Account"></button>
-            <button class="sb-icon-button sb-cart" type="button" aria-label="Cart"></button>
-          </div>
+          <button class="header-icon cart-icon" aria-label="Cart" type="button">
+            <img src="https://cdn.shopify.com/s/files/1/0754/6948/8351/files/fi_5337564.svg?v=1763101209" alt="" width="24" height="24">
+          </button>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <main>
-        <section class="sb-product" aria-label="SnoozeBrew product">
-          <div class="sb-product-container">
-            <!-- Gallery logic start -->
-            <div class="sb-gallery" data-gallery>
-              <div class="sb-gallery-sticky">
-                <div class="sb-gallery-frame">
-                  <img class="sb-gallery-image is-active" src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_1060x.png" alt="SnoozeBrew jar on a moonlit surface" width="1060" height="1060" decoding="async" data-gallery-image>
-                </div>
-                <div class="sb-thumbnails" aria-label="Product images">
-                  <button class="sb-thumb is-active" type="button" data-gallery-src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_1060x.png" data-gallery-alt="SnoozeBrew jar on a moonlit surface" aria-label="Show product jar image" aria-pressed="true">
-                    <img src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_200x@2x.png" alt="" width="200" height="200" loading="eager" decoding="async">
-                  </button>
-                  <button class="sb-thumb" type="button" data-gallery-src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_1060x.png" data-gallery-alt="SnoozeBrew jar with cocoa mug and spoon" aria-label="Show bedtime drink image" aria-pressed="false">
-                    <img src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_200x@2x.png" alt="" width="200" height="200" loading="lazy" decoding="async">
-                  </button>
-                  <button class="sb-thumb" type="button" data-gallery-src="assets/images/cf304c5b7ac366cab5b0897ea0adfe2f_1765591366_1060x.png" data-gallery-alt="SnoozeBrew comparison chart" aria-label="Show comparison chart" aria-pressed="false">
-                    <img src="assets/images/cf304c5b7ac366cab5b0897ea0adfe2f_1765591366_200x@2x.png" alt="" width="200" height="200" loading="lazy" decoding="async">
-                  </button>
-                  <button class="sb-thumb" type="button" data-gallery-src="assets/images/3c9dc083cba1e607f870c793d2212f8e_1765588773_1060x.png" data-gallery-alt="SnoozeBrew sleep benefits chart" aria-label="Show supplement benefits image" aria-pressed="false">
-                    <img src="assets/images/3c9dc083cba1e607f870c793d2212f8e_1765588773_200x@2x.png" alt="" width="200" height="200" loading="lazy" decoding="async">
-                  </button>
-                  <button class="sb-thumb" type="button" data-gallery-src="assets/images/0b7739b33f3bfd9cd272c1eb7df0cbf3_1765589787_1060x.png" data-gallery-alt="Floating SnoozeBrew jar product shot" aria-label="Show floating jar image" aria-pressed="false">
-                    <img src="assets/images/0b7739b33f3bfd9cd272c1eb7df0cbf3_1765589787_200x@2x.png" alt="" width="200" height="200" loading="lazy" decoding="async">
-                  </button>
-                  <button class="sb-thumb" type="button" data-gallery-src="assets/images/4a3cae9929c82cc75b7c0aacefeb6f93_1765591190_1060x.png" data-gallery-alt="SnoozeBrew supplement facts panel" aria-label="Show supplement facts image" aria-pressed="false">
-                    <img src="assets/images/4a3cae9929c82cc75b7c0aacefeb6f93_1765591190_200x@2x.png" alt="" width="200" height="200" loading="lazy" decoding="async">
-                  </button>
-                </div>
+    <main class="product-page" id="product-page">
+      <div class="product-page__inner">
+        <section class="product-gallery" id="product-gallery">
+          <div class="gallery-desktop-grid">
+            <figure class="gallery-card gallery-card--product gallery-card--primary">
+              <img id="desktop-variant-media" src="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png" alt="SnoozeBrew 2-jar bundle">
+            </figure>
+            <figure class="gallery-card gallery-card--product gallery-card--feature">
+              <img src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_1060x.png" alt="SnoozeBrew jar on a moonlit surface" loading="lazy">
+            </figure>
+            <figure class="gallery-card gallery-card--hero">
+              <img src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_1060x.png" alt="SnoozeBrew beside a warm cocoa mug">
+            </figure>
+            <figure class="gallery-stats-image">
+              <img src="assets/images/cf304c5b7ac366cab5b0897ea0adfe2f_1765591366_1060x.png" alt="SnoozeBrew comparison highlights" loading="lazy">
+            </figure>
+            <figure class="gallery-card gallery-card--product gallery-card--bundle">
+              <img src="assets/products/ChatGPT Image Apr 30, 2026, 04_01_55 AM.png" alt="SnoozeBrew 4-jar bundle" loading="lazy">
+            </figure>
+            <figure class="gallery-card gallery-card--lifestyle">
+              <img src="assets/images/0b7739b33f3bfd9cd272c1eb7df0cbf3_1765589787_1060x.png" alt="Floating SnoozeBrew jar product shot" loading="lazy">
+            </figure>
+            <figure class="gallery-card gallery-card--detail">
+              <img src="assets/images/3c9dc083cba1e607f870c793d2212f8e_1765588773_1060x.png" alt="SnoozeBrew formula feature graphic" loading="lazy">
+            </figure>
+            <figure class="gallery-card gallery-card--ingredients">
+              <img src="assets/images/4a3cae9929c82cc75b7c0aacefeb6f93_1765591190_1060x.png" alt="SnoozeBrew supplement facts panel" loading="lazy">
+            </figure>
+            <figure class="gallery-card gallery-card--before">
+              <img src="assets/images/67d193cc252c976e4cbb49fab463ec20_1765597911_856x.png" alt="Customer holding SnoozeBrew" loading="lazy">
+            </figure>
+            <figure class="gallery-card gallery-card--after">
+              <img src="assets/images/83774c21dbf2f76cbbc0e09aaed838e7_1765596839_856x.png" alt="SnoozeBrew by the bedside" loading="lazy">
+            </figure>
+            <figure class="gallery-card gallery-card--product gallery-card--support">
+              <img src="assets/products/ChatGPT Image Apr 30, 2026, 03_59_55 AM.png" alt="SnoozeBrew 1-jar bundle" loading="lazy">
+            </figure>
+            <figure class="gallery-card gallery-card--product gallery-card--repeat">
+              <img src="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png" alt="SnoozeBrew 2-jar bundle" loading="lazy">
+            </figure>
+          </div>
+          <div class="gallery-mobile-shell">
+            <button class="gallery-zoom-btn" type="button" aria-label="Zoom image">
+              <span class="gallery-zoom-btn__icon" aria-hidden="true"></span>
+            </button>
+            <div class="gallery-mobile-track" id="gallery-mobile-track">
+              <figure class="gallery-slide is-active" data-index="0">
+                <img id="gallery-main-img" src="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png" alt="SnoozeBrew 2-jar bundle" class="gallery-main__img">
+              </figure>
+              <figure class="gallery-slide" data-index="1">
+                <img src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_1060x.png" alt="SnoozeBrew jar on a moonlit surface">
+              </figure>
+              <figure class="gallery-slide" data-index="2">
+                <img src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_1060x.png" alt="SnoozeBrew beside a warm cocoa mug">
+              </figure>
+              <figure class="gallery-slide" data-index="3">
+                <img src="assets/products/ChatGPT Image Apr 30, 2026, 03_59_55 AM.png" alt="SnoozeBrew 1-jar bundle">
+              </figure>
+              <figure class="gallery-slide" data-index="4">
+                <img src="assets/products/ChatGPT Image Apr 30, 2026, 04_01_55 AM.png" alt="SnoozeBrew 4-jar bundle">
+              </figure>
+              <figure class="gallery-slide" data-index="5">
+                <img src="assets/images/0b7739b33f3bfd9cd272c1eb7df0cbf3_1765589787_1060x.png" alt="Floating SnoozeBrew jar product shot">
+              </figure>
+              <figure class="gallery-slide" data-index="6">
+                <img src="assets/images/3c9dc083cba1e607f870c793d2212f8e_1765588773_1060x.png" alt="SnoozeBrew formula feature graphic">
+              </figure>
+              <figure class="gallery-slide" data-index="7">
+                <img src="assets/images/4a3cae9929c82cc75b7c0aacefeb6f93_1765591190_1060x.png" alt="SnoozeBrew supplement facts panel">
+              </figure>
+              <figure class="gallery-slide" data-index="8">
+                <img src="assets/images/67d193cc252c976e4cbb49fab463ec20_1765597911_856x.png" alt="Customer holding SnoozeBrew">
+              </figure>
+              <figure class="gallery-slide" data-index="9">
+                <img src="assets/images/83774c21dbf2f76cbbc0e09aaed838e7_1765596839_856x.png" alt="SnoozeBrew by the bedside">
+              </figure>
+              <figure class="gallery-slide" data-index="10">
+                <img src="assets/images/Gemini_Generated_Image_qufgmiqufgmiqufg_856x.png" alt="Customer nighttime SnoozeBrew review photo">
+              </figure>
+              <figure class="gallery-slide" data-index="11">
+                <img src="assets/images/Gemini_Generated_Image_s8n4j5s8n4j5s8n4_856x.png" alt="Customer morning-after SnoozeBrew photo">
+              </figure>
+            </div>
+            <div class="gallery-counter" aria-live="polite">
+              <span id="gallery-current-index">1</span>
+              <span>/</span>
+              <span>12</span>
+            </div>
+            <div class="gallery-thumb-row">
+              <button class="gallery-arrow gallery-arrow--prev" id="gallery-prev" type="button" aria-label="Previous image">
+                <span aria-hidden="true">&#8249;</span>
+              </button>
+              <div class="gallery-thumbnails" id="gallery-thumbnails">
+                <button class="gallery-thumb active" data-index="0" type="button">
+                  <img src="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png" alt="Product view 1">
+                </button>
+                <button class="gallery-thumb" data-index="1" type="button">
+                  <img src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_200x@2x.png" alt="Product view 2">
+                </button>
+                <button class="gallery-thumb" data-index="2" type="button">
+                  <img src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_200x@2x.png" alt="Product view 3">
+                </button>
+                <button class="gallery-thumb" data-index="3" type="button">
+                  <img src="assets/products/ChatGPT Image Apr 30, 2026, 03_59_55 AM.png" alt="Product view 4">
+                </button>
+                <button class="gallery-thumb" data-index="4" type="button">
+                  <img src="assets/products/ChatGPT Image Apr 30, 2026, 04_01_55 AM.png" alt="Product view 5">
+                </button>
+                <button class="gallery-thumb" data-index="5" type="button">
+                  <img src="assets/images/0b7739b33f3bfd9cd272c1eb7df0cbf3_1765589787_200x@2x.png" alt="Product view 6">
+                </button>
+                <button class="gallery-thumb" data-index="6" type="button">
+                  <img src="assets/images/3c9dc083cba1e607f870c793d2212f8e_1765588773_200x@2x.png" alt="Product view 7">
+                </button>
+                <button class="gallery-thumb" data-index="7" type="button">
+                  <img src="assets/images/4a3cae9929c82cc75b7c0aacefeb6f93_1765591190_200x@2x.png" alt="Product view 8">
+                </button>
+                <button class="gallery-thumb" data-index="8" type="button">
+                  <img src="assets/images/67d193cc252c976e4cbb49fab463ec20_1765597911_856x.png" alt="Product view 9">
+                </button>
+                <button class="gallery-thumb" data-index="9" type="button">
+                  <img src="assets/images/83774c21dbf2f76cbbc0e09aaed838e7_1765596839_856x.png" alt="Product view 10">
+                </button>
+                <button class="gallery-thumb" data-index="10" type="button">
+                  <img src="assets/images/Gemini_Generated_Image_qufgmiqufgmiqufg_856x.png" alt="Product view 11">
+                </button>
+                <button class="gallery-thumb" data-index="11" type="button">
+                  <img src="assets/images/Gemini_Generated_Image_s8n4j5s8n4j5s8n4_856x.png" alt="Product view 12">
+                </button>
+              </div>
+              <button class="gallery-arrow gallery-arrow--next" id="gallery-next" type="button" aria-label="Next image">
+                <span aria-hidden="true">&#8250;</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="product-info" id="product-info">
+          <div class="product-header">
+            <div class="product-reviews-line">
+              <span class="jdgm-prev-badge__stars" data-score="4.8" tabindex="0" aria-label="4.8 stars" role="button">
+                <span class="jdgm-star jdgm--on" aria-hidden="true"></span>
+                <span class="jdgm-star jdgm--on" aria-hidden="true"></span>
+                <span class="jdgm-star jdgm--on" aria-hidden="true"></span>
+                <span class="jdgm-star jdgm--on" aria-hidden="true"></span>
+                <span class="jdgm-star jdgm--half" aria-hidden="true"></span>
+              </span>
+              <span class="stars" aria-hidden="true">
+                <svg viewBox="0 0 62 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <symbol id="rating-star" viewBox="0 0 12 12">
+                      <path d="M6 0.7L7.57 4.03L11.2 4.55L8.55 7.11L9.18 10.7L6 8.95L2.82 10.7L3.45 7.11L0.8 4.55L4.43 4.03L6 0.7Z" fill="currentColor" />
+                    </symbol>
+                    <clipPath id="rating-half-fill">
+                      <rect x="50" y="0" width="6" height="12"></rect>
+                    </clipPath>
+                  </defs>
+                  <g color="#d49a63">
+                    <use href="#rating-star" x="0" y="0"></use>
+                    <use href="#rating-star" x="12.5" y="0"></use>
+                    <use href="#rating-star" x="25" y="0"></use>
+                    <use href="#rating-star" x="37.5" y="0"></use>
+                    <use href="#rating-star" x="50" y="0" color="#efdbc6"></use>
+                    <g clip-path="url(#rating-half-fill)">
+                      <use href="#rating-star" x="50" y="0"></use>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+              <span class="review-count">10,839 reviews</span>
+            </div>
+            <h1 class="product-title">SnoozeBrew&trade; Magnesium Sleep Aid</h1>
+            <p class="product-description"><strong>A melatonin-free nightly cocoa powered by magnesium glycinate, L-theanine, valerian root, 5-HTP, and passionflower,</strong> SnoozeBrew helps you unwind faster, sleep more deeply, and wake up feeling clear instead of groggy. Stir one scoop into your evening routine and let calmer nights stack into brighter mornings.</p>
+          </div>
+
+          <ul class="benefit-icons">
+            <li class="benefit-icon-item">
+              <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c774ef96b9bd6b4b8.png" alt="Melatonin-Free Nightly Formula" width="50" height="50">
+              <span class="benefit-icon-label">Melatonin-Free Nightly Formula</span>
+            </li>
+            <li class="benefit-icon-item">
+              <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c3ea93d9dd2ea376e.png" alt="Vegan, Gluten-Free &amp; Gentle" width="50" height="50">
+              <span class="benefit-icon-label">Vegan, Gluten-Free &amp; Gentle</span>
+            </li>
+            <li class="benefit-icon-item">
+              <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988ced4bb7f4ed4b6249.png" alt="Supports Deeper, Restorative Sleep" width="50" height="50">
+              <span class="benefit-icon-label">Supports Deeper, Restorative Sleep</span>
+            </li>
+          </ul>
+
+          <div class="urgency-line">
+            <span class="urgency-text">&#128293; Loved in 10,000+ nightly routines</span>
+          </div>
+
+          <div class="jar-options-section">
+            <h3 class="jar-options-label">Supply</h3>
+            <div class="jar-options" id="jar-options">
+              <button class="jar-option" type="button" data-jar="1" data-bundle="buy1" data-regular="51.99" data-regular-compare="" data-subscription="41.59" data-subscription-compare="51.99" data-subscription-daily="1.39" data-regular-daily="1.73" data-discount="20" data-image="assets/products/ChatGPT Image Apr 30, 2026, 03_59_55 AM.png">
+                <span class="jar-option__card">
+                  <span class="jar-option__header">
+                    <span class="jar-qty-title">Buy 1</span>
+                  </span>
+                  <span class="jar-option__image">
+                    <img src="assets/products/ChatGPT Image Apr 30, 2026, 03_59_55 AM.png" alt="1 jar">
+                  </span>
+                </span>
+                <span class="jar-option__pricing">
+                  <span class="price-current">$41.59</span>
+                  <span class="price-compare">$51.99</span>
+                  <span class="price-daily">$1.39 per day</span>
+                </span>
+              </button>
+              <button class="jar-option selected" type="button" data-jar="2" data-bundle="buy1get1free" data-regular="51.99" data-regular-compare="" data-subscription="41.59" data-subscription-compare="51.99" data-subscription-daily="0.69" data-regular-daily="0.87" data-discount="20" data-image="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png">
+                <span class="jar-badge most-popular">Most Popular</span>
+                <span class="jar-option__card">
+                  <span class="jar-option__header">
+                    <span class="jar-qty-title">Buy 1 Get 1 Free</span>
+                  </span>
+                  <span class="jar-option__image">
+                    <img src="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png" alt="2 jars">
+                  </span>
+                </span>
+                <span class="jar-option__pricing">
+                  <span class="price-current">$41.59</span>
+                  <span class="price-compare">$51.99</span>
+                  <span class="price-daily">$0.69 per day</span>
+                </span>
+              </button>
+              <button class="jar-option" type="button" data-jar="3" data-bundle="buy2get2free" data-regular="89.99" data-regular-compare="" data-subscription="71.99" data-subscription-compare="89.99" data-subscription-daily="0.60" data-regular-daily="0.75" data-discount="20" data-image="assets/products/ChatGPT Image Apr 30, 2026, 04_01_55 AM.png">
+                <span class="jar-badge best-deal">Best Value</span>
+                <span class="jar-option__card">
+                  <span class="jar-option__header">
+                    <span class="jar-qty-title">Buy 2 Get 2 Free</span>
+                  </span>
+                  <span class="jar-option__image">
+                    <img src="assets/products/ChatGPT Image Apr 30, 2026, 04_01_55 AM.png" alt="4 jars">
+                  </span>
+                </span>
+                <span class="jar-option__pricing">
+                  <span class="price-current">$71.99</span>
+                  <span class="price-compare">$89.99</span>
+                  <span class="price-daily">$0.60 per day</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="auto-refill" id="auto-refill">
+            <label class="auto-refill__label">
+              <input type="checkbox" id="auto-refill-toggle" class="auto-refill__native" checked>
+              <span class="auto-refill__checkbox" aria-hidden="true"></span>
+              <span class="auto-refill__text">
+                <strong id="auto-refill-title">Save 20% with Monthly Delivery</strong>
+                <span class="auto-refill__sub">Cancel Anytime &ndash; No Commitment</span>
+              </span>
+            </label>
+          </div>
+
+          <div class="purchase-row">
+            <button class="add-to-cart-btn" id="add-to-cart" type="button" data-checkout-cta data-purchase-type="subscription" data-bundle="buy1get1free" data-checkout-url="#product-info">Add to cart</button>
+          </div>
+
+          <div class="guarantee-block">
+            <img src="assets/images/menoy1.png" alt="30-day guarantee" class="guarantee-icon" width="40" height="40">
+            <p class="guarantee-text"><strong>Try it risk-free for 30 days.</strong> If SnoozeBrew does not become your favorite part of winding down, we will refund you in full.</p>
+          </div>
+
+          <div class="info-accordions" id="info-accordions">
+            <div class="accordion-item open" data-accordion>
+              <button class="accordion-header" aria-expanded="true">
+                <span>KEY BENEFITS</span>
+                <span class="accordion-icon">&minus;</span>
+              </button>
+              <div class="accordion-body">
+                <ul class="benefit-list">
+                  <li><strong>Falls asleep faster</strong> - Helps quiet nighttime restlessness.</li>
+                  <li><strong>Sleeps more deeply</strong> - Supports restorative sleep cycles.</li>
+                  <li><strong>Wakes clear</strong> - No melatonin hangover or foggy mornings.</li>
+                  <li><strong>Builds a ritual</strong> - Turns bedtime into a calming cocoa routine.</li>
+                </ul>
               </div>
             </div>
-            <!-- Gallery logic end -->
 
-            <article class="sb-product-info">
-              <div class="sb-trust-callout">
-                <span class="sb-atom-icon" aria-hidden="true"></span>
-                <div>
-                  <strong>Tested. Trusted. Truly Rest-Ready.</strong>
-                  <p>Made in a GMP-certified facility and purity-tested, SnoozeBrew gives you clean, trustworthy ingredients in every calming cup.</p>
-                </div>
+            <div class="accordion-item" data-accordion>
+              <button class="accordion-header" aria-expanded="false">
+                <span>HOW TO USE</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-body">
+                <p>Mix one scoop into warm water, milk, or your favorite plant-based alternative about 30 minutes before bed. Sip slowly as you wind down and use nightly for best results.</p>
               </div>
+            </div>
 
-              <h1>SnoozeBrew™ Magnesium Sleep Aid</h1>
-              <p class="sb-product-copy"><strong>When your nights improve, everything improves.</strong><br>SnoozeBrew helps you unwind at night so you can fall asleep faster, sleep deeper, and wake up energized. Better nights lead to brighter, more balanced days.</p>
-
-              <ul class="sb-bullets">
-                <li>Helps you fall asleep faster and stay asleep longer</li>
-                <li>Melatonin-free for a natural, non-groggy morning</li>
-                <li>Calming blend of magnesium + soothing herbs</li>
-                <li>Supports relaxation, stress relief, and deeper rest</li>
-                <li>Crafted in a GMP-certified facility and purity-tested</li>
-                <li>Supports restorative REM and slow-wave sleep</li>
-              </ul>
-
-              <p class="sb-stock"><span></span><strong>Low Stock!</strong> <span class="sb-stock-desktop">45 people are looking at this</span><span class="sb-stock-mobile">52 people are looking at this</span></p>
-
-              <section class="sb-purchase-card" aria-label="Choose your SnoozeBrew supply">
-                <div class="sb-purchase-heading">
-                  <p class="sb-purchase-kicker">Choose your supply and save</p>
-                </div>
-
-                <div class="sb-variant-grid" id="sb-variant-options">
-                  <button
-                    class="sb-variant-option"
-                    type="button"
-                    data-bundle="buy1"
-                    data-image="assets/products/1.png"
-                    data-image-alt="SnoozeBrew 1-month supply"
-                    data-regular="51.99"
-                    data-regular-compare=""
-                    data-regular-daily="1.73"
-                    data-subscription="41.59"
-                    data-subscription-compare="51.99"
-                    data-subscription-daily="1.39"
-                    aria-pressed="false">
-                    <span class="sb-variant-badge">1-Month Supply</span>
-                    <span class="sb-variant-card">
-                      <span class="sb-variant-media">
-                        <img src="assets/products/1.png" alt="SnoozeBrew single jar bundle">
-                      </span>
-                      <span class="sb-variant-copy">
-                        <strong class="sb-variant-title">Buy 1</strong>
-                        <span class="sb-variant-note">Perfect to try</span>
-                      </span>
-                      <span class="sb-variant-pricing">
-                        <span class="sb-variant-price">$51.99</span>
-                        <span class="sb-variant-compare"></span>
-                        <span class="sb-variant-daily">$1.73 per day</span>
-                      </span>
-                    </span>
-                  </button>
-
-                  <button
-                    class="sb-variant-option is-selected"
-                    type="button"
-                    data-bundle="buy1get1free"
-                    data-image="assets/products/2.png"
-                    data-image-alt="SnoozeBrew 2-month supply"
-                    data-regular="51.99"
-                    data-regular-compare=""
-                    data-regular-daily="0.87"
-                    data-subscription="41.59"
-                    data-subscription-compare="51.99"
-                    data-subscription-daily="0.69"
-                    aria-pressed="true">
-                    <span class="sb-variant-badge sb-variant-badge--popular">2-Month Supply</span>
-                    <span class="sb-variant-card">
-                      <span class="sb-variant-media">
-                        <img src="assets/products/2.png" alt="SnoozeBrew buy one get one free bundle">
-                      </span>
-                      <span class="sb-variant-copy">
-                        <strong class="sb-variant-title">Buy 1 Get 1 FREE</strong>
-                        <span class="sb-variant-note">Most popular pick</span>
-                      </span>
-                      <span class="sb-variant-pricing">
-                        <span class="sb-variant-price">$51.99</span>
-                        <span class="sb-variant-compare"></span>
-                        <span class="sb-variant-daily">$0.87 per day</span>
-                      </span>
-                    </span>
-                  </button>
-
-                  <button
-                    class="sb-variant-option"
-                    type="button"
-                    data-bundle="buy2get2free"
-                    data-image="assets/products/3.png"
-                    data-image-alt="SnoozeBrew 4-month supply"
-                    data-regular="89.99"
-                    data-regular-compare=""
-                    data-regular-daily="0.75"
-                    data-subscription="71.99"
-                    data-subscription-compare="89.99"
-                    data-subscription-daily="0.60"
-                    aria-pressed="false">
-                    <span class="sb-variant-badge sb-variant-badge--value">4-Month Supply</span>
-                    <span class="sb-variant-card">
-                      <span class="sb-variant-media">
-                        <img src="assets/products/3.png" alt="SnoozeBrew buy two get two free bundle">
-                      </span>
-                      <span class="sb-variant-copy">
-                        <strong class="sb-variant-title">Buy 2 Get 2 FREE</strong>
-                        <span class="sb-variant-note">Best value bundle</span>
-                      </span>
-                      <span class="sb-variant-pricing">
-                        <span class="sb-variant-price">$89.99</span>
-                        <span class="sb-variant-compare"></span>
-                        <span class="sb-variant-daily">$0.75 per day</span>
-                      </span>
-                    </span>
-                  </button>
-                </div>
-
-                <div class="sb-subscribe-toggle" id="sb-subscribe-box">
-                  <label class="sb-subscribe-label" for="sb-subscribe-toggle">
-                    <input type="checkbox" id="sb-subscribe-toggle" class="sb-subscribe-native" checked>
-                    <span class="sb-subscribe-check" aria-hidden="true"></span>
-                    <span class="sb-subscribe-copy">
-                      <strong id="sb-subscribe-title">Save 20% — Monthly Delivery</strong>
-                      <span class="sb-subscribe-sub" id="sb-subscribe-sub">Subscription active — 20% discount applied.</span>
-                    </span>
-                  </label>
-                </div>
-
-                <button class="sb-primary-btn sb-selector-cta" id="sb-selector-cta" type="button">
-                  <span class="sb-bag-mini" aria-hidden="true"></span>
-                  <span id="sb-selector-cta-text">ADD TO CART — SAVE 20%</span>
-                </button>
-              </section>
-
-              <div class="sb-payments" aria-label="Payment methods">
-                <span class="sb-pay sb-visa">VISA</span>
-                <span class="sb-pay sb-master"><i></i><i></i></span>
-                <span class="sb-pay sb-maestro"><i></i><i></i></span>
-                <span class="sb-pay sb-gpay">G Pay</span>
-                <span class="sb-pay sb-apple"> Pay</span>
+            <div class="accordion-item" data-accordion>
+              <button class="accordion-header" aria-expanded="false">
+                <span>WHO IT'S FOR</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-body">
+                <p>SnoozeBrew is designed for adults who want calmer evenings, deeper sleep, and clearer mornings without relying on melatonin-heavy formulas or groggy next-day blends.</p>
               </div>
+            </div>
 
-              <div class="sb-guarantee-card">
-                <img src="assets/images/menoy1.png" alt="30 day money back guarantee">
-                <div>
-                  <h2>30-Day Money Back Guarantee</h2>
-                  <p>We’re confident SnoozeBrew will help you wind down easier, sleep deeper, and wake feeling more refreshed. But if it doesn’t become a nightly ritual you love, simply send it back within 30 days for a full refund — no questions asked.</p>
-                </div>
+            <div class="accordion-item" data-accordion>
+              <button class="accordion-header" aria-expanded="false">
+                <span>5 CORE INGREDIENTS</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-body">
+                <p>Each scoop is built around five sleep-support essentials from the SnoozeBrew label:</p>
+                <ul class="ingredient-quick-list">
+                  <li><strong>Valerian Root Extract</strong> - classic nighttime herb for relaxation.</li>
+                  <li><strong>L-Theanine</strong> - supports calm focus and a quieter mind.</li>
+                  <li><strong>Magnesium Glycinate</strong> - gentle, bioavailable magnesium for nightly support.</li>
+                  <li><strong>5-HTP</strong> - helps the body ease into rest.</li>
+                  <li><strong>Passionflower Extract</strong> - supports a smoother wind-down.</li>
+                </ul>
+                <button class="see-all-ingredients-btn" id="see-all-btn">See All Ingredients</button>
               </div>
+            </div>
+          </div>
 
-              <div class="sb-accordion sb-product-faq" data-accordion>
-                <div class="sb-accordion-item">
-                  <button type="button" class="sb-accordion-trigger">How does SnoozeBrew help me sleep?<span>+</span></button>
-                  <div class="sb-accordion-panel"><p>SnoozeBrew combines bioavailable magnesium with calming herbs and adaptogens that help relax your body, quiet your mind, and support deeper, more restorative sleep — without melatonin or grogginess.</p></div>
-                </div>
-                <div class="sb-accordion-item">
-                  <button type="button" class="sb-accordion-trigger">Will SnoozeBrew make me feel drowsy the next morning?<span>+</span></button>
-                  <div class="sb-accordion-panel"><p>No. SnoozeBrew is melatonin-free and formulated to support your natural sleep cycle, so you wake up feeling clear, refreshed, and energized — not sluggish.</p></div>
-                </div>
-                <div class="sb-accordion-item">
-                  <button type="button" class="sb-accordion-trigger">When should I drink SnoozeBrew?<span>+</span></button>
-                  <div class="sb-accordion-panel"><p>For best results, enjoy one scoop mixed with warm or cold milk/water about 30 minutes before bed to help your body shift into wind-down mode.</p></div>
-                </div>
-                <div class="sb-accordion-item">
-                  <button type="button" class="sb-accordion-trigger">Is SnoozeBrew safe to use every night?<span>+</span></button>
-                  <div class="sb-accordion-panel"><p>Yes. Our formula is designed for nightly use, made in a GMP-certified facility, and tested for purity and safety. It’s gentle, natural, and non-habit-forming.</p></div>
-                </div>
-                <div class="sb-accordion-item">
-                  <button type="button" class="sb-accordion-trigger">What role does magnesium play in sleep?<span>+</span></button>
-                  <div class="sb-accordion-panel"><p>Magnesium is essential for nervous-system regulation. Bioavailable forms support muscle relaxation, reduce stress-related tension, and assist with deeper, more restorative sleep cycles.</p></div>
-                </div>
-              </div>
+          <div class="video-thumbs-row">
+            <button class="video-thumb" type="button" aria-label="Play customer review video 1">
+              <video preload="auto" playsinline loop>
+                <source src="assets/vidoes/7557848004560997645.mp4" type="video/mp4">
+              </video>
+              <span class="play-icon"></span>
+            </button>
+            <button class="video-thumb" type="button" aria-label="Play customer review video 2">
+              <video preload="auto" playsinline loop>
+                <source src="assets/vidoes/7565291903848107278.mp4" type="video/mp4">
+              </video>
+              <span class="play-icon"></span>
+            </button>
+            <button class="video-thumb" type="button" aria-label="Play customer review video 3">
+              <video preload="auto" playsinline loop>
+                <source src="assets/vidoes/7572085583544159519.mp4" type="video/mp4">
+              </video>
+              <span class="play-icon"></span>
+            </button>
+            <button class="video-thumb" type="button" aria-label="Play customer review video 4">
+              <video preload="auto" playsinline loop>
+                <source src="assets/vidoes/7575637017707449631.mp4" type="video/mp4">
+              </video>
+              <span class="play-icon"></span>
+            </button>
+            <button class="video-thumb" type="button" aria-label="Play customer review video 5">
+              <video preload="auto" playsinline loop>
+                <source src="assets/vidoes/7576700546778729759.mp4" type="video/mp4">
+              </video>
+              <span class="play-icon"></span>
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
 
-              <div class="sb-mini-review">
-                <img src="assets/images/Screenshot_2025-10-29_at_7.48.17_pm_80x.png" alt="Sarah M.">
-                <div>
-                  <h3>Sarah M. <span class="sb-verified">✓</span> <span class="sb-gold-stars">★★★★★</span></h3>
-                  <p>“Best sleep I’ve had in months — and no groggy mornings. Love this stuff.” — Sarah M.</p>
+    <section class="benefit-strip" id="benefit-strip">
+      <div class="benefit-strip__track">
+        <div class="benefit-strip__item">
+          <span class="bs-icon" aria-hidden="true"><img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c6da81710db0b78ad.png" alt="" width="54" height="54" loading="lazy"></span>
+          <span class="benefit-strip__text">Calms the Mind</span>
+        </div>
+        <div class="benefit-strip__item">
+          <span class="bs-icon" aria-hidden="true"><img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c774ef96b9bd6b4b8.png" alt="" width="54" height="54" loading="lazy"></span>
+          <span class="benefit-strip__text">Deeper Sleep</span>
+        </div>
+        <div class="benefit-strip__item">
+          <span class="bs-icon" aria-hidden="true"><img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988ced4bb7f4ed4b6249.png" alt="" width="54" height="54" loading="lazy"></span>
+          <span class="benefit-strip__text">Wake Refreshed</span>
+        </div>
+        <div class="benefit-strip__item">
+          <span class="bs-icon" aria-hidden="true"><img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c3ea93d9dd2ea376e.png" alt="" width="54" height="54" loading="lazy"></span>
+          <span class="benefit-strip__text">Melatonin-Free</span>
+        </div>
+        <div class="benefit-strip__item">
+          <span class="bs-icon" aria-hidden="true"><img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c38381eafa8f33d15.png" alt="" width="54" height="54" loading="lazy"></span>
+          <span class="benefit-strip__text">Nightly Ritual</span>
+        </div>
+        <div class="benefit-strip__item">
+          <span class="bs-icon" aria-hidden="true"><img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c774ef96b9bd6b4b6.png" alt="" width="54" height="54" loading="lazy"></span>
+          <span class="benefit-strip__text">Non-Habit Forming</span>
+        </div>
+        <div class="benefit-strip__item">
+          <span class="bs-icon" aria-hidden="true"><img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988ccc4d90735efbe98c.png" alt="" width="54" height="54" loading="lazy"></span>
+          <span class="benefit-strip__text">Cocoa Comfort</span>
+        </div>
+        <div class="benefit-strip__item">
+          <span class="bs-icon" aria-hidden="true"><img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988ced4bb7f4ed4b6249.png" alt="" width="54" height="54" loading="lazy"></span>
+          <span class="benefit-strip__text">Clear Mornings</span>
+        </div>
+        <div class="benefit-strip__item">
+          <span class="bs-icon" aria-hidden="true"><img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c6da81710db0b78ad.png" alt="" width="54" height="54" loading="lazy"></span>
+          <span class="benefit-strip__text">Calms the Mind</span>
+        </div>
+        <div class="benefit-strip__item">
+          <span class="bs-icon" aria-hidden="true"><img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c774ef96b9bd6b4b8.png" alt="" width="54" height="54" loading="lazy"></span>
+          <span class="benefit-strip__text">Deeper Sleep</span>
+        </div>
+        <div class="benefit-strip__item">
+          <span class="bs-icon" aria-hidden="true"><img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988ced4bb7f4ed4b6249.png" alt="" width="54" height="54" loading="lazy"></span>
+          <span class="benefit-strip__text">Wake Refreshed</span>
+        </div>
+        <div class="benefit-strip__item">
+          <span class="bs-icon" aria-hidden="true"><img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c3ea93d9dd2ea376e.png" alt="" width="54" height="54" loading="lazy"></span>
+          <span class="benefit-strip__text">Melatonin-Free</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="real-results" id="real-results">
+      <div class="real-results__inner">
+        <h2 class="section-heading serif-heading"><em>Real People. Real Rest.</em></h2>
+        <p class="section-subtext">SnoozeBrew is made for the part of wellness you feel first thing in the morning: calmer nights, steadier sleep, and a clearer start to the day.</p>
+
+        <div class="results-avatars" id="results-avatars">
+          <button class="avatar-btn active" data-slide="0"><img src="assets/images/67d193cc252c976e4cbb49fab463ec20_1765597911_856x.png" alt="Alex G."></button>
+          <button class="avatar-btn" data-slide="1"><img src="assets/images/83774c21dbf2f76cbbc0e09aaed838e7_1765596839_856x.png" alt="Sam T."></button>
+          <button class="avatar-btn" data-slide="2"><img src="assets/images/Gemini_Generated_Image_qufgmiqufgmiqufg_856x.png" alt="Sarah L."></button>
+          <button class="avatar-btn" data-slide="3"><img src="assets/images/Gemini_Generated_Image_s8n4j5s8n4j5s8n4_856x.png" alt="Emma R."></button>
+        </div>
+
+        <div class="results-carousel" id="results-carousel">
+          <button class="carousel-arrow carousel-prev" id="results-prev" aria-label="Previous">&#8249;</button>
+          <div class="results-viewport">
+            <div class="results-slides" id="results-slides">
+              <article class="result-slide active" data-slide="0">
+                <div class="ba-pair">
+                  <div class="ba-card">
+                    <img src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_1060x.png" alt="Alex bedtime routine">
+                    <span class="ba-label">Night 1</span>
+                  </div>
+                  <div class="ba-card">
+                    <img src="assets/images/67d193cc252c976e4cbb49fab463ec20_1765597911_856x.png" alt="Alex after 2 weeks">
+                    <span class="ba-label ba-after">Week 2</span>
+                  </div>
                 </div>
+                <p class="result-quote">By the end of my second week, bedtime felt easier and my mornings were much less foggy. It finally feels like my nervous system knows how to power down again.</p>
+                <p class="result-name">Alex G.</p>
+                <p class="result-verified"><span class="result-verified__icon" aria-hidden="true">&#10003;</span><span>Verified Customer</span></p>
+              </article>
+              <article class="result-slide" data-slide="1">
+                <div class="ba-pair">
+                  <div class="ba-card">
+                    <img src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_1060x.png" alt="Sam bedtime setup">
+                    <span class="ba-label">Night 1</span>
+                  </div>
+                  <div class="ba-card">
+                    <img src="assets/images/83774c21dbf2f76cbbc0e09aaed838e7_1765596839_856x.png" alt="Sam after 3 weeks">
+                    <span class="ba-label ba-after">Week 3</span>
+                  </div>
+                </div>
+                <p class="result-quote">I was waking up several times a night before SnoozeBrew. A few weeks in, my sleep started feeling longer, steadier, and way more restorative.</p>
+                <p class="result-name">Sam T.</p>
+                <p class="result-verified"><span class="result-verified__icon" aria-hidden="true">&#10003;</span><span>Verified Customer</span></p>
+              </article>
+              <article class="result-slide" data-slide="2">
+                <div class="ba-pair">
+                  <div class="ba-card">
+                    <img src="assets/images/0b7739b33f3bfd9cd272c1eb7df0cbf3_1765589787_1060x.png" alt="Sarah before using SnoozeBrew">
+                    <span class="ba-label">Night 1</span>
+                  </div>
+                  <div class="ba-card">
+                    <img src="assets/images/Gemini_Generated_Image_qufgmiqufgmiqufg_856x.png" alt="Sarah after 4 weeks">
+                    <span class="ba-label ba-after">Week 4</span>
+                  </div>
+                </div>
+                <p class="result-quote">The difference for me was the morning after. I feel noticeably clearer and more patient now, instead of waking up tense and already behind.</p>
+                <p class="result-name">Sarah L.</p>
+                <p class="result-verified"><span class="result-verified__icon" aria-hidden="true">&#10003;</span><span>Verified Customer</span></p>
+              </article>
+              <article class="result-slide" data-slide="3">
+                <div class="ba-pair">
+                  <div class="ba-card">
+                    <img src="assets/images/3c9dc083cba1e607f870c793d2212f8e_1765588773_1060x.png" alt="Emma night routine graphic">
+                    <span class="ba-label">Night 1</span>
+                  </div>
+                  <div class="ba-card">
+                    <img src="assets/images/Gemini_Generated_Image_s8n4j5s8n4j5s8n4_856x.png" alt="Emma after 4 weeks">
+                    <span class="ba-label ba-after">Week 4</span>
+                  </div>
+                </div>
+                <p class="result-quote">I look forward to my bedtime routine now. One scoop, a warm mug, and I feel my body settle instead of fighting sleep the way I used to.</p>
+                <p class="result-name">Emma R.</p>
+                <p class="result-verified"><span class="result-verified__icon" aria-hidden="true">&#10003;</span><span>Verified Customer</span></p>
+              </article>
+            </div>
+          </div>
+          <button class="carousel-arrow carousel-next" id="results-next" aria-label="Next">&#8250;</button>
+        </div>
+
+        <div class="carousel-dots" id="carousel-dots">
+          <span class="dot active" data-dot="0"></span>
+          <span class="dot" data-dot="1"></span>
+          <span class="dot" data-dot="2"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="clinical-ingredients" id="clinical-ingredients">
+      <div class="clinical-inner">
+        <span class="clinical-pre">NIGHTLY WIND-DOWN COMPLEX</span>
+        <h2 class="section-heading serif-heading">8 Formula Highlights</h2>
+        <p class="section-subtext">Everything in SnoozeBrew is chosen to support a smoother bedtime ritual, gentler relaxation, and more restorative sleep without the usual morning drag.</p>
+
+        <div class="ingredients-slider">
+          <button class="ingredients-arrow ingredients-arrow--prev" id="ingredients-prev" type="button" aria-label="Previous ingredients">
+            <span aria-hidden="true">&#8249;</span>
+          </button>
+          <div class="ingredients-row" id="ingredients-row">
+            <div class="ingredient-card">
+              <div class="ingredient-img"><img src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_530x.png" alt="Valerian Root Extract"></div>
+              <h4 class="ingredient-name">VALERIAN ROOT</h4>
+              <p class="ingredient-why"><strong>Why we chose it:</strong></p>
+              <p class="ingredient-desc">A classic nighttime botanical that helps the body settle into relaxation before bed.</p>
+            </div>
+            <div class="ingredient-card">
+              <div class="ingredient-img"><img src="assets/images/0b7739b33f3bfd9cd272c1eb7df0cbf3_1765589787_530x.png" alt="L-Theanine"></div>
+              <h4 class="ingredient-name">L-THEANINE</h4>
+              <p class="ingredient-why"><strong>Why we chose it:</strong></p>
+              <p class="ingredient-desc">Supports a calmer mind so it is easier to switch off racing thoughts at night.</p>
+            </div>
+            <div class="ingredient-card">
+              <div class="ingredient-img"><img src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_530x.png" alt="Magnesium Glycinate"></div>
+              <h4 class="ingredient-name">MAGNESIUM GLYCINATE</h4>
+              <p class="ingredient-why"><strong>Why we chose it:</strong></p>
+              <p class="ingredient-desc">A gentle, bioavailable magnesium form that supports relaxation without harsh digestion issues.</p>
+            </div>
+            <div class="ingredient-card">
+              <div class="ingredient-img"><img src="assets/images/3c9dc083cba1e607f870c793d2212f8e_1765588773_530x.png" alt="5-HTP"></div>
+              <h4 class="ingredient-name">5-HTP</h4>
+              <p class="ingredient-why"><strong>Why we chose it:</strong></p>
+              <p class="ingredient-desc">Helps support the body’s natural wind-down chemistry as part of a bedtime routine.</p>
+            </div>
+            <div class="ingredient-card">
+              <div class="ingredient-img"><img src="assets/images/4a3cae9929c82cc75b7c0aacefeb6f93_1765591190_530x.png" alt="Passionflower Extract"></div>
+              <h4 class="ingredient-name">PASSIONFLOWER</h4>
+              <p class="ingredient-why"><strong>Why we chose it:</strong></p>
+              <p class="ingredient-desc">Rounds out the botanical side of the formula for a softer, steadier nighttime mood.</p>
+            </div>
+            <div class="ingredient-card">
+              <div class="ingredient-img"><img src="assets/images/cf304c5b7ac366cab5b0897ea0adfe2f_1765591366_530x.png" alt="Melatonin free"></div>
+              <h4 class="ingredient-name">MELATONIN-FREE</h4>
+              <p class="ingredient-why"><strong>Why we chose it:</strong></p>
+              <p class="ingredient-desc">Designed for people who want help sleeping without relying on a groggy next-day formula.</p>
+            </div>
+            <div class="ingredient-card">
+              <div class="ingredient-img"><img src="assets/images/67d193cc252c976e4cbb49fab463ec20_1765597911_856x.png" alt="Vegan and gluten free"></div>
+              <h4 class="ingredient-name">VEGAN + GLUTEN-FREE</h4>
+              <p class="ingredient-why"><strong>Why we chose it:</strong></p>
+              <p class="ingredient-desc">Made to fit more nighttime routines cleanly, simply, and consistently.</p>
+            </div>
+            <div class="ingredient-card">
+              <div class="ingredient-img"><img src="assets/images/83774c21dbf2f76cbbc0e09aaed838e7_1765596839_856x.png" alt="No added sugar"></div>
+              <h4 class="ingredient-name">0G TOTAL SUGAR</h4>
+              <p class="ingredient-why"><strong>Why we chose it:</strong></p>
+              <p class="ingredient-desc">Keeps the nightly cocoa ritual comforting without loading it up with extra sugar.</p>
+            </div>
+          </div>
+          <button class="ingredients-arrow ingredients-arrow--next" id="ingredients-next" type="button" aria-label="Next ingredients">
+            <span aria-hidden="true">&#8250;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-different" id="how-different">
+      <div class="how-different__inner">
+        <h2 class="section-heading serif-heading">How We're Different</h2>
+        <p class="section-subtext">A warm, bedtime-ready formula built for calm nights and clear mornings.</p>
+
+        <div class="comparison-table">
+          <div class="comparison-header">
+            <div class="comp-col comp-label-col comp-label-head">
+              <img src="assets/images/cf304c5b7ac366cab5b0897ea0adfe2f_1765591366_1060x.png" alt="SnoozeBrew comparison graphic" class="comp-hero-img">
+            </div>
+            <div class="comp-col comp-brand-col comp-head-cell">
+              <img src="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png" alt="SnoozeBrew bundle" class="comp-product-img">
+              <span class="comp-brand">SNOOZEBREW</span>
+            </div>
+            <div class="comp-col comp-other-col comp-head-cell">
+              <img src="assets/images/0b7739b33f3bfd9cd272c1eb7df0cbf3_1765589787_1060x.png" alt="Other nighttime blends" class="comp-product-img comp-product-img--other">
+              <span class="comp-brand">OTHER BLENDS</span>
+            </div>
+          </div>
+
+          <div class="comparison-row">
+            <div class="comp-col comp-label-col"><strong>Formula Type</strong></div>
+            <div class="comp-col comp-brand-col">
+              <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c38381eafa8f33d16.svg" alt="" aria-hidden="true" class="comp-mark-icon comp-mark-icon--check">
+              <span class="comp-copy">Functional botanical + mineral blend for nighttime relaxation</span>
+            </div>
+            <div class="comp-col comp-other-col">
+              <span class="comp-mark-icon comp-mark-icon--x" aria-hidden="true">&times;</span>
+              <span class="comp-copy">Weak or low-dose single-angle formulas</span>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <div class="comp-col comp-label-col"><strong>Habit Forming</strong></div>
+            <div class="comp-col comp-brand-col">
+              <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c38381eafa8f33d16.svg" alt="" aria-hidden="true" class="comp-mark-icon comp-mark-icon--check">
+              <span class="comp-copy">Melatonin-free and built for consistent nightly use</span>
+            </div>
+            <div class="comp-col comp-other-col">
+              <span class="comp-mark-icon comp-mark-icon--x" aria-hidden="true">&times;</span>
+              <span class="comp-copy">Often leans on melatonin-heavy groggy formulas</span>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <div class="comp-col comp-label-col"><strong>Ingredient Quality</strong></div>
+            <div class="comp-col comp-brand-col">
+              <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c38381eafa8f33d16.svg" alt="" aria-hidden="true" class="comp-mark-icon comp-mark-icon--check">
+              <span class="comp-copy">Magnesium glycinate plus targeted herbal support</span>
+            </div>
+            <div class="comp-col comp-other-col">
+              <span class="comp-mark-icon comp-mark-icon--x" aria-hidden="true">&times;</span>
+              <span class="comp-copy">Lower-grade oxide blends, fillers, or artificial extras</span>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <div class="comp-col comp-label-col"><strong>Sleep Experience</strong></div>
+            <div class="comp-col comp-brand-col">
+              <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c38381eafa8f33d16.svg" alt="" aria-hidden="true" class="comp-mark-icon comp-mark-icon--check">
+              <span class="comp-copy">Comforting cocoa ritual that supports deeper rest</span>
+            </div>
+            <div class="comp-col comp-other-col">
+              <span class="comp-mark-icon comp-mark-icon--x" aria-hidden="true">&times;</span>
+              <span class="comp-copy">Bitter, chalky, or purely functional bedtime drinks</span>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <div class="comp-col comp-label-col"><strong>Morning Feeling</strong></div>
+            <div class="comp-col comp-brand-col">
+              <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c38381eafa8f33d16.svg" alt="" aria-hidden="true" class="comp-mark-icon comp-mark-icon--check">
+              <span class="comp-copy">Wake up refreshed and clear</span>
+            </div>
+            <div class="comp-col comp-other-col">
+              <span class="comp-mark-icon comp-mark-icon--x" aria-hidden="true">&times;</span>
+              <span class="comp-copy">Wake up groggy, heavy, or mentally foggy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews-showcase" id="customer-reviews">
+      <div class="reviews-showcase__inner" id="reviews-summary-section">
+        <h2 class="section-heading serif-heading">What Our Customers Are Saying</h2>
+
+        <div class="reviews-showcase__hero">
+          <div class="reviews-showcase__summary">
+            <span class="reviews-showcase__eyebrow">Customer Reviews</span>
+            <div class="reviews-showcase__rating-line">
+              <span class="reviews-showcase__rating-star" aria-hidden="true">&#9733;</span>
+              <strong class="reviews-showcase__rating-value">4.8</strong>
+              <span class="reviews-showcase__rating-count">10,839 reviews</span>
+              <span class="reviews-showcase__verified-pill">Verified</span>
+            </div>
+
+            <div class="reviews-showcase__breakdown">
+              <div class="reviews-showcase__bar-row reviews-showcase__bar-row--5">
+                <span class="reviews-showcase__bar-label">5</span>
+                <span class="reviews-showcase__bar-star" aria-hidden="true">&#9733;</span>
+                <span class="reviews-showcase__bar-track"><span class="reviews-showcase__bar-fill"></span></span>
+                <span class="reviews-showcase__bar-count">8,462</span>
               </div>
+              <div class="reviews-showcase__bar-row reviews-showcase__bar-row--4">
+                <span class="reviews-showcase__bar-label">4</span>
+                <span class="reviews-showcase__bar-star" aria-hidden="true">&#9733;</span>
+                <span class="reviews-showcase__bar-track"><span class="reviews-showcase__bar-fill"></span></span>
+                <span class="reviews-showcase__bar-count">1,411</span>
+              </div>
+              <div class="reviews-showcase__bar-row reviews-showcase__bar-row--3">
+                <span class="reviews-showcase__bar-label">3</span>
+                <span class="reviews-showcase__bar-star" aria-hidden="true">&#9733;</span>
+                <span class="reviews-showcase__bar-track"><span class="reviews-showcase__bar-fill"></span></span>
+                <span class="reviews-showcase__bar-count">506</span>
+              </div>
+              <div class="reviews-showcase__bar-row reviews-showcase__bar-row--2">
+                <span class="reviews-showcase__bar-label">2</span>
+                <span class="reviews-showcase__bar-star" aria-hidden="true">&#9733;</span>
+                <span class="reviews-showcase__bar-track"><span class="reviews-showcase__bar-fill"></span></span>
+                <span class="reviews-showcase__bar-count">196</span>
+              </div>
+              <div class="reviews-showcase__bar-row reviews-showcase__bar-row--1">
+                <span class="reviews-showcase__bar-label">1</span>
+                <span class="reviews-showcase__bar-star" aria-hidden="true">&#9733;</span>
+                <span class="reviews-showcase__bar-track"><span class="reviews-showcase__bar-fill"></span></span>
+                <span class="reviews-showcase__bar-count">264</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews-showcase__media">
+            <div class="reviews-showcase__media-grid">
+              <span class="reviews-showcase__thumb"><img src="assets/images/67d193cc252c976e4cbb49fab463ec20_1765597911_856x.png" alt="Review thumbnail 1" loading="lazy"></span>
+              <span class="reviews-showcase__thumb"><img src="assets/images/83774c21dbf2f76cbbc0e09aaed838e7_1765596839_856x.png" alt="Review thumbnail 2" loading="lazy"></span>
+              <span class="reviews-showcase__thumb"><img src="assets/images/Gemini_Generated_Image_qufgmiqufgmiqufg_856x.png" alt="Review thumbnail 3" loading="lazy"></span>
+              <span class="reviews-showcase__thumb"><img src="assets/images/Gemini_Generated_Image_s8n4j5s8n4j5s8n4_856x.png" alt="Review thumbnail 4" loading="lazy"></span>
+              <span class="reviews-showcase__thumb"><img src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_530x.png" alt="Review thumbnail 5" loading="lazy"></span>
+              <span class="reviews-showcase__thumb"><img src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_530x.png" alt="Review thumbnail 6" loading="lazy"></span>
+              <span class="reviews-showcase__thumb"><img src="assets/images/3c9dc083cba1e607f870c793d2212f8e_1765588773_530x.png" alt="Review thumbnail 7" loading="lazy"></span>
+              <span class="reviews-showcase__thumb"><img src="assets/images/4a3cae9929c82cc75b7c0aacefeb6f93_1765591190_530x.png" alt="Review thumbnail 8" loading="lazy"></span>
+            </div>
+            <div class="reviews-showcase__topics">
+              <span>Sleep</span>
+              <span>Taste</span>
+              <span>Routine</span>
+              <span>Morning</span>
+              <span>Calm</span>
+              <span>Shipping</span>
+              <span>Texture</span>
+              <span>Results</span>
+            </div>
+          </div>
+
+          <div class="reviews-showcase__actions">
+            <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e698dbcc4d90735efbfbcd.svg" alt="Transparency badge" class="reviews-showcase__badge" loading="lazy">
+            <button class="reviews-showcase__write-btn" type="button">Write a review</button>
+          </div>
+        </div>
+
+        <div class="reviews-showcase__controls">
+          <button class="reviews-showcase__control reviews-showcase__control--filter" type="button">
+            <span class="reviews-showcase__filter-icon" aria-hidden="true"></span>
+            Filters
+          </button>
+          <button class="reviews-showcase__control" type="button">
+            Most recent
+            <span class="reviews-showcase__control-caret" aria-hidden="true">&#8964;</span>
+          </button>
+        </div>
+
+        <div class="reviews-showcase__columns">
+          <div class="reviews-showcase__column">
+            <article class="reviews-showcase-card reviews-showcase-card--md">
+              <div class="reviews-showcase-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="reviews-showcase-card__meta">
+                <strong class="reviews-showcase-card__author">Alex G.</strong>
+                <span class="reviews-showcase-card__verified">Verified by shop</span>
+              </div>
+              <div class="reviews-showcase-card__date">04/22/2026</div>
+              <p class="reviews-showcase-card__body">Best sleep I have had in ages. I fall asleep faster and wake up clear instead of dragging through the morning.</p>
+              <div class="reviews-showcase-card__source">Review written in Shop App</div>
+            </article>
+            <article class="reviews-showcase-card reviews-showcase-card--lg">
+              <div class="reviews-showcase-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="reviews-showcase-card__meta">
+                <strong class="reviews-showcase-card__author">Sam T.</strong>
+                <span class="reviews-showcase-card__verified">Verified by shop</span>
+              </div>
+              <div class="reviews-showcase-card__date">04/20/2026</div>
+              <p class="reviews-showcase-card__body">I used to wake up multiple times every night. SnoozeBrew helped me settle into deeper sleep and it now feels like my body actually stays asleep. <span class="reviews-showcase-card__more">More</span></p>
+              <div class="reviews-showcase-card__source">Review written in Shop App</div>
+            </article>
+            <article class="reviews-showcase-card reviews-showcase-card--xl">
+              <div class="reviews-showcase-card__stars" aria-label="4 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+              <div class="reviews-showcase-card__meta">
+                <strong class="reviews-showcase-card__author">Brianna</strong>
+                <span class="reviews-showcase-card__verified">Verified by shop</span>
+              </div>
+              <div class="reviews-showcase-card__date">04/18/2026</div>
+              <p class="reviews-showcase-card__body">The taste surprised me in the best way. It feels like a cozy cocoa, not a chalky supplement drink, and that made it easier to stay consistent every night. <span class="reviews-showcase-card__more">More</span></p>
+              <div class="reviews-showcase-card__source">Review written in Shop App</div>
+            </article>
+            <article class="reviews-showcase-card reviews-showcase-card--sm">
+              <div class="reviews-showcase-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="reviews-showcase-card__meta">
+                <strong class="reviews-showcase-card__author">Nina</strong>
+                <span class="reviews-showcase-card__verified">Verified by shop</span>
+              </div>
+              <div class="reviews-showcase-card__date">04/16/2026</div>
+              <p class="reviews-showcase-card__body">No groggy morning at all.</p>
+              <div class="reviews-showcase-card__source">Review written in Shop App</div>
+            </article>
+            <article class="reviews-showcase-card reviews-showcase-card--sm reviews-showcase-card--faded">
+              <div class="reviews-showcase-card__stars" aria-label="4 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+              <div class="reviews-showcase-card__meta">
+                <strong class="reviews-showcase-card__author">Lauren</strong>
+                <span class="reviews-showcase-card__verified">Verified by shop</span>
+              </div>
+              <div class="reviews-showcase-card__date">04/14/2026</div>
+              <p class="reviews-showcase-card__body">A calming ritual I actually look forward to every night.</p>
+              <div class="reviews-showcase-card__source">Review written in Shop App</div>
             </article>
           </div>
-        </section>
 
-        <section class="sb-journey">
-          <div class="sb-narrow">
-            <header class="sb-section-header">
-              <h2><span>🌙</span> Your Journey to Deeper, Better Sleep</h2>
-              <p>When your sleep is supported, everything becomes easier. Over time, SnoozeBrew helps your body settle into a smoother nightly rhythm — leading to calmer moods, steadier energy, and clearer mornings. Stay consistent, and the shift becomes unmistakable.</p>
-            </header>
-
-            <div class="sb-timeline">
-              <article class="sb-timeline-item">
-                <span class="sb-timeline-dot"></span>
-                <div>
-                  <span class="sb-phase">Phase 1</span>
-                  <h3>Ease In & Unwind (Days 1–10)</h3>
-                  <p>SnoozeBrew begins supporting your nightly relaxation pathways. Subtle shifts start as your body eases into a calmer rhythm and your mind winds down more smoothly.</p>
-                  <strong>What you may notice:</strong>
-                  <ul>
-                    <li>A softer, easier transition into bedtime</li>
-                    <li>Mild reductions in restlessness or tension</li>
-                    <li>Falling asleep a bit faster</li>
-                    <li>More refreshed mornings compared to usual</li>
-                  </ul>
-                </div>
-              </article>
-              <article class="sb-timeline-item">
-                <span class="sb-timeline-dot"></span>
-                <div>
-                  <span class="sb-phase">Phase 2</span>
-                  <h3>Deepen Your Rest (Days 11–20)</h3>
-                  <p>Your system begins responding more consistently to SnoozeBrew’s calming blend. Sleep cycles may deepen, and your body starts maintaining a steadier nightly rhythm.</p>
-                  <strong>What you may notice:</strong>
-                  <ul>
-                    <li>Longer, more continuous sleep</li>
-                    <li>Fewer middle-of-the-night wakeups</li>
-                    <li>Improved mood and morning focus</li>
-                    <li>Less dependence on screens or stimulants at night</li>
-                  </ul>
-                </div>
-              </article>
-              <article class="sb-timeline-item">
-                <span class="sb-timeline-dot"></span>
-                <div>
-                  <span class="sb-phase">Phase 3</span>
-                  <h3>Restore & Maintain (Days 21–30+)</h3>
-                  <p>With regular use, SnoozeBrew helps reinforce healthier sleep patterns. Your nights become more restorative, and your days feel clearer, steadier, and more balanced.</p>
-                  <strong>What you may notice:</strong>
-                  <ul>
-                    <li>Noticeably deeper, higher-quality sleep</li>
-                    <li>Brighter, more energized mornings</li>
-                    <li>Greater resilience to daily stress</li>
-                    <li>A solid, dependable bedtime ritual you look forward to</li>
-                  </ul>
-                </div>
-              </article>
-            </div>
-          </div>
-          <img class="sb-mobile-banner" src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_1060x.png" alt="SnoozeBrew with warm cocoa mug">
-        </section>
-
-        <section class="sb-stats">
-          <div class="sb-narrow">
-            <header class="sb-section-header sb-stats-header">
-              <h2>Feel the Difference Better Sleep Makes</h2>
-              <p>With SnoozeBrew, you’ll ease into calmer nights, smoother mornings, and more consistent energy — real improvements you can genuinely feel.</p>
-            </header>
-            <div class="sb-stat-list">
-              <article><strong>90%</strong><div><h3>Fell Asleep Faster & More Easily</h3><p>SnoozeBrew’s calming blend helped users relax sooner, making bedtime feel effortless.</p></div></article>
-              <article><strong>89%</strong><div><h3>Woke Up Clearer & More Refreshed</h3><p>Supports deeper, more restorative sleep so you rise with a sharper mind and lighter mood.</p></div></article>
-              <article><strong>92%</strong><div><h3>Experienced Better Daily Well-Being</h3><p>SnoozeBrew helped people feel more balanced, steady, and in control throughout the day.</p></div></article>
-            </div>
-            <p class="sb-disclaimer"><span>i</span>* Based on internal studies and customer feedback surveys.</p>
-          </div>
-        </section>
-
-        <section class="sb-photo-reviews">
-          <div class="sb-wide">
-            <div class="sb-rating-pill">★★★★★ Rated 4.8/5 based on +10,839 Total Ratings</div>
-            <header class="sb-section-header">
-              <h2>Hear from People Who Tried <span>SnoozeBrew</span></h2>
-            </header>
-            <div class="sb-carousel" data-carousel>
-              <div class="sb-review-track" data-carousel-track>
-                <article class="sb-review-card">
-                  <img src="assets/images/67d193cc252c976e4cbb49fab463ec20_1765597911_856x.png" alt="Alex holding SnoozeBrew">
-                  <div class="sb-review-body">
-                    <p class="sb-review-meta"><span>★★★★★</span> <strong>Alex G.</strong> <em>Verified Buyer</em></p>
-                    <p>“Best sleep I’ve had in ages. I fall asleep faster and wake up clear, not groggy.”</p>
-                    <div class="sb-purchase"><strong>Subscribed To SnoozeBrew</strong><b>$29.96 <s>$79.96</s></b><small>Purchased on March 14th, 2025</small></div>
-                  </div>
-                </article>
-                <article class="sb-review-card">
-                  <img src="assets/images/83774c21dbf2f76cbbc0e09aaed838e7_1765596839_856x.png" alt="SnoozeBrew held in front of bed">
-                  <div class="sb-review-body">
-                    <p class="sb-review-meta"><span>★★★★★</span> <strong>Sam T.</strong> <em>Verified Buyer</em></p>
-                    <p>“I used to wake up multiple times, but SnoozeBrew helped me settle into deeper sleep. I wake up feeling rested instead of drained.”</p>
-                    <div class="sb-purchase"><strong>Subscribed To SnoozeBrew</strong><b>$29.96 <s>$79.96</s></b><small>Purchased on June 18th, 2025</small></div>
-                  </div>
-                </article>
-                <article class="sb-review-card">
-                  <img src="assets/images/Gemini_Generated_Image_qufgmiqufgmiqufg_856x.png" alt="Sarah holding SnoozeBrew near bed">
-                  <div class="sb-review-body">
-                    <p class="sb-review-meta"><span>★★★★★</span> <strong>Sarah L.</strong> <em>Verified Buyer</em></p>
-                    <p>“I fall asleep quicker and stay asleep longer. No grogginess, just a clear, refreshed feeling in the morning.”</p>
-                    <div class="sb-purchase"><strong>Subscribed To SnoozeBrew</strong><b>$29.96 <s>$79.96</s></b><small>Purchased on January 11th, 2025</small></div>
-                  </div>
-                </article>
+          <div class="reviews-showcase__column">
+            <article class="reviews-showcase-card reviews-showcase-card--lg">
+              <div class="reviews-showcase-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="reviews-showcase-card__meta">
+                <strong class="reviews-showcase-card__author">Sarah L.</strong>
+                <span class="reviews-showcase-card__verified">Verified by shop</span>
               </div>
-              <div class="sb-carousel-nav">
-                <button type="button" data-carousel-prev aria-label="Previous review">‹</button>
-                <button type="button" data-carousel-next aria-label="Next review">›</button>
+              <div class="reviews-showcase-card__date">04/22/2026</div>
+              <p class="reviews-showcase-card__body">I fall asleep quicker and stay asleep longer. No grogginess, just a clear, refreshed feeling the next morning.</p>
+              <div class="reviews-showcase-card__source">Review written in Shop App</div>
+            </article>
+            <article class="reviews-showcase-card reviews-showcase-card--md">
+              <div class="reviews-showcase-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="reviews-showcase-card__meta">
+                <strong class="reviews-showcase-card__author">Emma R.</strong>
+                <span class="reviews-showcase-card__verified">Verified by shop</span>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="sb-benefits">
-          <div class="sb-benefits-grid">
-            <div class="sb-benefits-copy">
-              <header class="sb-section-header">
-                <h2>The Supplement That Helps You Feel Like <span>Yourself Again</span></h2>
-                <p>SnoozeBrew works with your body to promote deeper rest, smoother mornings, and a clearer sense of wellbeing from the moment you wake. When your sleep improves, everything in your life feels lighter — and people around you notice the difference.</p>
-              </header>
-              <div class="sb-benefit-box">
-                <article><h3>Supports a Calmer Nervous System</h3><p>Bioavailable magnesium and calming botanicals help reduce nighttime tension, making it easier to transition into sleep.</p></article>
-                <article><h3>Promotes More Restorative Mornings</h3><p>By supporting deeper sleep cycles, SnoozeBrew helps you wake with clearer focus and steadier energy.</p></article>
-                <article><h3>Helps Moderate Nighttime Stress Responses</h3><p>Adaptogenic ingredients work with your stress pathways to ease overthinking and support a smoother wind-down.</p></article>
-                <article><h3>Encourages Long-Term Sleep Rhythm Balance</h3><p>Consistent use helps reinforce healthier sleep patterns and more stable nightly rest.</p></article>
+              <div class="reviews-showcase-card__date">04/19/2026</div>
+              <p class="reviews-showcase-card__body">This made it so much easier to stop doom-scrolling and actually transition into sleep.</p>
+              <div class="reviews-showcase-card__source">Review written in Shop App</div>
+            </article>
+            <article class="reviews-showcase-card reviews-showcase-card--sm">
+              <div class="reviews-showcase-card__stars" aria-label="4 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+              <div class="reviews-showcase-card__meta">
+                <strong class="reviews-showcase-card__author">Marco</strong>
+                <span class="reviews-showcase-card__verified">Verified by shop</span>
               </div>
-            </div>
-            <img class="sb-benefits-img" src="assets/images/3c9dc083cba1e607f870c793d2212f8e_1765588773_1060x.png" alt="SnoozeBrew supplement aid ingredients graphic">
-          </div>
-        </section>
-
-        <section class="sb-store-faq">
-          <div class="sb-faq-wrap">
-            <header>
-              <h2>Frequently Asked Questions</h2>
-              <p>Find answers to common questions about our products, shipping, returns, and more.</p>
-            </header>
-            <div class="sb-accordion sb-store-accordion" data-accordion>
-              <div class="sb-accordion-item"><button type="button" class="sb-accordion-trigger">How long does one jar of SnoozeBrew last?<span>+</span></button><div class="sb-accordion-panel"><p>Each jar provides a 30-day supply when used once nightly as recommended.</p></div></div>
-              <div class="sb-accordion-item"><button type="button" class="sb-accordion-trigger">What ingredients are in SnoozeBrew?<span>+</span></button><div class="sb-accordion-panel"><p>SnoozeBrew contains a blend of bioavailable magnesium, calming botanicals, and adaptogens formulated to support relaxation and deeper sleep.</p></div></div>
-              <div class="sb-accordion-item"><button type="button" class="sb-accordion-trigger">Is it safe for all age groups?<span>+</span></button><div class="sb-accordion-panel"><p>SnoozeBrew is formulated for adults 18 and older. Consult a healthcare professional before use if pregnant, breastfeeding, or managing a medical condition.</p></div></div>
-              <div class="sb-accordion-item"><button type="button" class="sb-accordion-trigger">Is there sugar in SnoozeBrew?<span>+</span></button><div class="sb-accordion-panel"><p>SnoozeBrew contains no added sugar. Its lightly sweet flavor comes from natural, sleep-friendly ingredients.</p></div></div>
-            </div>
-          </div>
-        </section>
-
-        <section class="sb-results">
-          <div class="sb-wide">
-            <header class="sb-section-header">
-              <h2>Customer <span>Results</span></h2>
-              <p>SnoozeBrew is helping people feel calmer at night, clearer in the morning, and show up each day as the best version of themselves—without the restless nights or foggy wakeups.</p>
-              <small>★★★★★ 4.8/5 based on 12,500+ customer reviews</small>
-            </header>
-            <div class="sb-results-carousel" data-carousel>
-              <div class="sb-results-track" data-carousel-track>
-                <article class="sb-result-card"><p class="sb-purple-stars">★★★★★</p><h3>“I noticed a real change in my sleep.”</h3><p>I’ve dealt with restless nights for a long time, but SnoozeBrew helped me fall asleep faster and stay asleep longer within the first week.</p><footer><span>A</span> Ava P <strong>Verified customer</strong></footer></article>
-                <article class="sb-result-card"><p class="sb-purple-stars">★★★★★</p><h3>“Finally sleeping through the night again.”</h3><p>I didn’t realize how much my broken sleep was affecting my mood and focus. SnoozeBrew helped me fall asleep faster and actually stay asleep.</p><footer><span>E</span> Emma R <strong>Verified customer</strong></footer></article>
-                <article class="sb-result-card"><p class="sb-purple-stars">★★★★★</p><h3>“My stress levels feel so much lower.”</h3><p>I didn’t expect a sleep drink to help this much, but SnoozeBrew has made such a difference. I wind down easier and sleep deeper.</p><footer><span>M</span> Mark K <strong>Verified customer</strong></footer></article>
-                <article class="sb-result-card sb-faded"><p class="sb-purple-stars">★★★☆☆</p><h3>“I look forward to it.”</h3><p>The taste is rich and cozy. It’s like my bedtime cue now, and I feel the moments stack up.</p><footer><span>T</span> Toni <strong>Verified customer</strong></footer></article>
+              <div class="reviews-showcase-card__date">04/17/2026</div>
+              <p class="reviews-showcase-card__body">The magnesium glycinate is what sold me, and the formula feels noticeably gentler than other sleep products I have tried.</p>
+              <div class="reviews-showcase-card__source">Review written in Shop App</div>
+            </article>
+            <article class="reviews-showcase-card reviews-showcase-card--sm">
+              <div class="reviews-showcase-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="reviews-showcase-card__meta">
+                <strong class="reviews-showcase-card__author">Toni</strong>
+                <span class="reviews-showcase-card__verified">Verified by shop</span>
               </div>
-              <div class="sb-dots" aria-label="Customer results slides">
-                <button type="button" class="is-active" data-carousel-dot="0" aria-label="Show result 1"></button>
-                <button type="button" data-carousel-dot="1" aria-label="Show result 2"></button>
-                <button type="button" data-carousel-dot="2" aria-label="Show result 3"></button>
-                <button type="button" data-carousel-dot="3" aria-label="Show result 4"></button>
+              <div class="reviews-showcase-card__date">04/13/2026</div>
+              <p class="reviews-showcase-card__body">Shipping was fast and the 2-pack ended up being the sweet spot for my household.</p>
+              <div class="reviews-showcase-card__source">Review written in Shop App</div>
+            </article>
+            <article class="reviews-showcase-card reviews-showcase-card--xl">
+              <div class="reviews-showcase-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="reviews-showcase-card__meta">
+                <strong class="reviews-showcase-card__author">Jules</strong>
+                <span class="reviews-showcase-card__verified">Verified by shop</span>
               </div>
-            </div>
+              <div class="reviews-showcase-card__date">04/11/2026</div>
+              <p class="reviews-showcase-card__body">The biggest difference has been the morning after. I am not groggy or heavy headed like I was with old melatonin gummies, and that alone made me stick with SnoozeBrew. <span class="reviews-showcase-card__more">More</span></p>
+              <div class="reviews-showcase-card__source">Review written in Shop App</div>
+            </article>
           </div>
-        </section>
-
-        <section class="sb-refund">
-          <div class="sb-refund-inner">
-            <div class="sb-shield" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="80" height="80">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16L4.35009 13.3929C2.24773 11.8912 1 9.46667 1 6.88306V3L8 0L15 3V6.88306C15 9.46667 13.7523 11.8912 11.6499 13.3929L8 16ZM12.2071 5.70711L10.7929 4.29289L7 8.08579L5.20711 6.29289L3.79289 7.70711L7 10.9142L12.2071 5.70711Z" fill="currentColor"></path>
-              </svg>
-            </div>
-            <h2>NO RESULTS = REFUND</h2>
-            <p>Experience calmer nights and more restorative sleep — or your money back. If SnoozeBrew doesn’t help you unwind with ease and wake feeling refreshed and composed, we’ll issue a full refund. No stress, no complications, just our commitment to your well-being.</p>
-            <button class="sb-primary-btn" type="button" data-scroll-target="#sb-top">ADD TO CART</button>
-            <div class="sb-refund-badges"><span>✓ 100% Satisfaction</span><span>✓ Fast Shipping</span><span>✓ Easy Returns</span></div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="sb-footer">
-        <div>SnoozeBrew™</div>
-      </footer>
-
-      <aside class="sb-sticky-offer" aria-label="Sticky add to cart">
-        <div class="sb-sticky-inner">
-          <div class="sb-sticky-product">
-            <img src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_60x60_crop_center.png" alt="">
-            <div>
-              <p><span>★★★★★</span> Excellent 4.8 | 1319 reviews</p>
-              <strong>SnoozeBrew™ Magnesium Sleeping Aid</strong>
-            </div>
-          </div>
-          <p class="sb-sticky-delivery">☛ Get It By <strong>Sunday, May 3</strong></p>
-          <button class="sb-sticky-btn" type="button" data-scroll-target="#sb-top">CLAIM OFFER</button>
         </div>
-      </aside>
+
+        <button class="reviews-showcase__more-btn" type="button">
+          Show more
+          <span aria-hidden="true">&#8964;</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq-section">
+      <div class="faq-inner">
+        <h2 class="section-heading serif-heading"><em>Frequently Asked Questions</em></h2>
+        <div class="faq-grid">
+          <div class="faq-column">
+            <div class="faq-item" data-faq>
+              <button class="faq-question">Do you offer a Money Back Guarantee? <span class="faq-arrow">&rsaquo;</span></button>
+              <div class="faq-answer">
+                <p>Yes. Try SnoozeBrew for 30 days. If it does not feel like a fit for your nightly routine, we will refund your order.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-faq>
+              <button class="faq-question">How does the subscription work? <span class="faq-arrow">&rsaquo;</span></button>
+              <div class="faq-answer">
+                <p>Your refill ships automatically on the cadence you choose. You can pause, skip, or cancel whenever you need to.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-faq>
+              <button class="faq-question">When should I drink SnoozeBrew? <span class="faq-arrow">&rsaquo;</span></button>
+              <div class="faq-answer">
+                <p>We recommend mixing one scoop about 30 minutes before bed so your body has time to settle into a calmer nighttime rhythm.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-faq>
+              <button class="faq-question">How often should I use it? <span class="faq-arrow">&rsaquo;</span></button>
+              <div class="faq-answer">
+                <p>SnoozeBrew is designed for nightly use. Consistency matters most when you are building a stronger sleep routine.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-faq>
+              <button class="faq-question">Is SnoozeBrew melatonin-free? <span class="faq-arrow">&rsaquo;</span></button>
+              <div class="faq-answer">
+                <p>Yes. SnoozeBrew is melatonin-free, so it is built to support sleep without that heavy next-morning feeling many people want to avoid.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-faq>
+              <button class="faq-question">What ingredients are inside each scoop? <span class="faq-arrow">&rsaquo;</span></button>
+              <div class="faq-answer">
+                <p>The supplement facts call out Valerian Root Extract, L-Theanine, Magnesium Glycinate, 5-HTP, Passionflower Extract, and Sodium as Sodium Citrate.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-faq>
+              <button class="faq-question">What does SnoozeBrew help with? <span class="faq-arrow">&rsaquo;</span></button>
+              <div class="faq-answer">
+                <p>It is made to support relaxation before bed, deeper sleep through the night, and clearer mornings after consistent use.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-column">
+            <div class="faq-item" data-faq>
+              <button class="faq-question">How long does one jar last? <span class="faq-arrow">&rsaquo;</span></button>
+              <div class="faq-answer">
+                <p>One jar contains 30 servings, which is about one month when used once nightly.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-faq>
+              <button class="faq-question">Can I mix it with hot or cold drinks? <span class="faq-arrow">&rsaquo;</span></button>
+              <div class="faq-answer">
+                <p>Yes. Most people enjoy it warm like a cocoa, but it can also be mixed into cold milk or water if that suits your routine better.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-faq>
+              <button class="faq-question">Who is SnoozeBrew best for? <span class="faq-arrow">&rsaquo;</span></button>
+              <div class="faq-answer">
+                <p>Adults who want a gentle wind-down ritual, more restorative sleep, and clearer mornings without leaning on melatonin-heavy products.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-faq>
+              <button class="faq-question">Does SnoozeBrew use artificial dyes or fillers? <span class="faq-arrow">&rsaquo;</span></button>
+              <div class="faq-answer">
+                <p>The formula messaging centers on a cleaner nightly blend with vegan and gluten-free positioning rather than the artificial-heavy approach found in many sleep aids.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-faq>
+              <button class="faq-question">Is SnoozeBrew diet-friendly? <span class="faq-arrow">&rsaquo;</span></button>
+              <div class="faq-answer">
+                <p>Yes. The product is positioned as vegan and gluten-free, and the supplement facts show 0g total sugar per serving.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-faq>
+              <button class="faq-question">Will I feel groggy the next morning? <span class="faq-arrow">&rsaquo;</span></button>
+              <div class="faq-answer">
+                <p>That is the opposite of what the formula is built for. SnoozeBrew is designed to help you wake up refreshed and clear.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="social-section" id="social-section">
+      <div class="social-inner">
+        <div class="social-header">
+          <div class="social-copy">
+            <h2 class="section-heading serif-heading">Follow Us on Social</h2>
+            <p class="section-subtext">See bedtime routines, cozy recipe ideas, and real customer sleep wins from the SnoozeBrew community.</p>
+          </div>
+        </div>
+
+        <div class="social-collage">
+          <button class="social-tile social-tile--large social-tile--left media-play-tile" type="button" aria-label="Play SnoozeBrew social testimonial video">
+            <video preload="auto" playsinline loop>
+              <source src="assets/vidoes/7585033016922115359.mp4" type="video/mp4">
+            </video>
+            <span class="social-play" aria-hidden="true"></span>
+            <div class="social-comment-card" aria-hidden="true">
+              <div class="social-comment-card__header">
+                <span class="social-comment-avatar">A</span>
+                <div class="social-comment-author">
+                  <span class="social-comment-name">alex.sleeps</span>
+                </div>
+              </div>
+              <p>This little night ritual changed my mornings more than I expected.</p>
+              <div class="social-comment-meta">
+                <span>16m</span>
+                <span>Reply</span>
+                <span>&#9825;</span>
+              </div>
+            </div>
+          </button>
+
+          <div class="social-collage__center">
+            <button class="social-tile social-tile--small media-play-tile" type="button" aria-label="Play SnoozeBrew social review video 1">
+              <video preload="auto" playsinline loop>
+                <source src="assets/vidoes/7603217996709891359.mp4" type="video/mp4">
+              </video>
+              <span class="social-play" aria-hidden="true"></span>
+            </button>
+            <button class="social-tile social-tile--small media-play-tile" type="button" aria-label="Play SnoozeBrew social review video 2">
+              <video preload="auto" playsinline loop>
+                <source src="assets/vidoes/7615459501449170189.mp4" type="video/mp4">
+              </video>
+              <span class="social-play" aria-hidden="true"></span>
+            </button>
+            <button class="social-tile social-tile--small media-play-tile" type="button" aria-label="Play SnoozeBrew social review video 3">
+              <video preload="auto" playsinline loop>
+                <source src="assets/vidoes/7618805042430086431.mp4" type="video/mp4">
+              </video>
+              <span class="social-play" aria-hidden="true"></span>
+            </button>
+            <button class="social-tile social-tile--small media-play-tile" type="button" aria-label="Play SnoozeBrew social review video 4">
+              <video preload="auto" playsinline loop>
+                <source src="assets/vidoes/7618823930748423454.mp4" type="video/mp4">
+              </video>
+              <span class="social-play" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <button class="social-tile social-tile--large social-tile--right media-play-tile" type="button" aria-label="Play SnoozeBrew social tutorial video">
+            <video preload="auto" playsinline loop>
+              <source src="assets/vidoes/7618975778025245982.mp4" type="video/mp4">
+            </video>
+            <span class="social-play" aria-hidden="true"></span>
+          </button>
+        </div>
+        <span class="social-handle-pill" aria-label="SnoozeBrew social handle">@SNOOZEBREW</span>
+      </div>
+    </section>
+
+    <section class="newsletter-section" id="newsletter-section">
+      <div class="newsletter-shell">
+        <div class="newsletter-inner">
+          <h2 class="section-heading serif-heading">Stay in the Sleep Club <span class="newsletter-sparkles" aria-hidden="true"><span class="newsletter-sparkle newsletter-sparkle--lg">&#10022;</span><span class="newsletter-sparkle newsletter-sparkle--sm">&#10022;</span></span></h2>
+          <p class="section-subtext">Get bedtime tips, product updates, and exclusive SnoozeBrew offers straight to your inbox.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Your email" class="newsletter-input" required>
+          <span class="newsletter-form__icon" aria-hidden="true">
+            <span class="newsletter-form__icon-dot"></span>
+          </span>
+          <button type="submit" class="newsletter-submit">SUBSCRIBE</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer" id="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand-block">
+          <a href="#product-page" class="footer-brand" aria-label="SnoozeBrew home">
+            <img src="assets/images/Screenshot_2025-12-04_at_5.09.10_pm_x320.png" alt="SnoozeBrew" width="170" height="38">
+          </a>
+          <div class="footer-social-icons">
+            <span class="footer-social-icon" aria-label="Facebook" role="img">
+              <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988cc56ad2790845a0e6.svg" alt="" width="32" height="32" loading="lazy">
+            </span>
+            <span class="footer-social-icon" aria-label="Instagram" role="img">
+              <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988ced4bb7f4ed4b624f.svg" alt="" width="32" height="32" loading="lazy">
+            </span>
+            <span class="footer-social-icon" aria-label="YouTube" role="img">
+              <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988c774ef96b9bd6b4b5.svg" alt="" width="32" height="32" loading="lazy">
+            </span>
+            <span class="footer-social-icon" aria-label="TikTok" role="img">
+              <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e6988ced4bb7f4ed4b624e.svg" alt="" width="32" height="32" loading="lazy">
+            </span>
+          </div>
+        </div>
+
+        <div class="footer-col footer-col--shop">
+          <h4>Shop All</h4>
+          <ul>
+            <li><a href="#product-page">SNOOZEBREW<br>MAGNESIUM SLEEP AID</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col--about">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="#clinical-ingredients">OUR FORMULA</a></li>
+            <li><a href="#faq-section">FAQ</a></li>
+            <li><a href="#how-different">WHY SNOOZEBREW</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col--help">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#newsletter-section">CONTACT US</a></li>
+            <li><a href="#product-info">SHIPPING INFO</a></li>
+            <li><a href="#product-info">RETURN POLICY</a></li>
+            <li><a href="#faq-section">PRIVACY POLICY</a></li>
+            <li><a href="#faq-section">TERMS OF SERVICE</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>SnoozeBrew, 2026</p>
+        <p>Hot cocoa magnesium sleep aid</p>
+        <p>Calm nights. Clear mornings.</p>
+      </div>
+    </footer>
+
+    <div class="modal-overlay" id="ingredients-modal">
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <h3>Full Ingredients List</h3>
+        <p>Per the SnoozeBrew supplement facts panel: Valerian Root Extract 600mg, L-Theanine 200mg, Magnesium (as Magnesium Glycinate) 350mg, 5-HTP 200mg, Passionflower Extract 400mg, and Sodium (as Sodium Citrate) 3mg. The formula is positioned as melatonin-free, vegan, gluten-free, and made with 0g total sugar per serving.</p>
+      </div>
     </div>
   </body>
 </html>

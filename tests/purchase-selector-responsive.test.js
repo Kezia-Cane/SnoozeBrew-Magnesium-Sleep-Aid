@@ -2,49 +2,64 @@ const { chromium } = require("playwright");
 const path = require("path");
 const assert = require("assert");
 
-function columnCount(gridTemplateColumns) {
+function countColumns(gridTemplateColumns) {
   return gridTemplateColumns.split(" ").filter(Boolean).length;
 }
 
 (async () => {
   const browser = await chromium.launch({ headless: true, channel: "msedge" });
-  const fileUrl = "file:///" + path.resolve("C:/Users/Administrator/Documents/My projects/Snooze Brew/index.html").replace(/\\/g, "/");
+  const fileUrl =
+    "file:///" +
+    path
+      .resolve("C:/Users/Administrator/Documents/My projects/Snooze Brew/index.html")
+      .replace(/\\/g, "/");
 
-  async function getLayout(width) {
-    const page = await browser.newPage({ viewport: { width, height: 1200 } });
+  async function capture(width) {
+    const page = await browser.newPage({ viewport: { width, height: 1600 } });
     await page.goto(fileUrl);
-    await page.waitForSelector(".sb-purchase-card");
-    const info = await page.evaluate(() => {
-      const card = document.querySelector(".sb-variant-option .sb-variant-card");
-      const badge = document.querySelector(".sb-variant-option .sb-variant-badge");
-      const cardStyle = getComputedStyle(card);
-      const badgeStyle = getComputedStyle(badge);
+    await page.waitForSelector(".product-page__inner");
 
-      return {
-        gridTemplateColumns: cardStyle.gridTemplateColumns,
-        badgeRight: badgeStyle.right
-      };
-    });
+    const info = await page.evaluate(() => ({
+      productCols: getComputedStyle(document.querySelector(".product-page__inner")).gridTemplateColumns,
+      faqCols: getComputedStyle(document.querySelector(".faq-grid")).gridTemplateColumns,
+      desktopGalleryDisplay: getComputedStyle(document.querySelector(".gallery-desktop-grid")).display,
+      mobileGalleryDisplay: getComputedStyle(document.querySelector(".gallery-mobile-shell")).display,
+      navDisplay: getComputedStyle(document.querySelector(".site-nav")).display,
+      socialCols: getComputedStyle(document.querySelector(".social-collage")).gridTemplateColumns
+    }));
+
     await page.close();
     return info;
   }
 
-  const mobile = await getLayout(390);
-  const tablet = await getLayout(900);
+  const desktop = await capture(1366);
+  const tablet = await capture(900);
+  const mobile = await capture(390);
 
-  assert.strictEqual(
-    columnCount(tablet.gridTemplateColumns),
-    columnCount(mobile.gridTemplateColumns),
-    "expected tablet cards to keep the same multi-column layout as mobile"
-  );
+  assert.strictEqual(countColumns(desktop.productCols), 2, "expected desktop to keep Jiyu's two-column product layout");
+  assert.strictEqual(countColumns(tablet.productCols), 1, "expected tablet to collapse the product layout like Jiyu");
+  assert.strictEqual(countColumns(mobile.productCols), 1, "expected mobile to remain a single-column product layout");
 
-  assert.strictEqual(
-    tablet.badgeRight,
-    mobile.badgeRight,
-    "expected tablet badge positioning to match the mobile card design"
-  );
+  assert.strictEqual(countColumns(desktop.faqCols), 2, "expected desktop FAQ to remain two columns");
+  assert.strictEqual(countColumns(tablet.faqCols), 1, "expected tablet FAQ to collapse to one column");
+  assert.strictEqual(countColumns(mobile.faqCols), 1, "expected mobile FAQ to remain one column");
 
-  console.log("PASS purchase selector responsive layout matches between mobile and tablet");
+  assert.strictEqual(desktop.desktopGalleryDisplay !== "none", true, "expected desktop gallery grid to stay visible on desktop");
+  assert.strictEqual(desktop.mobileGalleryDisplay, "none", "expected mobile gallery shell to stay hidden on desktop");
+  assert.strictEqual(tablet.desktopGalleryDisplay, "none", "expected desktop gallery grid to hide on tablet");
+  assert.strictEqual(tablet.mobileGalleryDisplay !== "none", true, "expected mobile gallery shell to take over on tablet");
+  assert.strictEqual(mobile.desktopGalleryDisplay, "none", "expected desktop gallery grid to hide on mobile");
+  assert.strictEqual(mobile.mobileGalleryDisplay !== "none", true, "expected mobile gallery shell to stay visible on mobile");
+
+  assert.strictEqual(desktop.navDisplay, "flex", "expected desktop navigation to remain visible");
+  assert.strictEqual(tablet.navDisplay, "none", "expected tablet navigation to switch to the hamburger layout");
+  assert.strictEqual(mobile.navDisplay, "none", "expected mobile navigation to switch to the hamburger layout");
+
+  assert.strictEqual(countColumns(desktop.socialCols), 3, "expected desktop social collage to keep its three-column composition");
+  assert.strictEqual(countColumns(tablet.socialCols), 2, "expected tablet social collage to collapse to the Jiyu two-column state");
+  assert.strictEqual(mobile.socialCols, "none", "expected mobile social collage to stack instead of using a grid template");
+
+  console.log("PASS desktop, tablet, and mobile responsive states match the intended Jiyu-style behavior");
   await browser.close();
 })().catch((error) => {
   console.error(error);
