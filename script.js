@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var desktopVariantMedia = document.getElementById('desktop-variant-media');
   var galleryPrev = document.getElementById('gallery-prev');
   var galleryNext = document.getElementById('gallery-next');
+  var headerMenu = document.querySelector('.header-menu');
+  var mobileNav = document.getElementById('mobile-nav');
+  var mobileNavCloseControls = Array.from(document.querySelectorAll('[data-mobile-nav-close]'));
+  var mobileNavLinks = Array.from(document.querySelectorAll('.mobile-nav a'));
 
   var jarOptions = Array.from(document.querySelectorAll('.jar-option'));
   var autoRefillToggle = document.getElementById('auto-refill-toggle');
@@ -32,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var benefitStrip = document.getElementById('benefit-strip');
 
   var videoThumbs = Array.from(document.querySelectorAll('.video-thumb, .media-play-tile'));
+  var reviewThumbnailVideos = Array.from(document.querySelectorAll('.reviews-showcase__thumb video'));
   var ingredientsRow = document.getElementById('ingredients-row');
   var ingredientsPrev = document.getElementById('ingredients-prev');
   var ingredientsNext = document.getElementById('ingredients-next');
@@ -71,6 +76,32 @@ document.addEventListener('DOMContentLoaded', function () {
     return '$' + amount.toFixed(2);
   }
 
+  function parseAmount(value) {
+    var amount = Number(value);
+    return isFinite(amount) ? amount : null;
+  }
+
+  function applyDiscount(amount, discountPercent) {
+    var numericAmount = parseAmount(amount);
+    var numericDiscount = parseAmount(discountPercent);
+
+    if (numericAmount === null) {
+      return '';
+    }
+
+    if (numericDiscount === null) {
+      return numericAmount;
+    }
+
+    return numericAmount * (1 - numericDiscount / 100);
+  }
+
+  function getSubscriptionDiscountPercent() {
+    var sourceOption = selectedOption || jarOptions[0];
+    var discountValue = sourceOption ? parseAmount(sourceOption.dataset.discount) : null;
+    return discountValue === null ? 0 : discountValue;
+  }
+
   function getPurchaseType() {
     return autoRefillToggle && autoRefillToggle.checked ? 'subscription' : 'one_time';
   }
@@ -105,6 +136,32 @@ document.addEventListener('DOMContentLoaded', function () {
         cta.href = checkoutUrl;
       }
     });
+  }
+
+  function openMobileNav() {
+    if (!mobileNav) {
+      return;
+    }
+
+    mobileNav.hidden = false;
+    document.body.classList.add('mobile-nav-open');
+
+    if (headerMenu) {
+      headerMenu.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  function closeMobileNav() {
+    if (!mobileNav) {
+      return;
+    }
+
+    mobileNav.hidden = true;
+    document.body.classList.remove('mobile-nav-open');
+
+    if (headerMenu) {
+      headerMenu.setAttribute('aria-expanded', 'false');
+    }
   }
 
   function updateGalleryUI(index) {
@@ -156,24 +213,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (desktopVariantMedia) {
       desktopVariantMedia.src = imageSrc;
     }
-
-    if (galleryMainImg) {
-      galleryMainImg.src = imageSrc;
-    }
-
-    if (gallerySlides[0]) {
-      var slideImg = gallerySlides[0].querySelector('img');
-      if (slideImg) {
-        slideImg.src = imageSrc;
-      }
-    }
-
-    if (galleryThumbs[0]) {
-      var thumbImg = galleryThumbs[0].querySelector('img');
-      if (thumbImg) {
-        thumbImg.src = imageSrc;
-      }
-    }
   }
 
   function renderJarPricing() {
@@ -183,11 +222,18 @@ document.addEventListener('DOMContentLoaded', function () {
       var current = option.querySelector('.price-current');
       var compare = option.querySelector('.price-compare');
       var daily = option.querySelector('.price-daily');
-      var price = useSubscription ? option.dataset.subscription : option.dataset.regular;
-      var comparePrice = useSubscription ? option.dataset.subscriptionCompare : option.dataset.regularCompare;
+      var regularPrice = parseAmount(option.dataset.regular);
+      var regularDaily = parseAmount(option.dataset.regularDaily || option.dataset.daily);
+      var discountPercent = parseAmount(option.dataset.discount);
+      var price = useSubscription
+        ? applyDiscount(regularPrice !== null ? regularPrice : option.dataset.subscription, discountPercent)
+        : (regularPrice !== null ? regularPrice : option.dataset.regular);
+      var comparePrice = useSubscription
+        ? (regularPrice !== null ? regularPrice : option.dataset.subscriptionCompare)
+        : option.dataset.regularCompare;
       var dailyPrice = useSubscription
-        ? (option.dataset.subscriptionDaily || option.dataset.daily)
-        : (option.dataset.regularDaily || option.dataset.daily);
+        ? applyDiscount(regularDaily !== null ? regularDaily : (option.dataset.subscriptionDaily || option.dataset.daily), discountPercent)
+        : (regularDaily !== null ? regularDaily : (option.dataset.regularDaily || option.dataset.daily));
 
       if (current) {
         current.textContent = formatPrice(price);
@@ -215,7 +261,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     if (autoRefillTitle) {
-      autoRefillTitle.textContent = useSubscription ? 'Save 20% with Monthly Delivery' : 'One-Time Purchase';
+      autoRefillTitle.textContent = useSubscription
+        ? 'Save ' + getSubscriptionDiscountPercent() + '% with Monthly Delivery'
+        : 'One-Time Purchase';
     }
 
     if (autoRefillSub) {
@@ -255,6 +303,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
   renderJarPricing();
 
+  if (headerMenu && mobileNav) {
+    headerMenu.addEventListener('click', function () {
+      if (mobileNav.hidden) {
+        openMobileNav();
+      } else {
+        closeMobileNav();
+      }
+    });
+  }
+
+  mobileNavCloseControls.forEach(function (control) {
+    control.addEventListener('click', closeMobileNav);
+  });
+
+  mobileNavLinks.forEach(function (link) {
+    link.addEventListener('click', closeMobileNav);
+  });
+
   if (galleryTrack) {
     galleryTrack.addEventListener('scroll', syncGalleryFromScroll, { passive: true });
   }
@@ -285,6 +351,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('resize', function () {
     syncGalleryFromScroll();
+
+    if (window.innerWidth > 1024) {
+      closeMobileNav();
+    }
   });
 
   updateGalleryUI(0);
@@ -374,7 +444,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' && modal && modal.style.display === 'flex') {
+    if (event.key !== 'Escape') {
+      return;
+    }
+
+    if (mobileNav && !mobileNav.hidden) {
+      closeMobileNav();
+    }
+
+    if (modal && modal.style.display === 'flex') {
       modal.style.display = 'none';
       document.body.style.overflow = '';
     }
@@ -518,8 +596,7 @@ document.addEventListener('DOMContentLoaded', function () {
   syncResultDots();
   showResultSlide(0, 0);
 
-  videoThumbs.forEach(function (thumb) {
-    var video = thumb.querySelector('video');
+  function primeVideoFrame(video, seekTime) {
     var thumbnailPrimed = false;
 
     if (!video) {
@@ -529,7 +606,7 @@ document.addEventListener('DOMContentLoaded', function () {
     video.removeAttribute('poster');
     video.preload = 'auto';
 
-    function primeVideoThumbnail() {
+    function primeThumbnail() {
       if (thumbnailPrimed || !Number.isFinite(video.duration)) {
         return;
       }
@@ -537,17 +614,27 @@ document.addEventListener('DOMContentLoaded', function () {
       thumbnailPrimed = true;
 
       try {
-        video.currentTime = Math.min(0.1, Math.max(video.duration - 0.1, 0));
+        video.currentTime = Math.min(seekTime, Math.max(video.duration - 0.1, 0));
       } catch (error) {
         return;
       }
     }
 
     if (video.readyState >= 2) {
-      primeVideoThumbnail();
+      primeThumbnail();
     } else {
-      video.addEventListener('loadeddata', primeVideoThumbnail, { once: true });
+      video.addEventListener('loadeddata', primeThumbnail, { once: true });
     }
+  }
+
+  videoThumbs.forEach(function (thumb) {
+    var video = thumb.querySelector('video');
+
+    if (!video) {
+      return;
+    }
+
+    primeVideoFrame(video, 0.1);
 
     thumb.addEventListener('click', function () {
       var isPlaying = !video.paused;
@@ -580,6 +667,12 @@ document.addEventListener('DOMContentLoaded', function () {
     video.addEventListener('play', function () {
       thumb.classList.add('is-playing');
     });
+  });
+
+  reviewThumbnailVideos.forEach(function (video) {
+    video.pause();
+    video.muted = true;
+    primeVideoFrame(video, 0.6);
   });
 
   if (ingredientsRow) {

@@ -21,20 +21,20 @@
 
     <header class="site-header">
       <div class="site-header__inner">
-        <button class="header-menu" aria-label="Open menu" type="button">
+        <button class="header-menu" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false" type="button">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <a href="#product-page" class="site-logo" aria-label="SnoozeBrew home">
+        <a href="index.html" class="site-logo" aria-label="SnoozeBrew home">
           <img src="assets/images/Screenshot_2025-12-04_at_5.09.10_pm_x320.png" alt="SnoozeBrew" class="site-logo__image" width="170" height="38">
         </a>
         <nav class="site-nav">
-          <a href="#product-info">SHOP</a>
-          <a href="#clinical-ingredients">ABOUT US</a>
-          <a href="#customer-reviews">REVIEWS</a>
-          <a href="#faq-section">FAQS</a>
-          <a href="#newsletter-section">CONTACT US</a>
+          <a href="index.html#product-info">SHOP</a>
+          <a href="about.html">ABOUT US</a>
+          <a href="#newsletter-section">SLEEP CLUB &#10024;</a>
+          <a href="index.html#faq-section">FAQS</a>
+          <a href="contact.html">CONTACT US</a>
         </nav>
         <div class="site-header__actions">
           <button class="header-icon" aria-label="Account" type="button">
@@ -46,6 +46,23 @@
         </div>
       </div>
     </header>
+
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <button class="mobile-nav__backdrop" type="button" aria-label="Close menu" data-mobile-nav-close></button>
+      <nav class="mobile-nav__panel" aria-label="Mobile navigation">
+        <div class="mobile-nav__header">
+          <span class="mobile-nav__title">Menu</span>
+          <button class="mobile-nav__close" type="button" aria-label="Close menu" data-mobile-nav-close>&times;</button>
+        </div>
+        <div class="mobile-nav__links">
+          <a href="index.html#product-info">SHOP</a>
+          <a href="about.html">ABOUT US</a>
+          <a href="#newsletter-section">SLEEP CLUB</a>
+          <a href="index.html#faq-section">FAQS</a>
+          <a href="contact.html">CONTACT US</a>
+        </div>
+      </nav>
+    </div>
 
     <main class="product-page" id="product-page">
       <div class="product-page__inner">
@@ -94,13 +111,13 @@
             </button>
             <div class="gallery-mobile-track" id="gallery-mobile-track">
               <figure class="gallery-slide is-active" data-index="0">
-                <img id="gallery-main-img" src="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png" alt="SnoozeBrew 2-jar bundle" class="gallery-main__img">
+                <img id="gallery-main-img" src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_1060x.png" alt="SnoozeBrew beside a warm cocoa mug" class="gallery-main__img">
               </figure>
               <figure class="gallery-slide" data-index="1">
                 <img src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_1060x.png" alt="SnoozeBrew jar on a moonlit surface">
               </figure>
               <figure class="gallery-slide" data-index="2">
-                <img src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_1060x.png" alt="SnoozeBrew beside a warm cocoa mug">
+                <img src="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png" alt="SnoozeBrew 2-jar bundle">
               </figure>
               <figure class="gallery-slide" data-index="3">
                 <img src="assets/products/ChatGPT Image Apr 30, 2026, 03_59_55 AM.png" alt="SnoozeBrew 1-jar bundle">
@@ -141,13 +158,13 @@
               </button>
               <div class="gallery-thumbnails" id="gallery-thumbnails">
                 <button class="gallery-thumb active" data-index="0" type="button">
-                  <img src="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png" alt="Product view 1">
+                  <img src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_200x@2x.png" alt="Product view 1">
                 </button>
                 <button class="gallery-thumb" data-index="1" type="button">
                   <img src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_200x@2x.png" alt="Product view 2">
                 </button>
                 <button class="gallery-thumb" data-index="2" type="button">
-                  <img src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_200x@2x.png" alt="Product view 3">
+                  <img src="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png" alt="Product view 3">
                 </button>
                 <button class="gallery-thumb" data-index="3" type="button">
                   <img src="assets/products/ChatGPT Image Apr 30, 2026, 03_59_55 AM.png" alt="Product view 4">
@@ -244,7 +261,7 @@
           <div class="jar-options-section">
             <h3 class="jar-options-label">Supply</h3>
             <div class="jar-options" id="jar-options">
-              <button class="jar-option" type="button" data-jar="1" data-bundle="buy1" data-regular="51.99" data-regular-compare="" data-subscription="41.59" data-subscription-compare="51.99" data-subscription-daily="1.39" data-regular-daily="1.73" data-discount="20" data-image="assets/products/ChatGPT Image Apr 30, 2026, 03_59_55 AM.png">
+              <button class="jar-option" type="button" data-jar="1" data-bundle="buy1" data-regular="51.99" data-regular-compare="" data-subscription="36.39" data-subscription-compare="51.99" data-subscription-daily="1.21" data-regular-daily="1.73" data-discount="30" data-image="assets/products/ChatGPT Image Apr 30, 2026, 03_59_55 AM.png">
                 <span class="jar-option__card">
                   <span class="jar-option__header">
                     <span class="jar-qty-title">Buy 1</span>
@@ -254,12 +271,12 @@
                   </span>
                 </span>
                 <span class="jar-option__pricing">
-                  <span class="price-current">$41.59</span>
+                  <span class="price-current">$36.39</span>
                   <span class="price-compare">$51.99</span>
-                  <span class="price-daily">$1.39 per day</span>
+                  <span class="price-daily">$1.21 per day</span>
                 </span>
               </button>
-              <button class="jar-option selected" type="button" data-jar="2" data-bundle="buy1get1free" data-regular="51.99" data-regular-compare="" data-subscription="41.59" data-subscription-compare="51.99" data-subscription-daily="0.69" data-regular-daily="0.87" data-discount="20" data-image="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png">
+              <button class="jar-option selected" type="button" data-jar="2" data-bundle="buy1get1free" data-regular="51.99" data-regular-compare="" data-subscription="36.39" data-subscription-compare="51.99" data-subscription-daily="0.61" data-regular-daily="0.87" data-discount="30" data-image="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png">
                 <span class="jar-badge most-popular">Most Popular</span>
                 <span class="jar-option__card">
                   <span class="jar-option__header">
@@ -270,12 +287,12 @@
                   </span>
                 </span>
                 <span class="jar-option__pricing">
-                  <span class="price-current">$41.59</span>
+                  <span class="price-current">$36.39</span>
                   <span class="price-compare">$51.99</span>
-                  <span class="price-daily">$0.69 per day</span>
+                  <span class="price-daily">$0.61 per day</span>
                 </span>
               </button>
-              <button class="jar-option" type="button" data-jar="3" data-bundle="buy2get2free" data-regular="89.99" data-regular-compare="" data-subscription="71.99" data-subscription-compare="89.99" data-subscription-daily="0.60" data-regular-daily="0.75" data-discount="20" data-image="assets/products/ChatGPT Image Apr 30, 2026, 04_01_55 AM.png">
+              <button class="jar-option" type="button" data-jar="3" data-bundle="buy2get2free" data-regular="89.99" data-regular-compare="" data-subscription="62.99" data-subscription-compare="89.99" data-subscription-daily="0.52" data-regular-daily="0.75" data-discount="30" data-image="assets/products/ChatGPT Image Apr 30, 2026, 04_01_55 AM.png">
                 <span class="jar-badge best-deal">Best Value</span>
                 <span class="jar-option__card">
                   <span class="jar-option__header">
@@ -286,9 +303,9 @@
                   </span>
                 </span>
                 <span class="jar-option__pricing">
-                  <span class="price-current">$71.99</span>
+                  <span class="price-current">$62.99</span>
                   <span class="price-compare">$89.99</span>
-                  <span class="price-daily">$0.60 per day</span>
+                  <span class="price-daily">$0.52 per day</span>
                 </span>
               </button>
             </div>
@@ -299,7 +316,7 @@
               <input type="checkbox" id="auto-refill-toggle" class="auto-refill__native" checked>
               <span class="auto-refill__checkbox" aria-hidden="true"></span>
               <span class="auto-refill__text">
-                <strong id="auto-refill-title">Save 20% with Monthly Delivery</strong>
+                <strong id="auto-refill-title">Save 30% with Monthly Delivery</strong>
                 <span class="auto-refill__sub">Cancel Anytime &ndash; No Commitment</span>
               </span>
             </label>
@@ -559,49 +576,49 @@
           </button>
           <div class="ingredients-row" id="ingredients-row">
             <div class="ingredient-card">
-              <div class="ingredient-img"><img src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_530x.png" alt="Valerian Root Extract"></div>
+              <div class="ingredient-img"><img src="assets/ingredients/Dried_valerian_root_macro_photog…_202605010324.jpeg" alt="Valerian Root Extract"></div>
               <h4 class="ingredient-name">VALERIAN ROOT</h4>
               <p class="ingredient-why"><strong>Why we chose it:</strong></p>
               <p class="ingredient-desc">A classic nighttime botanical that helps the body settle into relaxation before bed.</p>
             </div>
             <div class="ingredient-card">
-              <div class="ingredient-img"><img src="assets/images/0b7739b33f3bfd9cd272c1eb7df0cbf3_1765589787_530x.png" alt="L-Theanine"></div>
+              <div class="ingredient-img"><img src="assets/ingredients/Leaves_in_oval_frame_202605010324.jpeg" alt="L-Theanine"></div>
               <h4 class="ingredient-name">L-THEANINE</h4>
               <p class="ingredient-why"><strong>Why we chose it:</strong></p>
               <p class="ingredient-desc">Supports a calmer mind so it is easier to switch off racing thoughts at night.</p>
             </div>
             <div class="ingredient-card">
-              <div class="ingredient-img"><img src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_530x.png" alt="Magnesium Glycinate"></div>
+              <div class="ingredient-img"><img src="assets/ingredients/White_crystalline_powder_scatter…_202605010324.jpeg" alt="Magnesium Glycinate"></div>
               <h4 class="ingredient-name">MAGNESIUM GLYCINATE</h4>
               <p class="ingredient-why"><strong>Why we chose it:</strong></p>
               <p class="ingredient-desc">A gentle, bioavailable magnesium form that supports relaxation without harsh digestion issues.</p>
             </div>
             <div class="ingredient-card">
-              <div class="ingredient-img"><img src="assets/images/3c9dc083cba1e607f870c793d2212f8e_1765588773_530x.png" alt="5-HTP"></div>
+              <div class="ingredient-img"><img src="assets/ingredients/Griffonia_simplicifolia_seeds_te…_202605010324.jpeg" alt="5-HTP"></div>
               <h4 class="ingredient-name">5-HTP</h4>
               <p class="ingredient-why"><strong>Why we chose it:</strong></p>
               <p class="ingredient-desc">Helps support the body’s natural wind-down chemistry as part of a bedtime routine.</p>
             </div>
             <div class="ingredient-card">
-              <div class="ingredient-img"><img src="assets/images/4a3cae9929c82cc75b7c0aacefeb6f93_1765591190_530x.png" alt="Passionflower Extract"></div>
+              <div class="ingredient-img"><img src="assets/ingredients/Passionflower_petals_and_leaves_202605010324.jpeg" alt="Passionflower Extract"></div>
               <h4 class="ingredient-name">PASSIONFLOWER</h4>
               <p class="ingredient-why"><strong>Why we chose it:</strong></p>
               <p class="ingredient-desc">Rounds out the botanical side of the formula for a softer, steadier nighttime mood.</p>
             </div>
             <div class="ingredient-card">
-              <div class="ingredient-img"><img src="assets/images/cf304c5b7ac366cab5b0897ea0adfe2f_1765591366_530x.png" alt="Melatonin free"></div>
+              <div class="ingredient-img"><img src="assets/ingredients/Liquid_gel_with_ripples_202605010324.jpeg" alt="Melatonin free"></div>
               <h4 class="ingredient-name">MELATONIN-FREE</h4>
               <p class="ingredient-why"><strong>Why we chose it:</strong></p>
               <p class="ingredient-desc">Designed for people who want help sleeping without relying on a groggy next-day formula.</p>
             </div>
             <div class="ingredient-card">
-              <div class="ingredient-img"><img src="assets/images/67d193cc252c976e4cbb49fab463ec20_1765597911_856x.png" alt="Vegan and gluten free"></div>
+              <div class="ingredient-img"><img src="assets/ingredients/Water_droplets_on_smooth_surface_202605010324.jpeg" alt="Vegan and gluten free"></div>
               <h4 class="ingredient-name">VEGAN + GLUTEN-FREE</h4>
               <p class="ingredient-why"><strong>Why we chose it:</strong></p>
               <p class="ingredient-desc">Made to fit more nighttime routines cleanly, simply, and consistently.</p>
             </div>
             <div class="ingredient-card">
-              <div class="ingredient-img"><img src="assets/images/83774c21dbf2f76cbbc0e09aaed838e7_1765596839_856x.png" alt="No added sugar"></div>
+              <div class="ingredient-img"><img src="assets/ingredients/White_silk_texture_oval_composition_202605010324.jpeg" alt="No added sugar"></div>
               <h4 class="ingredient-name">0G TOTAL SUGAR</h4>
               <p class="ingredient-why"><strong>Why we chose it:</strong></p>
               <p class="ingredient-desc">Keeps the nightly cocoa ritual comforting without loading it up with extra sugar.</p>
@@ -622,14 +639,14 @@
         <div class="comparison-table">
           <div class="comparison-header">
             <div class="comp-col comp-label-col comp-label-head">
-              <img src="assets/images/cf304c5b7ac366cab5b0897ea0adfe2f_1765591366_1060x.png" alt="SnoozeBrew comparison graphic" class="comp-hero-img">
+              <img src="assets/images/67d193cc252c976e4cbb49fab463ec20_1765597911_856x.png" alt="Customer holding SnoozeBrew" class="comp-hero-img">
             </div>
             <div class="comp-col comp-brand-col comp-head-cell">
-              <img src="assets/products/ChatGPT Image Apr 30, 2026, 04_00_48 AM.png" alt="SnoozeBrew bundle" class="comp-product-img">
+              <img src="assets/products/ChatGPT Image Apr 30, 2026, 03_59_55 AM.png" alt="SnoozeBrew single jar" class="comp-product-img">
               <span class="comp-brand">SNOOZEBREW</span>
             </div>
             <div class="comp-col comp-other-col comp-head-cell">
-              <img src="assets/images/0b7739b33f3bfd9cd272c1eb7df0cbf3_1765589787_1060x.png" alt="Other nighttime blends" class="comp-product-img comp-product-img--other">
+              <img src="https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69e698c238381eafa8f3493f.png" alt="Other nighttime blends" class="comp-product-img comp-product-img--other">
               <span class="comp-brand">OTHER BLENDS</span>
             </div>
           </div>
@@ -743,14 +760,14 @@
 
           <div class="reviews-showcase__media">
             <div class="reviews-showcase__media-grid">
-              <span class="reviews-showcase__thumb"><img src="assets/images/67d193cc252c976e4cbb49fab463ec20_1765597911_856x.png" alt="Review thumbnail 1" loading="lazy"></span>
-              <span class="reviews-showcase__thumb"><img src="assets/images/83774c21dbf2f76cbbc0e09aaed838e7_1765596839_856x.png" alt="Review thumbnail 2" loading="lazy"></span>
-              <span class="reviews-showcase__thumb"><img src="assets/images/Gemini_Generated_Image_qufgmiqufgmiqufg_856x.png" alt="Review thumbnail 3" loading="lazy"></span>
-              <span class="reviews-showcase__thumb"><img src="assets/images/Gemini_Generated_Image_s8n4j5s8n4j5s8n4_856x.png" alt="Review thumbnail 4" loading="lazy"></span>
-              <span class="reviews-showcase__thumb"><img src="assets/images/9cd21df1b78aab99ca0c2237fc640a13_1765592168_530x.png" alt="Review thumbnail 5" loading="lazy"></span>
-              <span class="reviews-showcase__thumb"><img src="assets/images/2ab997b7ee4ba4684b90975f621101f8_1765589584_530x.png" alt="Review thumbnail 6" loading="lazy"></span>
-              <span class="reviews-showcase__thumb"><img src="assets/images/3c9dc083cba1e607f870c793d2212f8e_1765588773_530x.png" alt="Review thumbnail 7" loading="lazy"></span>
-              <span class="reviews-showcase__thumb"><img src="assets/images/4a3cae9929c82cc75b7c0aacefeb6f93_1765591190_530x.png" alt="Review thumbnail 8" loading="lazy"></span>
+              <span class="reviews-showcase__thumb"><video preload="auto" playsinline muted tabindex="-1" aria-hidden="true"><source src="assets/vidoes/7585033016922115359.mp4" type="video/mp4"></video></span>
+              <span class="reviews-showcase__thumb"><video preload="auto" playsinline muted tabindex="-1" aria-hidden="true"><source src="assets/vidoes/7603217996709891359.mp4" type="video/mp4"></video></span>
+              <span class="reviews-showcase__thumb"><video preload="auto" playsinline muted tabindex="-1" aria-hidden="true"><source src="assets/vidoes/7615459501449170189.mp4" type="video/mp4"></video></span>
+              <span class="reviews-showcase__thumb"><video preload="auto" playsinline muted tabindex="-1" aria-hidden="true"><source src="assets/vidoes/7618805042430086431.mp4" type="video/mp4"></video></span>
+              <span class="reviews-showcase__thumb"><video preload="auto" playsinline muted tabindex="-1" aria-hidden="true"><source src="assets/vidoes/7618823930748423454.mp4" type="video/mp4"></video></span>
+              <span class="reviews-showcase__thumb"><video preload="auto" playsinline muted tabindex="-1" aria-hidden="true"><source src="assets/vidoes/7618975778025245982.mp4" type="video/mp4"></video></span>
+              <span class="reviews-showcase__thumb"><video preload="auto" playsinline muted tabindex="-1" aria-hidden="true"><source src="assets/vidoes/7620815292788116750.mp4" type="video/mp4"></video></span>
+              <span class="reviews-showcase__thumb"><video preload="auto" playsinline muted tabindex="-1" aria-hidden="true"><source src="assets/vidoes/7621004936129645838.mp4" type="video/mp4"></video></span>
             </div>
             <div class="reviews-showcase__topics">
               <span>Sleep</span>
@@ -1074,7 +1091,7 @@
     <footer class="site-footer" id="site-footer">
       <div class="footer-inner">
         <div class="footer-brand-block">
-          <a href="#product-page" class="footer-brand" aria-label="SnoozeBrew home">
+          <a href="index.html" class="footer-brand" aria-label="SnoozeBrew home">
             <img src="assets/images/Screenshot_2025-12-04_at_5.09.10_pm_x320.png" alt="SnoozeBrew" width="170" height="38">
           </a>
           <div class="footer-social-icons">
@@ -1096,34 +1113,35 @@
         <div class="footer-col footer-col--shop">
           <h4>Shop All</h4>
           <ul>
-            <li><a href="#product-page">SNOOZEBREW<br>MAGNESIUM SLEEP AID</a></li>
+            <li><a href="index.html#product-page">SNOOZEBREW<br>MAGNESIUM SLEEP AID</a></li>
+            <li><a href="index.html#product-info">NIGHTLY WIND-DOWN<br>RITUAL</a></li>
+            <li><a href="index.html#product-info">BUNDLES &amp; SAVINGS</a></li>
           </ul>
         </div>
 
         <div class="footer-col footer-col--about">
           <h4>About Us</h4>
           <ul>
-            <li><a href="#clinical-ingredients">OUR FORMULA</a></li>
-            <li><a href="#faq-section">FAQ</a></li>
-            <li><a href="#how-different">WHY SNOOZEBREW</a></li>
+            <li><a href="about.html">OUR STORY</a></li>
+            <li><a href="about.html#about-korean">SLEEP SCIENCE</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
           </ul>
         </div>
 
         <div class="footer-col footer-col--help">
           <h4>Help</h4>
           <ul>
-            <li><a href="#newsletter-section">CONTACT US</a></li>
-            <li><a href="#product-info">SHIPPING INFO</a></li>
-            <li><a href="#product-info">RETURN POLICY</a></li>
-            <li><a href="#faq-section">PRIVACY POLICY</a></li>
-            <li><a href="#faq-section">TERMS OF SERVICE</a></li>
+            <li><a href="shipping.html">SHIPPING POLICY</a></li>
+            <li><a href="refund.html">REFUND POLICY</a></li>
+            <li><a href="privacy.html">PRIVACY POLICY</a></li>
+            <li><a href="terms.html">TERMS OF SERVICE</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>SnoozeBrew, 2026</p>
-        <p>Hot cocoa magnesium sleep aid</p>
-        <p>Calm nights. Clear mornings.</p>
+        <p>Silmea LLC</p>
+        <p>5830 E 2nd Street Suite 7000, Unit #78521 Casper</p>
+        <p>WY 82609 USA</p>
       </div>
     </footer>
 
