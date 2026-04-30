@@ -11698,7 +11698,7 @@ body {
 .benefit-strip .bs-icon img,
 .footer-social-icon img,
 .footer-social-icons img {
-  filter: brightness(0) saturate(100%) invert(14%) sepia(22%) saturate(2262%) hue-rotate(230deg) brightness(91%) contrast(95%);
+  filter: none;
 }
 
 .benefit-strip {
@@ -11751,7 +11751,7 @@ body {
 }
 
 #how-different .comp-mark-icon--check {
-  filter: brightness(0) saturate(100%) invert(14%) sepia(22%) saturate(2262%) hue-rotate(230deg) brightness(91%) contrast(95%);
+  filter: none;
 }
 
 #newsletter-section > div.newsletter-shell,
@@ -11776,7 +11776,7 @@ body {
 }
 
 .guarantee-icon {
-  filter: brightness(0) saturate(100%) invert(14%) sepia(22%) saturate(2262%) hue-rotate(230deg) brightness(91%) contrast(95%);
+  filter: none;
 }
 
 .newsletter-inner {
