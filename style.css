@@ -11696,9 +11696,8 @@ body {
 
 .benefit-icon-item img,
 .benefit-strip .bs-icon img,
-.footer-social-icon img,
-.footer-social-icons img {
-  filter: none;
+#how-different .comp-mark-icon--check {
+  filter: hue-rotate(100deg) saturate(1.35) brightness(0.92) contrast(1.02);
 }
 
 .benefit-strip {
@@ -11750,8 +11749,10 @@ body {
   border-top-color: rgba(53, 32, 95, 0.08);
 }
 
-#how-different .comp-mark-icon--check {
-  filter: none;
+.footer-social-icon img,
+.footer-social-icons img,
+.guarantee-icon {
+  filter: hue-rotate(105deg) saturate(1.45) brightness(0.9) contrast(1.02);
 }
 
 #newsletter-section > div.newsletter-shell,
@@ -11773,10 +11774,6 @@ body {
 
 .social-handle-pill {
   box-shadow: 0 0 0 5px var(--cream), 0 0 0 6px var(--snooze-indigo);
-}
-
-.guarantee-icon {
-  filter: none;
 }
 
 .newsletter-inner {
