@@ -175,20 +175,20 @@ const assert = require("assert");
   assert.deepStrictEqual(
     data.subscriptionSnapshot,
     [
-      { current: "$36.39", compare: "$51.99", daily: "$1.21 per day" },
-      { current: "$36.39", compare: "$51.99", daily: "$0.61 per day" },
-      { current: "$62.99", compare: "$89.99", daily: "$0.52 per day" }
+      { current: "$39.99", compare: "$57.99", daily: "$1.33 per day" },
+      { current: "$39.99", compare: "$57.99", daily: "$0.67 per day" },
+      { current: "$69.99", compare: "$99.99", daily: "$0.58 per day" }
     ],
-    "expected the checked refill state to apply a full 30% discount to the monthly-delivery pricing"
+    "expected the checked refill state to show the updated monthly-delivery pricing"
   );
   assert.deepStrictEqual(
     data.oneTimeSnapshot,
     [
-      { current: "$51.99", compare: "", compareVisible: false, daily: "$1.73 per day" },
-      { current: "$51.99", compare: "", compareVisible: false, daily: "$0.87 per day" },
-      { current: "$89.99", compare: "", compareVisible: false, daily: "$0.75 per day" }
+      { current: "$57.99", compare: "", compareVisible: false, daily: "$1.93 per day" },
+      { current: "$57.99", compare: "", compareVisible: false, daily: "$0.97 per day" },
+      { current: "$99.99", compare: "", compareVisible: false, daily: "$0.83 per day" }
     ],
-    "expected the one-time purchase state to keep the original non-discounted pricing"
+    "expected the one-time purchase state to show the updated non-subscription pricing"
   );
 
   console.log("PASS Snooze page keeps the Jiyu section system while using Snooze-only visible content and assets");

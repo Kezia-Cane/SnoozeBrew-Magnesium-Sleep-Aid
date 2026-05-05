@@ -11047,46 +11047,46 @@ video {
    Checkout Page
    ======================================== */
 .checkout-page-shell {
-  background: #fdfaf0;
-  color: #1a1a1a;
+  background: var(--brand-cream);
+  color: var(--black);
   overflow-x: hidden;
 }
 
 .checkout-page-shell > .announcement-bar {
-  background: #fdfaf0 !important;
+  background: var(--brand-cream) !important;
 }
 
 .checkout-page-shell > .announcement-bar > .announcement-bar__inner {
-  background: #35205f !important;
-  color: #fdfaf0 !important;
+  background: var(--brand-green) !important;
+  color: var(--brand-cream) !important;
   min-height: 42px !important;
   padding: 7px 18px !important;
   gap: 12px !important;
 }
 
 .checkout-page-shell .announcement-badge {
-  color: #35205f !important;
-  background: #fdfaf0 !important;
+  color: var(--brand-green) !important;
+  background: var(--brand-cream) !important;
   border-radius: 8px !important;
   letter-spacing: 0 !important;
 }
 
 .checkout-page-shell .announcement-badge__dot {
-  background: #f68b53 !important;
+  background: var(--brand-coral) !important;
 }
 
 .checkout-page-shell .announcement-message,
 .checkout-page-shell .announcement-link,
 .checkout-page-shell .announcement-link:visited,
 .checkout-page-shell .announcement-link:hover {
-  color: #fdfaf0 !important;
+  color: var(--brand-cream) !important;
   letter-spacing: 0 !important;
 }
 
 .checkout-page-shell .site-header {
   position: relative;
   top: auto;
-  background: #fdfaf0;
+  background: var(--brand-cream);
   border-bottom: 1px solid rgba(53, 32, 95, 0.14);
 }
 
@@ -11104,7 +11104,7 @@ video {
 
 .checkout-eyebrow,
 .checkout-card-kicker {
-  color: #f68b53;
+  color: var(--brand-coral);
   font-size: 12px;
   font-weight: 700;
   line-height: 1.2;
@@ -11176,7 +11176,7 @@ video {
   justify-content: center;
   min-height: 138px;
   border-radius: 16px;
-  background: #e8def6;
+  background: var(--green-light);
   border: 1px solid rgba(53, 32, 95, 0.13);
   overflow: hidden;
 }
@@ -11245,7 +11245,7 @@ video {
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  background: #f68b53;
+  background: var(--brand-coral);
   flex: 0 0 auto;
 }
 
@@ -11261,7 +11261,7 @@ video {
   min-height: 46px;
   padding: 10px 12px;
   border-radius: 12px;
-  background: #e8def6;
+  background: var(--green-light);
   color: #35205f;
   font-size: 12px;
   font-weight: 700;
@@ -11286,7 +11286,7 @@ video {
   align-items: center;
   padding: 14px;
   border-radius: 14px;
-  background: #fdfaf0;
+  background: var(--brand-cream);
   border: 1px solid rgba(53, 32, 95, 0.12);
 }
 
@@ -11315,7 +11315,7 @@ video {
 }
 
 .checkout-testimonial__meta span {
-  color: #f68b53;
+  color: var(--brand-coral);
   font-size: 12px;
   white-space: nowrap;
 }
@@ -11374,7 +11374,7 @@ video {
 
 .checkout-review-card__stars {
   margin-bottom: 12px;
-  color: #f68b53;
+  color: var(--brand-coral);
   font-size: 17px;
   line-height: 1;
 }
@@ -11888,19 +11888,72 @@ body {
   height: 20px;
   margin: auto;
   background: var(--snooze-indigo);
-  -webkit-mask-image: url("https://cdn.shopify.com/s/files/1/0754/6948/8351/files/fi_15678795.svg?v=1763101209");
+  -webkit-mask-image: url("https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69f513aedd67e758c08c07c9.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
-  mask-image: url("https://cdn.shopify.com/s/files/1/0754/6948/8351/files/fi_15678795.svg?v=1763101209");
+  mask-image: url("https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69f513aedd67e758c08c07c9.svg");
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
 }
 
 .site-header__actions .cart-icon::before {
-  -webkit-mask-image: url("https://cdn.shopify.com/s/files/1/0754/6948/8351/files/fi_5337564.svg?v=1763101209");
-  mask-image: url("https://cdn.shopify.com/s/files/1/0754/6948/8351/files/fi_5337564.svg?v=1763101209");
+  -webkit-mask-image: url("https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69f513aedd67e758c08c07c8.svg");
+  mask-image: url("https://assets.cdn.filesafe.space/LiPqlEzIjSLGJAzwjVeD/media/69f513aedd67e758c08c07c8.svg");
+}
+
+/* ========================================
+   Gallery Responsiveness Refinements
+   ======================================== */
+@media (max-width: 1160px) {
+  .gallery-mobile-shell {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .gallery-mobile-track {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+  }
+
+  .gallery-slide {
+    display: flex;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery-slide img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    margin: 0 auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .gallery-thumb-row,
+  .gallery-thumbnails {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
 }
 
 /* ========================================

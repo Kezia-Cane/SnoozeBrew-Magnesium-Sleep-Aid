@@ -43,23 +43,61 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var selectedOption = jarOptions.find(function (option) {
     return option.classList.contains('selected');
-  }) || jarOptions[0];
+  }) || jarOptions[0] || null;
   var checkoutRoutes = {
     one_time: {
-      buy1: '#product-info',
-      buy1get1free: '#product-info',
-      buy2get2free: '#product-info'
+      buy1: 'https://snoozebrew.silmea.com/snoozebrewbuy1',
+      buy1get1free: 'https://snoozebrew.silmea.com/snoozebrewbuy1getfree',
+      buy2get2free: 'https://snoozebrew.silmea.com/snoozebrewbuy2get2free'
     },
     subscription: {
-      buy1: '#product-info',
-      buy1get1free: '#product-info',
-      buy2get2free: '#product-info'
+      buy1: 'https://snoozebrew.silmea.com/snoozebrewbuy1save30monthlydelivery',
+      buy1get1free: 'https://snoozebrew.silmea.com/snoozebrewbuy1get1freesave30monthlydelivery',
+      buy2get2free: 'https://snoozebrew.silmea.com/snoozebrewbuy2get2freesave30monthlydelivery'
     }
   };
   var jarToBundle = {
     '1': 'buy1',
     '2': 'buy1get1free',
     '3': 'buy2get2free'
+  };
+  var bundlePricing = {
+    buy1: {
+      one_time: {
+        current: 57.99,
+        compare: null,
+        daily: 1.93
+      },
+      subscription: {
+        current: 39.99,
+        compare: 57.99,
+        daily: 1.33
+      }
+    },
+    buy1get1free: {
+      one_time: {
+        current: 57.99,
+        compare: null,
+        daily: 0.97
+      },
+      subscription: {
+        current: 39.99,
+        compare: 57.99,
+        daily: 0.67
+      }
+    },
+    buy2get2free: {
+      one_time: {
+        current: 99.99,
+        compare: null,
+        daily: 0.83
+      },
+      subscription: {
+        current: 69.99,
+        compare: 99.99,
+        daily: 0.58
+      }
+    }
   };
 
   if (addToCartBtn && checkoutCtas.indexOf(addToCartBtn) === -1) {
@@ -77,6 +115,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function parseAmount(value) {
+    if (value === '' || value === null || typeof value === 'undefined') {
+      return null;
+    }
+
     var amount = Number(value);
     return isFinite(amount) ? amount : null;
   }
@@ -106,9 +148,15 @@ document.addEventListener('DOMContentLoaded', function () {
     return autoRefillToggle && autoRefillToggle.checked ? 'subscription' : 'one_time';
   }
 
+  function getPricingForOption(option, purchaseType) {
+    var bundleKey = option.dataset.bundle || jarToBundle[option.dataset.jar] || 'buy1';
+    var pricingGroup = bundlePricing[bundleKey] || bundlePricing.buy1;
+    return pricingGroup[purchaseType] || pricingGroup.one_time;
+  }
+
   function getSelectedBundleKey() {
     if (!selectedOption) {
-      return 'buy1';
+      return null;
     }
 
     return selectedOption.dataset.bundle || jarToBundle[selectedOption.dataset.jar] || 'buy1';
@@ -119,7 +167,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var bundleKey = getSelectedBundleKey();
     var routesForType = checkoutRoutes[purchaseType] || checkoutRoutes.one_time;
 
-    return routesForType[bundleKey] || routesForType.buy1;
+    if (!bundleKey) {
+      return '';
+    }
+
+    return routesForType[bundleKey] || '';
   }
 
   function syncCheckoutCtas() {
@@ -130,11 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
     checkoutCtas.forEach(function (cta) {
       cta.dataset.checkoutUrl = checkoutUrl;
       cta.dataset.purchaseType = purchaseType;
-      cta.dataset.bundle = bundleKey;
-
-      if (cta.tagName && cta.tagName.toLowerCase() === 'a') {
-        cta.href = checkoutUrl;
-      }
+      cta.dataset.bundle = bundleKey || '';
     });
   }
 
@@ -217,30 +265,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function renderJarPricing() {
     var useSubscription = autoRefillToggle ? autoRefillToggle.checked : true;
+    var purchaseType = useSubscription ? 'subscription' : 'one_time';
 
     jarOptions.forEach(function (option) {
       var current = option.querySelector('.price-current');
       var compare = option.querySelector('.price-compare');
       var daily = option.querySelector('.price-daily');
-      var regularPrice = parseAmount(option.dataset.regular);
-      var regularDaily = parseAmount(option.dataset.regularDaily || option.dataset.daily);
-      var discountPercent = parseAmount(option.dataset.discount);
-      var price = useSubscription
-        ? applyDiscount(regularPrice !== null ? regularPrice : option.dataset.subscription, discountPercent)
-        : (regularPrice !== null ? regularPrice : option.dataset.regular);
-      var comparePrice = useSubscription
-        ? (regularPrice !== null ? regularPrice : option.dataset.subscriptionCompare)
-        : option.dataset.regularCompare;
-      var dailyPrice = useSubscription
-        ? applyDiscount(regularDaily !== null ? regularDaily : (option.dataset.subscriptionDaily || option.dataset.daily), discountPercent)
-        : (regularDaily !== null ? regularDaily : (option.dataset.regularDaily || option.dataset.daily));
+      var pricing = getPricingForOption(option, purchaseType);
+      var comparePrice = parseAmount(pricing.compare);
+      var dailyPrice = parseAmount(pricing.daily);
 
       if (current) {
-        current.textContent = formatPrice(price);
+        current.textContent = formatPrice(pricing.current);
       }
 
       if (compare) {
-        if (comparePrice) {
+        if (comparePrice !== null) {
           compare.textContent = formatPrice(comparePrice);
           compare.style.display = 'inline-block';
         } else {
@@ -369,13 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
       syncCheckoutCtas();
       var checkoutUrl = getCheckoutUrl();
 
-      if (checkoutUrl && checkoutUrl.charAt(0) === '#') {
-        var checkoutTarget = document.querySelector(checkoutUrl);
-
-        if (checkoutTarget) {
-          checkoutTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
+      if (!checkoutUrl) {
         return;
       }
 
