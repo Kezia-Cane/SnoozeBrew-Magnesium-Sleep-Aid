@@ -1748,7 +1748,7 @@ ul {
    ======================================== */
 @font-face {
   font-family: 'Reckless Neue';
-  src: url('https://www.jiyuskin.com/cdn/shop/t/22/assets/RecklessNeue-Regular.woff2?v=83426673365656187841776096188') format('woff2');
+  src: url('assets/fonts/geist_n4.6e27f20c83b0a07405328f98ff3b0be957c5d6d5.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -1756,7 +1756,7 @@ ul {
 
 @font-face {
   font-family: 'Reckless Neue';
-  src: url('https://www.jiyuskin.com/cdn/shop/t/22/assets/RecklessNeue-Regular.woff2?v=83426673365656187841776096188') format('woff2');
+  src: url('assets/fonts/geist_n4.6e27f20c83b0a07405328f98ff3b0be957c5d6d5.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -1764,7 +1764,7 @@ ul {
 
 @font-face {
   font-family: 'Reckless Neue';
-  src: url('https://www.jiyuskin.com/cdn/shop/t/22/assets/RecklessNeue-Regular.woff2?v=83426673365656187841776096188') format('woff2');
+  src: url('assets/fonts/geist_n4.6e27f20c83b0a07405328f98ff3b0be957c5d6d5.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -1772,7 +1772,7 @@ ul {
 
 @font-face {
   font-family: 'Avantt TRIAL';
-  src: url('https://www.jiyuskin.com/cdn/shop/t/22/assets/AvanttTRIAL-Regular.woff2?v=77282371245507588441776096089') format('woff2');
+  src: url('assets/fonts/geist_n4.6e27f20c83b0a07405328f98ff3b0be957c5d6d5.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -1780,7 +1780,7 @@ ul {
 
 @font-face {
   font-family: 'Avantt TRIAL';
-  src: url('https://www.jiyuskin.com/cdn/shop/t/22/assets/AvanttTRIAL-Medium.woff2?v=109645584466574180081776096084') format('woff2');
+  src: url('assets/fonts/geist_n7.d1a55eaf394973a6f8fe773d87de2e2f51331d2a.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -1788,7 +1788,7 @@ ul {
 
 @font-face {
   font-family: 'Avantt TRIAL';
-  src: url('https://www.jiyuskin.com/cdn/shop/t/22/assets/AvanttTRIAL-SemiBold.woff2?v=157798500036940128331776096092') format('woff2');
+  src: url('assets/fonts/geist_n7.d1a55eaf394973a6f8fe773d87de2e2f51331d2a.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -1796,7 +1796,7 @@ ul {
 
 @font-face {
   font-family: 'Avantt TRIAL';
-  src: url('https://www.jiyuskin.com/cdn/shop/t/22/assets/AvanttTRIAL-Bold.woff2?v=40411616037731133921776096082') format('woff2');
+  src: url('assets/fonts/geist_n7.d1a55eaf394973a6f8fe773d87de2e2f51331d2a.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -10590,12 +10590,12 @@ video {
 .about-concerns__tag--soothes { bottom: 18%; left: 24%; }
 .about-concerns__tag--protects { bottom: 6%; right: 14%; }
 
-.about-korean {
+.about-ritual {
   max-width: 1080px;
   margin: 62px auto 0;
 }
 
-.about-korean__badge {
+.about-ritual__badge {
   position: relative;
   z-index: 1;
   width: fit-content;
@@ -10607,7 +10607,7 @@ video {
   text-align: center;
 }
 
-.about-korean__badge-title {
+.about-ritual__badge-title {
   margin: 0 0 4px;
   color: var(--green-dark);
   font-family: var(--font-serif);
@@ -10615,14 +10615,14 @@ video {
   line-height: 1.08;
 }
 
-.about-korean__badge-copy {
+.about-ritual__badge-copy {
   margin: 0;
   color: rgba(53, 32, 95, 0.74);
   font-size: 13px;
   line-height: 1.45;
 }
 
-.about-korean__panel {
+.about-ritual__panel {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
   gap: 30px;
@@ -10632,34 +10632,34 @@ video {
   background: var(--green-dark);
 }
 
-.about-korean__media {
+.about-ritual__media {
   overflow: hidden;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.08);
 }
 
-.about-korean__media img {
+.about-ritual__media img {
   width: 100%;
   display: block;
 }
 
-.about-korean__copy {
+.about-ritual__copy {
   color: var(--cream);
 }
 
-.about-korean__lead {
+.about-ritual__lead {
   margin: 0 0 18px;
   color: rgba(253, 250, 240, 0.94);
   font-size: 17px;
   line-height: 1.66;
 }
 
-.about-korean__list {
+.about-ritual__list {
   display: grid;
   gap: 14px;
 }
 
-.about-korean__item {
+.about-ritual__item {
   display: flex;
   gap: 12px;
   align-items: flex-start;
@@ -10668,22 +10668,22 @@ video {
   line-height: 1.6;
 }
 
-.about-korean__item img {
+.about-ritual__item img {
   width: 18px;
   height: 18px;
   margin-top: 4px;
   flex: 0 0 18px;
 }
 
-.about-korean__item strong {
+.about-ritual__item strong {
   color: var(--cream);
 }
 
-.about-korean__cta {
+.about-ritual__cta {
   margin-top: 24px;
 }
 
-.about-korean__button {
+.about-ritual__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -10797,7 +10797,7 @@ video {
   }
 
   .about-brand,
-  .about-korean__panel {
+  .about-ritual__panel {
     grid-template-columns: 1fr;
   }
 
@@ -10927,14 +10927,14 @@ video {
     font-size: 11px;
   }
 
-  .about-korean__badge {
+  .about-ritual__badge {
     width: 100%;
     max-width: 420px;
     margin-bottom: -20px;
     padding: 14px 18px;
   }
 
-  .about-korean__panel {
+  .about-ritual__panel {
     gap: 20px;
     padding: 42px 18px 28px;
   }
@@ -11003,8 +11003,8 @@ video {
   .about-values__item-copy,
   .about-rule-card__copy,
   .about-promise__item-copy,
-  .about-korean__lead,
-  .about-korean__item {
+  .about-ritual__lead,
+  .about-ritual__item {
     font-size: 15px;
   }
 
@@ -11017,7 +11017,7 @@ video {
   .about-brand,
   .about-rules,
   .about-promise,
-  .about-korean,
+  .about-ritual,
   .about-faq-preview,
   .faq-products {
     margin-top: 46px;
@@ -11034,11 +11034,11 @@ video {
   .about-concerns__tag--soothes { bottom: 18%; left: 1%; }
   .about-concerns__tag--protects { bottom: 6%; right: 2%; }
 
-  .about-korean__badge-title {
+  .about-ritual__badge-title {
     font-size: 30px;
   }
 
-  .about-korean__badge-copy {
+  .about-ritual__badge-copy {
     font-size: 12px;
   }
 }
@@ -11837,7 +11837,7 @@ body {
   background: var(--snooze-indigo);
 }
 
-/* Snooze copy-length refinements for Jiyu mobile geometry */
+/* Snooze Brew copy-length refinements for mobile geometry */
 @media (max-width: 640px) {
   #social-section .social-copy {
     max-width: 420px;
