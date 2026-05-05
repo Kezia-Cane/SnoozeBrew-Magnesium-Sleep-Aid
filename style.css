@@ -11757,7 +11757,7 @@ body {
 
 #newsletter-section > div.newsletter-shell,
 .newsletter-shell {
-  padding-bottom: 14px;
+  padding-bottom: 16px;
   border-radius: 15px;
   background: var(--snooze-cocoa);
 }
@@ -11801,6 +11801,17 @@ body {
 
 .newsletter-input:focus {
   border: 0;
+}
+
+.newsletter-shell .newsletter-form,
+#newsletter-form {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  width: min(calc(100% - 96px), 316px);
+  margin: 20px auto 0;
+  transform: none;
+  z-index: 1;
 }
 
 .clinical-ingredients .section-subtext,
