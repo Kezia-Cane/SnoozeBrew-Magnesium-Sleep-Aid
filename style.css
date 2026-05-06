@@ -12049,3 +12049,183 @@ body.mobile-nav-open {
   }
 }
 
+/* Newsletter final layout: keep the signup module as one cohesive panel. */
+#newsletter-section > div.newsletter-shell,
+#newsletter-section > .newsletter-shell,
+.newsletter-shell {
+  max-width: 890px;
+  padding: 34px 36px 38px;
+  border: 1.25px solid var(--snooze-cocoa);
+  border-radius: 16px;
+  background: linear-gradient(180deg, #f0e6fb 0%, #e5d4f7 100%);
+}
+
+#newsletter-section > div > div.newsletter-inner,
+.newsletter-inner {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.newsletter-shell .newsletter-form,
+#newsletter-form {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  width: min(100%, 360px);
+  height: auto;
+  margin: 24px auto 0;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transform: none;
+  border: 1.25px solid rgba(74, 47, 126, 0.18);
+  border-radius: 999px;
+  background: #fbf7f1;
+  z-index: 1;
+}
+
+.newsletter-form__icon {
+  display: none;
+}
+
+.newsletter-input {
+  min-width: 0;
+  height: 40px;
+  padding: 0 16px;
+}
+
+.newsletter-submit {
+  flex: 0 0 auto;
+  height: 40px;
+  min-width: 112px;
+  padding: 0 18px;
+  background: var(--snooze-cocoa);
+}
+
+.newsletter-submit:hover {
+  background: var(--snooze-cocoa-dark);
+}
+
+@media (max-width: 640px) {
+  #newsletter-section > div.newsletter-shell,
+  #newsletter-section > .newsletter-shell,
+  .newsletter-shell {
+    width: min(100%, 390px);
+    padding: 28px 18px 30px;
+  }
+
+  #newsletter-section .section-heading {
+    font-size: 28px;
+    line-height: 1.08;
+  }
+
+  .newsletter-sparkles {
+    width: 18px;
+    height: 18px;
+    margin-left: 2px;
+    transform: translateY(-5px);
+  }
+
+  .newsletter-sparkle--lg {
+    font-size: 14px;
+  }
+
+  .newsletter-sparkle--sm {
+    font-size: 9px;
+  }
+
+  .newsletter-shell .newsletter-form,
+  #newsletter-form {
+    width: 100%;
+    margin-top: 22px;
+    padding: 5px;
+  }
+
+  .newsletter-input {
+    height: 42px;
+    padding: 0 13px;
+    font-size: 14px;
+  }
+
+  .newsletter-submit {
+    height: 42px;
+    min-width: 110px;
+    padding: 0 14px;
+    font-size: 10.5px;
+  }
+}
+
+/* GHL checkout embed containment */
+body:has(.c-order) {
+  overflow-x: hidden;
+}
+
+body:has(.c-order) .lb-checkout-reserve {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+  z-index: 1 !important;
+  width: min(100%, 580px) !important;
+  margin: 0 auto 20px !important;
+}
+
+body:has(.c-order) .fullSection:has(.c-order),
+body:has(.c-order) .c-section:has(.c-order),
+body:has(.c-order) .row-align-center:has(.c-order),
+body:has(.c-order) .c-column:has(.c-order),
+body:has(.c-order) .c-nested-column:has(.c-order) {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+body:has(.c-order) .c-order,
+body:has(.c-order) .container-order-form-two-step,
+body:has(.c-order) .form-body,
+body:has(.c-order) .form-payment,
+body:has(.c-order) .payment-content,
+body:has(.c-order) .payment-form,
+body:has(.c-order) .ghl-payment-element,
+body:has(.c-order) .StripeElement {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+body:has(.c-order) .form-input,
+body:has(.c-order) .form-btn,
+body:has(.c-order) .order-form-footer {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+}
+
+body:has(.c-order) .form-btn {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+@media (max-width: 640px) {
+  body:has(.c-order) .row-align-center:has(.c-order),
+  body:has(.c-order) .c-column:has(.c-order),
+  body:has(.c-order) .c-nested-column:has(.c-order) {
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body:has(.c-order) .container-order-form-two-step {
+    width: min(100%, calc(100vw - 18px)) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body:has(.c-order) .form-body {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
