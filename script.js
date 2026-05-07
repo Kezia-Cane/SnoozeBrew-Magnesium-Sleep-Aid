@@ -399,23 +399,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
   updateGalleryUI(0);
 
-  if (addToCartBtn) {
-    addToCartBtn.addEventListener('click', function (event) {
-      if (addToCartBtn.disabled) {
-        return;
-      }
+  function handleCheckoutCtaClick(event) {
+    var cta = event.currentTarget || this;
 
-      event.preventDefault();
-      syncCheckoutCtas();
-      var checkoutUrl = getCheckoutUrl();
+    if (!cta || cta.disabled) {
+      return;
+    }
 
-      if (!checkoutUrl) {
-        return;
-      }
+    event.preventDefault();
+    syncCheckoutCtas();
 
-      window.location.href = checkoutUrl;
-    });
+    var checkoutUrl = cta.dataset.checkoutUrl || getCheckoutUrl();
+
+    if (!checkoutUrl) {
+      return;
+    }
+
+    window.location.href = checkoutUrl;
   }
+
+  checkoutCtas.forEach(function (cta) {
+    cta.addEventListener('click', handleCheckoutCtaClick);
+  });
 
   accordionItems.forEach(function (item) {
     var header = item.querySelector('.accordion-header');

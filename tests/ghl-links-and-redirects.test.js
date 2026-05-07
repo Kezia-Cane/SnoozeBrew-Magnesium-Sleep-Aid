@@ -9,6 +9,7 @@ const htmlFiles = [
   "index.html",
   "about.html",
   "contact.html",
+  "faq.html",
   "shipping.html",
   "refund.html",
   "privacy.html",
@@ -190,6 +191,16 @@ function createHarness() {
       checkoutUrl: "#product-info"
     }
   });
+  const mobileAddToCartBtn = new FakeElement({
+    id: "mobile-add-to-cart",
+    tagName: "BUTTON",
+    dataset: {
+      checkoutCta: "",
+      purchaseType: "subscription",
+      bundle: "buy1get1free",
+      checkoutUrl: "#product-info"
+    }
+  });
   const desktopVariantMedia = new FakeElement({
     id: "desktop-variant-media",
     tagName: "IMG"
@@ -220,7 +231,7 @@ function createHarness() {
       }
 
       if (selector === "[data-checkout-cta]") {
-        return [addToCartBtn];
+        return [addToCartBtn, mobileAddToCartBtn];
       }
 
       return [];
@@ -278,6 +289,7 @@ function createHarness() {
     autoRefillTitle,
     autoRefillToggle,
     jarOptions,
+    mobileAddToCartBtn,
     window
   };
 }
@@ -330,9 +342,37 @@ function assertLandingPageHasNoHardcodedGhlLinks() {
   );
 }
 
+function assertPublishedPagesUseCleanInternalUrls() {
+  const internalHtmlHrefPattern = /href="(?:index|about|faq|contact|privacy|terms|shipping|refund|checkout)\.html(?:#[^"]*)?"/i;
+  const staleCheckoutDomainPattern = /https:\/\/(?:www\.)?trysnoozebrew\.com|https:\/\/(?:www\.)?trysnoozebrew\.silmea\.com/i;
+
+  htmlFiles.forEach((fileName) => {
+    const contents = fs.readFileSync(path.join(repoRoot, fileName), "utf8");
+
+    assert.strictEqual(
+      internalHtmlHrefPattern.test(contents),
+      false,
+      "expected " + fileName + " to use clean internal page URLs instead of .html paths"
+    );
+    assert.strictEqual(
+      staleCheckoutDomainPattern.test(contents),
+      false,
+      "expected " + fileName + " to remove stale published domains"
+    );
+  });
+}
+
 function assertRedirectsFollowBundleSelection() {
   const harness = createHarness();
-  const { addToCartBtn, autoRefillSub, autoRefillTitle, autoRefillToggle, jarOptions, window } = harness;
+  const {
+    addToCartBtn,
+    autoRefillSub,
+    autoRefillTitle,
+    autoRefillToggle,
+    jarOptions,
+    mobileAddToCartBtn,
+    window
+  } = harness;
 
   assert.strictEqual(autoRefillTitle.textContent, "Save 30% with Monthly Delivery");
   assert.strictEqual(autoRefillSub.textContent, "Cancel Anytime – No Commitment");
@@ -352,23 +392,26 @@ function assertRedirectsFollowBundleSelection() {
     change(autoRefillToggle);
     click(jarOptions[scenario.optionIndex]);
 
-    window.location.href = "about:blank";
-    click(addToCartBtn);
+    [addToCartBtn, mobileAddToCartBtn].forEach((cta) => {
+      window.location.href = "about:blank";
+      click(cta);
 
-    assert.strictEqual(
-      addToCartBtn.dataset.checkoutUrl,
-      scenario.expectedUrl,
-      "expected CTA dataset to track the selected route"
-    );
-    assert.strictEqual(
-      window.location.href,
-      scenario.expectedUrl,
-      "expected Add to Cart to redirect to the selected GHL checkout route"
-    );
+      assert.strictEqual(
+        cta.dataset.checkoutUrl,
+        scenario.expectedUrl,
+        "expected CTA dataset to track the selected route"
+      );
+      assert.strictEqual(
+        window.location.href,
+        scenario.expectedUrl,
+        "expected every Add to Cart CTA to redirect to the selected GHL checkout route"
+      );
+    });
   });
 }
 
 assertLandingPageHasNoHardcodedGhlLinks();
+assertPublishedPagesUseCleanInternalUrls();
 assertRedirectsFollowBundleSelection();
 
-console.log("PASS landing page contains no hardcoded GHL links and Add to Cart redirects match the selected bundle/subscription state");
+console.log("PASS published pages use clean internal URLs and every Add to Cart CTA redirects to the selected bundle/subscription route");
