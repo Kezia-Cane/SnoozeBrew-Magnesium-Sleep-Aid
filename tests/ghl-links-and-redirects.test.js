@@ -5,6 +5,7 @@ const vm = require("vm");
 
 const repoRoot = path.resolve(__dirname, "..");
 const scriptSource = fs.readFileSync(path.join(repoRoot, "script.js"), "utf8");
+const vercelConfigPath = path.join(repoRoot, "vercel.json");
 const htmlFiles = [
   "index.html",
   "about.html",
@@ -362,6 +363,39 @@ function assertPublishedPagesUseCleanInternalUrls() {
   });
 }
 
+function assertVercelCleanRouteConfig() {
+  assert.ok(
+    fs.existsSync(vercelConfigPath),
+    "expected vercel.json to exist so clean published routes resolve to the HTML files"
+  );
+
+  const config = JSON.parse(fs.readFileSync(vercelConfigPath, "utf8"));
+  const requiredRoutes = {
+    "/about": "/about.html",
+    "/faq": "/faq.html",
+    "/privacy": "/privacy.html",
+    "/terms": "/terms.html",
+    "/shipping": "/shipping.html",
+    "/refund": "/refund.html",
+    "/contact": "/contact.html",
+    "/checkout": "/checkout.html"
+  };
+  const rewrites = Array.isArray(config.rewrites) ? config.rewrites : [];
+  const redirects = Array.isArray(config.redirects) ? config.redirects : [];
+
+  Object.entries(requiredRoutes).forEach(([source, destination]) => {
+    assert.ok(
+      rewrites.some((rewrite) => rewrite.source === source && rewrite.destination === destination),
+      "expected vercel.json to rewrite " + source + " to " + destination
+    );
+
+    assert.ok(
+      redirects.some((redirect) => redirect.source === destination && redirect.destination === source),
+      "expected vercel.json to redirect " + destination + " to " + source
+    );
+  });
+}
+
 function assertRedirectsFollowBundleSelection() {
   const harness = createHarness();
   const {
@@ -412,6 +446,7 @@ function assertRedirectsFollowBundleSelection() {
 
 assertLandingPageHasNoHardcodedGhlLinks();
 assertPublishedPagesUseCleanInternalUrls();
+assertVercelCleanRouteConfig();
 assertRedirectsFollowBundleSelection();
 
 console.log("PASS published pages use clean internal URLs and every Add to Cart CTA redirects to the selected bundle/subscription route");
