@@ -9828,16 +9828,16 @@ video {
 
 .contact-care-pill {
   padding: 18px 20px 20px;
-  border: 1px solid rgba(0, 110, 55, 0.18);
+  border: 1px solid rgba(53, 32, 95, 0.16);
   border-radius: 18px;
-  background: linear-gradient(180deg, rgba(253, 250, 240, 0.95) 0%, rgba(246, 250, 244, 0.98) 100%);
-  box-shadow: 0 16px 36px rgba(0, 110, 55, 0.06);
+  background: linear-gradient(180deg, rgba(253, 250, 240, 0.96) 0%, rgba(232, 222, 246, 0.74) 100%);
+  box-shadow: 0 16px 36px rgba(53, 32, 95, 0.08);
 }
 
 .contact-care-pill__label {
   display: block;
   margin-bottom: 8px;
-  color: rgba(0, 110, 55, 0.66);
+  color: var(--orange);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -9863,10 +9863,10 @@ video {
 
 .contact-form-aside {
   padding: 30px 26px;
-  border: 1px solid rgba(0, 110, 55, 0.14);
+  border: 1px solid rgba(53, 32, 95, 0.14);
   border-radius: 22px;
-  background: linear-gradient(180deg, #f7fbf5 0%, #eef7ea 100%);
-  box-shadow: 0 18px 42px rgba(0, 110, 55, 0.08);
+  background: linear-gradient(180deg, #f7f1ff 0%, #efe7fb 100%);
+  box-shadow: 0 18px 42px rgba(53, 32, 95, 0.08);
 }
 
 .contact-form-aside__eyebrow,
@@ -9876,7 +9876,7 @@ video {
   margin: 0 0 14px;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(0, 110, 55, 0.08);
+  background: rgba(53, 32, 95, 0.08);
   color: var(--green-dark);
   font-size: 11px;
   font-weight: 700;
@@ -9895,7 +9895,7 @@ video {
 
 .contact-form-aside__text {
   margin: 0 0 22px;
-  color: rgba(0, 110, 55, 0.82);
+  color: rgba(53, 32, 95, 0.82);
   font-size: 16px;
   line-height: 1.7;
 }
@@ -9909,7 +9909,7 @@ video {
   padding: 14px 14px 16px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.68);
-  border: 1px solid rgba(0, 110, 55, 0.1);
+  border: 1px solid rgba(53, 32, 95, 0.1);
 }
 
 .contact-form-aside__point-title {
@@ -9922,7 +9922,7 @@ video {
 
 .contact-form-aside__point-copy {
   display: block;
-  color: rgba(0, 110, 55, 0.78);
+  color: rgba(53, 32, 95, 0.78);
   font-size: 14px;
   line-height: 1.65;
 }
@@ -9930,10 +9930,10 @@ video {
 .contact-form-card {
   position: relative;
   padding: 30px;
-  border: 1px solid rgba(0, 110, 55, 0.14);
+  border: 1px solid rgba(53, 32, 95, 0.14);
   border-radius: 24px;
-  background: linear-gradient(180deg, rgba(253, 250, 240, 0.98) 0%, rgba(250, 252, 249, 1) 100%);
-  box-shadow: 0 24px 56px rgba(0, 110, 55, 0.08);
+  background: linear-gradient(180deg, rgba(253, 250, 240, 0.98) 0%, rgba(232, 222, 246, 0.5) 100%);
+  box-shadow: 0 24px 56px rgba(53, 32, 95, 0.08);
 }
 
 .contact-form-card::before {
@@ -9944,7 +9944,7 @@ video {
   width: 92px;
   height: 92px;
   border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(255, 154, 88, 0.22) 0%, rgba(255, 154, 88, 0) 68%);
+  background: radial-gradient(circle at center, rgba(255, 139, 83, 0.22) 0%, rgba(255, 139, 83, 0) 68%);
   pointer-events: none;
 }
 
@@ -9964,7 +9964,7 @@ video {
 
 .contact-form-card__text {
   margin: 0;
-  color: rgba(0, 110, 55, 0.8);
+  color: rgba(53, 32, 95, 0.8);
   font-size: 16px;
   line-height: 1.7;
 }
@@ -9974,13 +9974,13 @@ video {
   padding: 22px;
   border-radius: 22px;
   background:
-    radial-gradient(circle at top left, rgba(234, 248, 207, 0.78) 0%, rgba(234, 248, 207, 0) 40%),
-    radial-gradient(circle at bottom right, rgba(0, 110, 55, 0.06) 0%, rgba(0, 110, 55, 0) 52%),
+    radial-gradient(circle at top left, rgba(232, 222, 246, 0.92) 0%, rgba(232, 222, 246, 0) 40%),
+    radial-gradient(circle at bottom right, rgba(53, 32, 95, 0.06) 0%, rgba(53, 32, 95, 0) 52%),
     linear-gradient(180deg, #ffffff 0%, #fbfdf9 100%);
-  border: 1px solid rgba(0, 110, 55, 0.12);
+  border: 1px solid rgba(53, 32, 95, 0.12);
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.78),
-    0 16px 32px rgba(0, 110, 55, 0.08);
+    0 16px 32px rgba(53, 32, 95, 0.08);
   overflow: hidden;
 }
 
@@ -10010,11 +10010,11 @@ video {
   height: auto !important;
   margin: 0 auto !important;
   padding: clamp(26px, 3.2vw, 36px) !important;
-  color: #183326 !important;
+  color: var(--green-dark) !important;
   background: linear-gradient(180deg, #fffef9 0%, #fdfaf0 100%) !important;
-  border: 1px solid rgba(0, 110, 55, 0.2) !important;
+  border: 1px solid rgba(53, 32, 95, 0.2) !important;
   border-radius: 24px !important;
-  box-shadow: 0 22px 54px rgba(24, 51, 38, 0.12), 0 1px 0 rgba(255, 255, 255, 0.9) inset !important;
+  box-shadow: 0 22px 54px rgba(53, 32, 95, 0.12), 0 1px 0 rgba(255, 255, 255, 0.9) inset !important;
   font-family: var(--font-sans) !important;
   overflow: visible !important;
 }
@@ -10071,7 +10071,7 @@ video {
 #form-wTqMTBCSiB .form-title,
 #form-wTqMTBCSiB .form-heading {
   margin: 0 0 20px !important;
-  color: #006e37 !important;
+  color: var(--green-dark) !important;
   font-family: var(--font-serif) !important;
   font-size: clamp(26px, 3vw, 34px) !important;
   font-weight: 500 !important;
@@ -10085,7 +10085,7 @@ video {
 #form-wTqMTBCSiB .field-label {
   display: block !important;
   margin: 0 0 7px !important;
-  color: #183326 !important;
+  color: var(--green-dark) !important;
   font-family: var(--font-sans) !important;
   font-size: 13px !important;
   font-weight: 700 !important;
@@ -10097,7 +10097,7 @@ video {
 #form-wTqMTBCSiB .asterisk,
 #form-wTqMTBCSiB .field-required,
 #form-wTqMTBCSiB abbr[title*="required" i] {
-  color: #f68b53 !important;
+  color: var(--orange) !important;
   text-decoration: none !important;
 }
 
@@ -10109,11 +10109,11 @@ video {
   min-height: 54px !important;
   margin: 0 !important;
   padding: 15px 17px !important;
-  color: #183326 !important;
+  color: var(--green-dark) !important;
   background: rgba(255, 254, 249, 0.96) !important;
-  border: 1px solid rgba(0, 110, 55, 0.2) !important;
+  border: 1px solid rgba(53, 32, 95, 0.2) !important;
   border-radius: 16px !important;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 8px 18px rgba(24, 51, 38, 0.035) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 8px 18px rgba(53, 32, 95, 0.035) !important;
   font-family: var(--font-sans) !important;
   font-size: 15px !important;
   font-weight: 500 !important;
@@ -10131,13 +10131,13 @@ video {
 
 #form-wTqMTBCSiB input::placeholder,
 #form-wTqMTBCSiB textarea::placeholder {
-  color: rgba(24, 51, 38, 0.52) !important;
+  color: rgba(53, 32, 95, 0.52) !important;
   font-weight: 500 !important;
   opacity: 1 !important;
 }
 
 #form-wTqMTBCSiB select {
-  color: #183326 !important;
+  color: var(--green-dark) !important;
   cursor: pointer !important;
 }
 
@@ -10149,7 +10149,7 @@ video {
 #form-wTqMTBCSiB .input-group-text,
 #form-wTqMTBCSiB .field-icon,
 #form-wTqMTBCSiB i {
-  color: #006e37 !important;
+  color: var(--green-dark) !important;
 }
 
 #form-wTqMTBCSiB input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="hidden"]):hover,
@@ -10157,7 +10157,7 @@ video {
 #form-wTqMTBCSiB textarea:hover,
 #form-wTqMTBCSiB .form-control:hover {
   background: #ffffff !important;
-  border-color: rgba(0, 110, 55, 0.34) !important;
+  border-color: rgba(53, 32, 95, 0.34) !important;
 }
 
 #form-wTqMTBCSiB input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="hidden"]):focus,
@@ -10165,16 +10165,16 @@ video {
 #form-wTqMTBCSiB textarea:focus,
 #form-wTqMTBCSiB .form-control:focus {
   background: #ffffff !important;
-  border-color: #006e37 !important;
-  box-shadow: 0 0 0 4px rgba(221, 239, 201, 0.88), 0 14px 28px rgba(0, 110, 55, 0.09) !important;
+  border-color: var(--green-dark) !important;
+  box-shadow: 0 0 0 4px rgba(232, 222, 246, 0.9), 0 14px 28px rgba(53, 32, 95, 0.09) !important;
 }
 
 #form-wTqMTBCSiB input[aria-invalid="true"],
 #form-wTqMTBCSiB select[aria-invalid="true"],
 #form-wTqMTBCSiB textarea[aria-invalid="true"],
 #form-wTqMTBCSiB .is-invalid {
-  border-color: #f68b53 !important;
-  box-shadow: 0 0 0 4px rgba(246, 139, 83, 0.16) !important;
+  border-color: var(--orange) !important;
+  box-shadow: 0 0 0 4px rgba(255, 139, 83, 0.16) !important;
 }
 
 #form-wTqMTBCSiB button,
@@ -10189,10 +10189,10 @@ video {
   margin: 6px 0 12px !important;
   padding: 16px 22px !important;
   color: #ffffff !important;
-  background: #006e37 !important;
-  border: 1px solid #006e37 !important;
+  background: var(--green-dark) !important;
+  border: 1px solid var(--green-dark) !important;
   border-radius: 999px !important;
-  box-shadow: 0 16px 30px rgba(0, 110, 55, 0.24) !important;
+  box-shadow: 0 16px 30px rgba(53, 32, 95, 0.24) !important;
   font-family: var(--font-sans) !important;
   font-size: 14px !important;
   font-weight: 800 !important;
@@ -10211,9 +10211,9 @@ video {
 #form-wTqMTBCSiB .submit-button:hover,
 #form-wTqMTBCSiB .button-element:hover,
 #form-wTqMTBCSiB .btn[type="submit"]:hover {
-  background: #00572c !important;
-  border-color: #00572c !important;
-  box-shadow: 0 20px 36px rgba(0, 110, 55, 0.28) !important;
+  background: var(--green-mid) !important;
+  border-color: var(--green-mid) !important;
+  box-shadow: 0 20px 36px rgba(53, 32, 95, 0.28) !important;
   transform: translateY(-2px) !important;
 }
 
@@ -10223,7 +10223,7 @@ video {
   height: 18px !important;
   min-width: 18px !important;
   margin: 2px 10px 0 0 !important;
-  accent-color: #006e37 !important;
+  accent-color: var(--green-dark) !important;
   cursor: pointer !important;
 }
 
@@ -10239,9 +10239,9 @@ video {
   gap: 9px !important;
   margin: 8px 0 0 !important;
   padding: 12px 13px !important;
-  color: rgba(24, 51, 38, 0.76) !important;
-  background: rgba(221, 239, 201, 0.24) !important;
-  border: 1px solid rgba(0, 110, 55, 0.12) !important;
+  color: rgba(53, 32, 95, 0.76) !important;
+  background: rgba(232, 222, 246, 0.32) !important;
+  border: 1px solid rgba(53, 32, 95, 0.12) !important;
   border-radius: 14px !important;
   font-size: 12px !important;
   line-height: 1.45 !important;
@@ -10254,7 +10254,7 @@ video {
 #form-wTqMTBCSiB .tcpa,
 #form-wTqMTBCSiB .privacy-policy {
   margin: 0 !important;
-  color: rgba(24, 51, 38, 0.76) !important;
+  color: rgba(53, 32, 95, 0.76) !important;
   font-size: 12px !important;
   font-weight: 500 !important;
   line-height: 1.45 !important;
@@ -10262,7 +10262,7 @@ video {
 }
 
 #form-wTqMTBCSiB a {
-  color: #006e37 !important;
+  color: var(--green-dark) !important;
   font-weight: 700 !important;
   text-decoration: underline !important;
   text-decoration-thickness: 1px !important;
@@ -10277,7 +10277,7 @@ video {
 #form-wTqMTBCSiB .text-danger,
 #form-wTqMTBCSiB [role="alert"] {
   margin: 7px 0 0 !important;
-  color: #f68b53 !important;
+  color: var(--orange) !important;
   font-family: var(--font-sans) !important;
   font-size: 12px !important;
   font-weight: 700 !important;
@@ -10296,7 +10296,7 @@ video {
   #form-wTqMTBCSiB {
     padding: 24px 18px !important;
     border-radius: 20px !important;
-    box-shadow: 0 14px 34px rgba(24, 51, 38, 0.11) !important;
+    box-shadow: 0 14px 34px rgba(53, 32, 95, 0.11) !important;
   }
 
   #form-wTqMTBCSiB form {
@@ -10349,10 +10349,10 @@ video {
 #form-wTqMTBCSiB #el_ObqCaTLA2e5XepeDlLWO_sCcDBZbc4WFpl62eM755_4 textarea,
 #form-wTqMTBCSiB #el_ObqCaTLA2e5XepeDlLWO_sCcDBZbc4WFpl62eM755_4 .form-control {
   background: rgba(255, 254, 249, 0.96) !important;
-  border: 1px solid rgba(0, 110, 55, 0.2) !important;
+  border: 1px solid rgba(53, 32, 95, 0.2) !important;
   border-radius: 16px !important;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 8px 18px rgba(24, 51, 38, 0.035) !important;
-  color: #183326 !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 8px 18px rgba(53, 32, 95, 0.035) !important;
+  color: var(--green-dark) !important;
   font-family: var(--font-sans) !important;
   font-size: 15px !important;
   font-weight: 500 !important;
@@ -10364,8 +10364,8 @@ video {
 #form-wTqMTBCSiB #el_ObqCaTLA2e5XepeDlLWO_sCcDBZbc4WFpl62eM755_4 textarea:focus,
 #form-wTqMTBCSiB #el_ObqCaTLA2e5XepeDlLWO_sCcDBZbc4WFpl62eM755_4 .form-control:focus {
   background: #ffffff !important;
-  border-color: #006e37 !important;
-  box-shadow: 0 0 0 4px rgba(221, 239, 201, 0.88), 0 14px 28px rgba(0, 110, 55, 0.09) !important;
+  border-color: var(--green-dark) !important;
+  box-shadow: 0 0 0 4px rgba(232, 222, 246, 0.9), 0 14px 28px rgba(53, 32, 95, 0.09) !important;
 }
 
 /* ========================================
