@@ -9876,7 +9876,7 @@ video {
   margin: 0 0 14px;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(53, 32, 95, 0.08);
+  background: rgba(255, 139, 83, 0.14);
   color: var(--green-dark);
   font-size: 11px;
   font-weight: 700;
@@ -9974,7 +9974,7 @@ video {
   padding: 22px;
   border-radius: 22px;
   background:
-    radial-gradient(circle at top left, rgba(232, 222, 246, 0.92) 0%, rgba(232, 222, 246, 0) 40%),
+    radial-gradient(circle at top left, rgba(255, 139, 83, 0.16) 0%, rgba(255, 139, 83, 0) 40%),
     radial-gradient(circle at bottom right, rgba(53, 32, 95, 0.06) 0%, rgba(53, 32, 95, 0) 52%),
     linear-gradient(180deg, #ffffff 0%, #fbfdf9 100%);
   border: 1px solid rgba(53, 32, 95, 0.12);
@@ -9987,7 +9987,7 @@ video {
 .contact-form-card__frame iframe {
   display: block;
   border-radius: 18px;
-  background: #f7faf5;
+  background: #fffaf5;
 }
 
 .contact-form-card__frame .ghl-contact-embed {
@@ -9997,6 +9997,7 @@ video {
   overflow: hidden !important;
   display: block;
   scrollbar-width: none;
+  background: #fffaf5;
 }
 
 .contact-form-card__frame .ghl-contact-embed::-webkit-scrollbar {
