@@ -19,6 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var addToCartBtn = document.getElementById('add-to-cart');
   var checkoutCtas = Array.from(document.querySelectorAll('[data-checkout-cta]'));
+  var trackingApi = window.SnoozeBrewAbTracking;
+  var tracker = trackingApi && typeof trackingApi.createAbTracker === 'function'
+    ? trackingApi.createAbTracker({
+      endpoint: 'https://funnel-ab-dashboard.vercel.app/api/ab-track',
+      testKey: 'snooze_brew_headline_v1'
+    })
+    : null;
 
   var accordionItems = document.querySelectorAll('[data-accordion]');
   var faqItems = document.querySelectorAll('[data-faq]');
@@ -186,6 +193,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function trackCheckoutClick(checkoutUrl, purchaseType, bundleKey) {
+    if (!tracker) {
+      return;
+    }
+
+    tracker.track('cta_click', {
+      metadata: {
+        checkout_url: checkoutUrl,
+        purchase_type: purchaseType,
+        bundle: bundleKey
+      }
+    });
+  }
+
   function openMobileNav() {
     if (!mobileNav) {
       return;
@@ -343,6 +364,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   renderJarPricing();
 
+  if (tracker) {
+    tracker.track('page_view');
+  }
+
   if (headerMenu && mobileNav) {
     headerMenu.addEventListener('click', function () {
       if (mobileNav.hidden) {
@@ -415,6 +440,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
+    trackCheckoutClick(checkoutUrl, cta.dataset.purchaseType || getPurchaseType(), cta.dataset.bundle || getSelectedBundleKey());
     window.location.href = checkoutUrl;
   }
 
