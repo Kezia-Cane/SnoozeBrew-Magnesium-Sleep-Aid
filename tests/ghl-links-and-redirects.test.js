@@ -20,14 +20,14 @@ const htmlFiles = [
 
 const expectedRoutes = {
   one_time: {
-    buy1: "https://snoozebrew.silmea.com/snoozebrewbuy1",
-    buy1get1free: "https://snoozebrew.silmea.com/snoozebrewbuy1getfree",
-    buy2get2free: "https://snoozebrew.silmea.com/snoozebrewbuy2get2free"
+    buy1: "https://getsnoozebrew.silmea.com/snoozebrewbuy1",
+    buy1get1free: "https://getsnoozebrew.silmea.com/snoozebrewbuy1getfree",
+    buy2get2free: "https://getsnoozebrew.silmea.com/snoozebrewbuy2get2free"
   },
   subscription: {
-    buy1: "https://snoozebrew.silmea.com/snoozebrewbuy1save30monthlydelivery",
-    buy1get1free: "https://snoozebrew.silmea.com/snoozebrewbuy1get1freesave30monthlydelivery",
-    buy2get2free: "https://snoozebrew.silmea.com/snoozebrewbuy2get2freesave30monthlydelivery"
+    buy1: "https://getsnoozebrew.silmea.com/snoozebrewbuy1save30monthlydelivery",
+    buy1get1free: "https://getsnoozebrew.silmea.com/snoozebrewbuy1get1freesave30monthlydelivery",
+    buy2get2free: "https://getsnoozebrew.silmea.com/snoozebrewbuy2get2freesave30monthlydelivery"
   }
 };
 
